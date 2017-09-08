@@ -1,0 +1,41 @@
+#sliderDiv{
+  height: 600px;
+  padding-top: 50px;
+  color: #ffffff;
+}
+
+#divTwo{
+  height: 300px;
+  padding-top: 30px;
+}
+
+#divThree{
+  height: 700px;
+}
+
+h1, h2, h3, h4, h5, p{
+  text-align: center;
+}
+div{
+  margin: auto !important;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    .ribbon {
+        width: 100%;
+    }
+    #divThree{
+      height: 700px;
+    }
+    h3{
+      font-size: 36px;
+    }
+    p{
+      font-size: 18px;
+    }
+    #sliderDiv{
+      height: 600px;
+      padding-top: 30px;
+    }
+}

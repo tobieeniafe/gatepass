@@ -1,68 +1,29 @@
+<div class="body">
 <nav class="white" role="navigation">
   <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo"><h4>Gatepass</h4></a>
+    <a id="logo-container" routerLink='/index' class="brand-logo"><h4>Gatepass</h4></a>
     <ul class="right hide-on-med-and-down">
-      <li><a routerLink='/createEvent' routerLinkActive='active'>Create Event</a></li>
+      <li><a routerLink='/login' routerLinkActive='active'>Create Event</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
-      <li><a routerLink='/createEvent' routerLinkActive='active'>Create Event</a></li>
+      <li><a routerLink='/index' routerLinkActive='active'>Home</a></li>
+      <li><a routerLink='/login' routerLinkActive='active'>Create Event</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="fa fa-bars secondary-light-text"></i></a>
   </div>
 </nav>
 
-  <div class="sliderDiv" id='sliderDiv' [ngStyle]="{'background-image': 'url(' + image + ')'}">
-    <h3>Sell Tickets Fast</h3>
-    <h3>Get Paid Faster</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore .
-      <br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
-      <br>Duis aute irure dolor voluptate velit esse cillum dolore eu fugiat.
-      <br>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-    </p>
-    <br><br>
-    <div class="row">
-      <div class="col s3 m3"></div>
-      <div class="col s3 m3">
-        <img src="{{appstore}}" [ngStyle]="{'width': '185px', 'height': '60px'}">
+  <router-outlet></router-outlet>
+
+<footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; Company 2017.
       </div>
-      <div class="col s3 m3">
-        <img src="{{playstore}}" [ngStyle]="{'width': '185px', 'height': '60px'}">
-      </div>
-      <div class="col s3 m3"></div>
     </div>
-  </div>
-
-  <div class="divTwo row" id="divTwo">
-    <div class="col s12 m2"></div>
-    <div class="col s12 m4">
-      <h4>No More Long Lines</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        <br> Ut enim ad minim veniam, quis nostrud exercitation
-        <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        <br>cupidatat non proident, sunt in culpa qui officia .
-      </p>
-    </div>
-    <div class="col s12 m1"></div>
-    <div class="col s12 m5">
-      <img src="{{iosApp}}" id="sliderImage">
-    </div>
-  </div>
-
-  <div class="divThree row" id="divThree">
-    <h3>Bring Your Event To Life</h3>
-    <div class="col s12 m12">
-      <img src="{{ribbon}}">
-    </div>
-    <br><br><br>
-    <div class="col s12 m12">
-      <button type="button" name="button" class="btn-large getStarted secondary-light waves-effect waves-light">Get Started</button>
-    </div>
-  </div>
-
-
+</footer>
+</div>
   <!-- <a routerLink='/dashboard' routerLinkActive='active'>Dashboard</a> -->
 
 
