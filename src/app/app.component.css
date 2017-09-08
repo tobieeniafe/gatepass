@@ -1,0 +1,24 @@
+#sliderDiv{
+  height: 600px;
+  padding-top: 50px;
+  color: #ffffff;
+}
+
+#divTwo{
+  height: 200px;
+  padding-top: 30px;
+}
+
+#divThree{
+  height: 700px;
+}
+
+h1, h2, h3, h4, h5, p{
+  text-align: center;
+}
+div{
+  margin: auto;
+}
+p{
+  font-size: 0.9em;
+}

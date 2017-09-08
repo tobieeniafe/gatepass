@@ -1,14 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Gatepassng</title>
+  <title>GatePass</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- CSS  -->
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="assets/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+  <link href="assets/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
+
   <app-root></app-root>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; Company 2017.
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/materialize.min.js"></script>
+  <script>
+  (function($){
+    $(function(){
+
+      $('.button-collapse').sideNav();
+      $('.parallax').parallax();
+
+    });
+  })(jQuery);
+  </script>
 </body>
 </html>
