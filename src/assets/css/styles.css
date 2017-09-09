@@ -24,19 +24,18 @@ body {
   width: 100% !important;
 }
 
-/**,
+*,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
 footer {
-  position: absolute;
+  /*position: absolute;*/
   right: 0;
   bottom: 0;
   left: 0;
-  height: 100px;
-}*/
+}
 
 .primary-base{
   background-color: #24242e !important;
@@ -122,4 +121,8 @@ p{
 
 a{
   color: #574799 !important;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'avenirNextCondensed' !important;
 }

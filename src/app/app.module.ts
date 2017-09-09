@@ -7,8 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent }         from './app.component';
-import { IndexComponent }   from './index.component';
-import { LoginComponent }   from './login.component';
+import { IndexComponent }   from './index/index.component';
+import { LoginComponent }   from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { LoginComponent }   from './login.component';
   declarations: [
     AppComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]

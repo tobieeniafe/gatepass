@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class LoginComponent{
-  private image: string = 'assets/img/2.png';
+  private image: string = 'assets/img/7.jpg';
   private title: string = 'Login Page';
 
   constructor (){}
