@@ -10,17 +10,17 @@
 
 .form{
   background-color: #fff;
-  height: 420px;
+  height: 450px;
   margin: auto;
   margin-top: 450px;
   margin-bottom: 100px;
-  padding-top: 30px;
+  /*padding-top: 30px;*/
   /*margin-right: 33%;*/
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .transparent{
-  background-color: rgba(64, 64, 64, 0.3) !important;
+  background-color: rgba(64, 64, 64, 0.5) !important;
   height: 300px;
   color: #ffffff;
 }
@@ -31,7 +31,11 @@
   border-radius: 5px;
 }
 
-@media only screen and (max-width: 1200px) {
+.small{
+  display: none;
+}
+
+@media only screen and (max-width: 1050px) {
   .registerBody{
     height: inherit;
     padding-top: 65px;
@@ -39,12 +43,20 @@
 
   .form{
     background-color: #fff;
-    height: 320px;
+    height: 400px;
     margin: auto;
     margin-top: 450px;
     margin-bottom: 100px;
     /*margin-right: 33%;*/
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .transparent{
+    display: none;
+  }
+
+  .small{
+    display: block;
   }
 
 }
