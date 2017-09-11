@@ -10,6 +10,7 @@ import { AppComponent }         from './app.component';
 import { IndexComponent }   from './index/index.component';
 import { LoginComponent }   from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     IndexComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]
