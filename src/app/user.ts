@@ -5,7 +5,7 @@ export class User {
   email: any;
   phone: any;
   password: any;
-  message: string = 'register works';
+  //message: string = 'register works';
 
   constructor() { }
 

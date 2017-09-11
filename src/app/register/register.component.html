@@ -10,24 +10,25 @@
       </div>
     </div>
     <div class="form col m4 s10 row" align="center">
-    	<form class="row" id="form" >
+    	<form class="row" id="form" method="post" novalidate="">
     		<h4>Register</h4>
             <div class="input-field col s12">
-              <input #fullname placeholder="Fullname" id="fullname" type="text" class="validate">
+              <input #fullname placeholder="Fullname" id="fullname" type="text" class="validate" name="fullname">
             </div>
             <div class="input-field col s12">
-              <input #username placeholder="Username" id="username" type="text" class="validate">
+              <input #username placeholder="Username" id="username" type="text" class="validate" name="username">
             </div>
             <div class="input-field col s12">
-              <input #phone placeholder="Phone" id="phone" type="text" class="validate">
+              <input #phone placeholder="Phone" id="phone" type="text" class="validate" name="phone">
             </div>
             <div class="input-field col s12">
-              <input #email placeholder="E-mail" id="password" type="email" class="validate">
+              <input #email placeholder="E-mail" id="password" type="email" class="validate" name="email">
             </div>
             <div class="input-field col s12">
-              <input #password placeholder='Password' id="password" type="password" class="validate">
+              <input #password placeholder='Password' id="password" type="password" class="validate" name="password">
             </div>
-            <button type="button" name="button" class="btn waves-effect waves-light" (click)="registerUser(fullname.value, username.value, phone.value, email.value, password.value)">Register</button>
+            <button type="submit" name="button" class="btn waves-effect waves-light" (click)="register(fullname.value, username.value, phone.value, email.value, password.value)">Register</button>
+
             <h5 class="small">Already have an account? <a routerLink='/login'>Login</a></h5>
     	</form>
     </div>
