@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col m2 s1"></div>
     <div class="form col m4 s10 row" align="center">
-    	<form method="" action="" class="row" id="form" >
+    	<form method="post" class="row" id="form" novalidate="">
     		<h4>Login</h4>
             <div class="input-field col s12">
-              <input placeholder="E-mail" id="password" type="email" class="validate">
+              <input placeholder="E-mail" id="password" type="email" class="validate" name="email" #email>
             </div>
             <div class="input-field col s12">
-              <input placeholder='Password' id="password" type="password" class="validate">
+              <input placeholder='Password' id="password" type="password" class="validate" name="password" #password>
             </div>
-            <button type="button" name="button" class="btn waves-effect waves-light">Login</button>
+            <button type="submit" name="button" class="btn waves-effect waves-light" (click)='login(email.value,password.value)'>Login</button>
             <h5 class="small">Don't have an account? <a routerLink='/register'>Register</a></h5>
     	</form>
     </div>
