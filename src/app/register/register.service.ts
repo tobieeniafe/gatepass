@@ -7,7 +7,7 @@ import { User } from '../user'
 export class RegisterService {
 
   http: Http;
-  url: string = 'http://gatepassng.herokuapp.com/api/v1/organiser/register/';
+  url: string = 'http://gatepassng.herokuapp.com/api/v1/organiser/register';
   constructor(public _http: Http) {
      this.http = _http;
   }
