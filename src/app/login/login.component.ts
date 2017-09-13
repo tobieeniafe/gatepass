@@ -34,9 +34,9 @@ export class LoginComponent implements OnInit {
          if (data.status == true) {
              //console.log(data.token);
              this.router.navigate(["/dashboard"]);
-             localStorage.setItem('currentUser', JSON.stringify({ token: data.token}));
-             let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-             let token = currentUser.token;
+             localStorage.setItem('gatepassToken', JSON.stringify({ token: data.token}));
+             let gatepassToken = JSON.parse(localStorage.getItem('gatepassToken'));
+             let token = gatepassToken.token;
          }else{
            console.log('Login failed');
          }
