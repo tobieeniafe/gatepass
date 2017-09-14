@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpModule, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map'
-import { User } from '../user'
+// import { User } from '../user'
 
 @Injectable()
 export class RegisterService {
@@ -11,7 +11,7 @@ export class RegisterService {
   constructor(public _http: Http) {
      this.http = _http;
   }
-  registerUser(user:User) {
+  registerUser(user) {
      return this.http.post(this.url, user, {  }).map(res =>  res.json());
   }
 

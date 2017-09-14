@@ -10,24 +10,24 @@
       </div>
     </div>
     <div class="form col m4 s10 row" align="center">
-    	<form class="row" id="form" method="post" novalidate="">
+    	<form class="row" id="form" (submit)="onRegisterSubmit()" novalidate="">
     		<h4>Register</h4>
             <div class="input-field col s12">
-              <input #fullname placeholder="Fullname" id="fullname" type="text" class="validate" name="fullname">
+              <input [(ngModel)]="fullname"  placeholder="Fullname" id="fullname" type="text" class="validate" name="fullname">
             </div>
             <div class="input-field col s12">
-              <input #username placeholder="Username" id="username" type="text" class="validate" name="username">
+              <input [(ngModel)]="username"  placeholder="Username" id="username" type="text" class="validate" name="username">
             </div>
             <div class="input-field col s12">
-              <input #phone placeholder="Phone" id="phone" type="text" class="validate" name="phone">
+              <input [(ngModel)]="phone"  placeholder="Phone" id="phone" type="text" class="validate" name="phone">
             </div>
             <div class="input-field col s12">
-              <input #email placeholder="E-mail" id="password" type="email" class="validate" name="email">
+              <input [(ngModel)]="email"  placeholder="E-mail" id="password" type="email" class="validate" name="email">
             </div>
             <div class="input-field col s12">
-              <input #password placeholder='Password' id="password" type="password" class="validate" name="password">
+              <input [(ngModel)]="password"  placeholder='Password' id="password" type="password" class="validate" name="password">
             </div>
-            <button type="submit" name="button" class="btn waves-effect waves-light" (click)="register(fullname.value, username.value, phone.value, email.value, password.value)">Register</button>
+            <button style="background-color: #25252E !important" type="submit" name="button" class="btn waves-effect waves-light">Register</button>
 
             <h5 class="small">Already have an account? <a routerLink='/login'>Login</a></h5>
     	</form>

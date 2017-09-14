@@ -3,25 +3,40 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes }     from '@angular/router';
 
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { DashboardComponent } from './organiser/dashboard/dashboard.component';
-import { EventsComponent } from './organiser/events/events.component';
-import { ProfileComponent } from './organiser/profile/profile.component';
-import { SettingsComponent } from './organiser/settings/settings.component';
+import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { DashboardComponent } from './components/organiser/dashboard/dashboard.component';
+import { EventsComponent } from './components/organiser/events/events.component';
+import { ProfileComponent } from './components/organiser/profile/profile.component';
+import { SettingsComponent } from './components/organiser/settings/settings.component';
+import {AuthService} from './services/auth.service'
+import {ValidatorService} from './services/validator.service';
+import { NavComponent } from './components/nav/nav.component'
+import {AuthGuard} from './services/authguard.service'
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: 'index',  component: IndexComponent },
+  { path: 'login',  component: LoginComponent },
+  { path: 'register',  component: RegisterComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },//, canActivate: [AuthGuard]
+  { path: 'events', component: EventsComponent , canActivate: [AuthGuard] }
+  //{ path: '**', component: LoginComponent }
+];
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k'
     })
@@ -34,9 +49,10 @@ import { SettingsComponent } from './organiser/settings/settings.component';
     DashboardComponent,
     EventsComponent,
     ProfileComponent,
-    SettingsComponent
+    SettingsComponent,
+    NavComponent
   ],
-  providers: [],
+  providers: [AuthService,ValidatorService,AuthGuard],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col m2 s1"></div>
     <div class="form col m4 s10 row" align="center">
-    	<form method="post" class="row" id="form" novalidate="">
+    	<form (submit)="onLoginSubmit()" class="row" id="form" novalidate="">
     		<h4>Login</h4>
             <div class="input-field col s12">
-              <input placeholder="E-mail" id="password" type="email" class="validate" name="email" #email>
+              <input placeholder="E-mail" id="password" type="email" class="validate" name="email" [(ngModel)]="email">
             </div>
             <div class="input-field col s12">
-              <input placeholder='Password' id="password" type="password" class="validate" name="password" #password>
+              <input placeholder='Password' id="password" type="password" class="validate" name="password" [(ngModel)]="password">
             </div>
-            <button type="submit" name="button" class="btn waves-effect waves-light" (click)='login(email.value,password.value)'>Login</button>
+            <button type="submit" name="button" class="btn waves-effect waves-light">Login</button>
             <h5 class="small">Don't have an account? <a routerLink='/register'>Register</a></h5>
     	</form>
     </div>
@@ -18,7 +18,7 @@
     <div class="col m4 s1 transparent">
       <div class="right" align='right'>
         <h4>Don't have an <br> account?</h4>
-        <a routerLink='/register'><button type="button" name="button" class="transparent-btn btn">Register</button></a>
+        <a routerLink='/register'><button style="background-color: #25252E !important" type="button" name="button" class="transparent-btn btn">Register</button></a>
         <p>Read the terms and conditions for this platform <br><a routerLink='/#'>here</a> </p>
       </div>
     </div>

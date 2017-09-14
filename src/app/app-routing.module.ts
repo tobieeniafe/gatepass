@@ -1,11 +1,11 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule, Routes }     from '@angular/router';
 
-import { IndexComponent }     from './index/index.component';
-import { LoginComponent }     from './login/login.component';
-import { RegisterComponent }      from './register/register.component';
-import { DashboardComponent }   from './organiser/dashboard/dashboard.component';
-import { EventsComponent }   from './organiser/events/events.component';
+import { IndexComponent }     from './components/index/index.component';
+import { LoginComponent }     from './components/login/login.component';
+import { RegisterComponent }      from './components/register/register.component';
+import { DashboardComponent }   from './components/organiser/dashboard/dashboard.component';
+import { EventsComponent }   from './components/organiser/events/events.component';
 
 
 const routes: Routes = [
