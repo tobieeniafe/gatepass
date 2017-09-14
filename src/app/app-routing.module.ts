@@ -5,6 +5,7 @@ import { IndexComponent }     from './index/index.component';
 import { LoginComponent }     from './login/login.component';
 import { RegisterComponent }      from './register/register.component';
 import { DashboardComponent }   from './organiser/dashboard/dashboard.component';
+import { EventsComponent }   from './organiser/events/events.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'index',  component: IndexComponent },
   { path: 'login',  component: LoginComponent },
   { path: 'register',  component: RegisterComponent },
-  { path: 'dashboard', component: DashboardComponent}//, canActivate: [AuthGuard]
+  { path: 'dashboard', component: DashboardComponent },//, canActivate: [AuthGuard]
+  { path: 'events', component: EventsComponent }
   //{ path: '**', component: LoginComponent }
 ];
 
