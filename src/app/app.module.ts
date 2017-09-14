@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -20,7 +21,10 @@ import { SettingsComponent } from './organiser/settings/settings.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k'
+    })
   ],
   declarations: [
     AppComponent,

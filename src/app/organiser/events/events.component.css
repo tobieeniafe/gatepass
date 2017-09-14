@@ -5,3 +5,7 @@
 label{
   font-size: 12px !important;
 }
+
+agm-map {
+  height: 100vh;
+}
