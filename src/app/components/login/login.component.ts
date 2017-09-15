@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         if(data.status){
           localStorage.setItem('token', data.token);
           console.log(data.token);
-          this._router.navigate(['/dashboard']);
+          this._router.navigate(['/events']);
         }else{
           this._router.navigate(['/login'])
         }

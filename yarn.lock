@@ -262,6 +262,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular2-image-upload@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/angular2-image-upload/-/angular2-image-upload-0.6.6.tgz#1a9ed2612adf5ad8dd0f2b1a7df31fe9988893d8"
+
 angular2-jwt@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/angular2-jwt/-/angular2-jwt-0.2.3.tgz#54efdda3ceedba85f6a37b165f22ac22b8adf021"

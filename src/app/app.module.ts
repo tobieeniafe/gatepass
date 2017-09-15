@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardComponent } from './components/organiser/dashboard/dashboard.component';
 import { EventsComponent } from './components/organiser/events/events.component';
 import { ProfileComponent } from './components/organiser/profile/profile.component';
 import { SettingsComponent } from './components/organiser/settings/settings.component';
@@ -26,7 +25,6 @@ const appRoutes: Routes = [
   { path: 'index',  component: IndexComponent },
   { path: 'login',  component: LoginComponent },
   { path: 'register',  component: RegisterComponent},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },//, canActivate: [AuthGuard]
   { path: 'events', component: EventsComponent , canActivate: [AuthGuard] }
   //{ path: '**', component: LoginComponent }
 ];
@@ -46,7 +44,6 @@ const appRoutes: Routes = [
     IndexComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent,
     EventsComponent,
     ProfileComponent,
     SettingsComponent,
