@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
        console.log(data)
        if(data.status){
          //Flash message
-         localStorage.setItem('id_token', data.token);
+         localStorage.setItem('token', data.token);
 
          this._router.navigate(['/events'])
        }else{

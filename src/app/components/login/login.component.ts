@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LoginService } from './login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location} from '@angular/common';
 import {AuthService} from '../../services/auth.service'
@@ -9,7 +8,6 @@ import {AuthService} from '../../services/auth.service'
   selector: 'login',
   templateUrl: `./login.component.html`,
   styleUrls: ['./login.component.css'],
-  providers:[LoginService]
 })
 
 export class LoginComponent implements OnInit {
@@ -20,7 +18,7 @@ export class LoginComponent implements OnInit {
    password:String;
 
 
-  constructor(private _loginService: LoginService,private router: Router, private _auth:AuthService, private _router:Router) { }
+  constructor(private router: Router, private _auth:AuthService, private _router:Router) { }
 
   ngOnInit() { }
   onLoginSubmit(){
@@ -28,14 +26,15 @@ export class LoginComponent implements OnInit {
         email:this.email,
         password: this.password
       }
+      console.log("Hello")
+
       this._auth.loginUser(user).subscribe(data => {
         if(data.status){
+          localStorage.setItem('token', data.token);
           this._router.navigate(['/events'])
         }else{
           this._router.navigate(['/login'])
         }
       })
     }
-
-
 }
