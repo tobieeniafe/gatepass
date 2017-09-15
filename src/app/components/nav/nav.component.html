@@ -1,25 +1,27 @@
 <div class="body">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" routerLink='/index' class="brand-logo" style="color: #25252E !important"><h4>Gatepass</h4></a>
+      <a id="logo-container" routerLink='/index' class="brand-logo"><h4 class="primary-base-text">Gatepass</h4></a>
       <ul class="right hide-on-med-and-down">
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/index' routerLinkActive='active'>Home</a></li>
+        <li><a *ngIf="_auth.loggedIn()" routerLink='/dashboard' routerLinkActive='active'>Dashboard</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/events' routerLinkActive='active'>Events</a></li>
         <li><a *ngIf="!_auth.loggedIn()" routerLink='/register' routerLinkActive='active'>Get Started</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Profile</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Settings</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/dashboard' routerLinkActive='active'>Create Event</a></li>
+        <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Logout</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/index' routerLinkActive='active'>Home</a></li>
+        <li><a *ngIf="_auth.loggedIn()" routerLink='/dashboard' routerLinkActive='active'>Dashboard</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/events' routerLinkActive='active'>Events</a></li>
         <li><a *ngIf="!_auth.loggedIn()" routerLink='/register' routerLinkActive='active'>Get Started</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Profile</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Settings</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/dashboard' routerLinkActive='active'>Create Event</a></li>
+        <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Logout</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="fa fa-bars secondary-light-text"></i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="fa fa-bars primary-base-text"></i></a>
     </div>
   </nav>
 </div>

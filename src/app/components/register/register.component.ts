@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RegisterService } from './register.service';
 
 import {AuthService} from '../../services/auth.service'
 import {ValidatorService} from '../../services/validator.service'
