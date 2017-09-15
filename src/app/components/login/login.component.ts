@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
       this._auth.loginUser(user).subscribe(data => {
         if(data.status){
           localStorage.setItem('token', data.token);
-          this._router.navigate(['/events'])
+          console.log(data.token);
+          this._router.navigate(['/dashboard']);
         }else{
           this._router.navigate(['/login'])
         }

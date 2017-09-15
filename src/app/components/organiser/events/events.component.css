@@ -9,3 +9,26 @@ label{
 agm-map {
   height: 100vh;
 }
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn {
+  border: 1px solid #271f6a;
+  color: #271f6a;
+  background-color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 18px !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

@@ -21,17 +21,17 @@ export class AuthService {
               .map(res => res.json());
   }
 
-  loadToken(){
-    const token:string = localStorage.getItem('id_token');
-  }
+  // loadToken(){
+  //   const token:string = localStorage.getItem('id_token');
+  // }
 
   loggedIn(){
     return tokenNotExpired()
   }
 
-  storeUserData(token){
-     localStorage.setItem('id_token', token);
-   }
+  // storeUserData(token){
+  //    localStorage.setItem('id_token', token);
+  //  }
 
   // logOut(){
   //   localStorage.removeItem('id_token');
