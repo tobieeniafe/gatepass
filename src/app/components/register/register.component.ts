@@ -6,10 +6,12 @@ import {ValidatorService} from '../../services/validator.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location} from '@angular/common';
 
+declare var Materialize: any;
+
 @Component({
   selector: 'register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['./register.component.css']
 })
 
 export class RegisterComponent implements OnInit {
@@ -39,7 +41,7 @@ export class RegisterComponent implements OnInit {
       password: this.password,
       email: this.email
     }
-    console.log(user)
+    //console.log(user)
     if(!this._validateService.ValidateRegister(user)){
        //Show flash or something
        console.log("err")
@@ -52,9 +54,12 @@ export class RegisterComponent implements OnInit {
        return false
      }
      this._auth.registerUser(user).subscribe(data => {
-       console.log(data)
-       if(data.status){
+       console.log(data);
+       if (data.status == false) {
+         Materialize.toast(data.message+'s', 5000, 'red white-text');
+       }else if(data.status == true){
          //Flash message
+         Materialize.toast('Registration successful', 5000, 'green white-text');
          localStorage.setItem('token', data.token);
          console.log(localStorage.setItem('token', data.token));
          this._router.navigate(['/events'])

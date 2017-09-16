@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { RouterModule, Routes }     from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -19,13 +20,17 @@ import {ValidatorService} from './services/validator.service';
 import { NavComponent } from './components/nav/nav.component'
 import {AuthGuard} from './services/authguard.service'
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { CreateEventComponent } from './components/organiser/create-event/create-event.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index',  component: IndexComponent },
   { path: 'login',  component: LoginComponent },
   { path: 'register',  component: RegisterComponent},
-  { path: 'events', component: EventsComponent , canActivate: [AuthGuard] }
+  { path: 'events', component: EventsComponent , canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent , canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] },
+  { path: 'create-event', component: CreateEventComponent , canActivate: [AuthGuard] }
   //{ path: '**', component: LoginComponent }
 ];
 
@@ -37,7 +42,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k'
-    })
+    }),
+    ImageUploadModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -47,7 +53,8 @@ const appRoutes: Routes = [
     EventsComponent,
     ProfileComponent,
     SettingsComponent,
-    NavComponent
+    NavComponent,
+    CreateEventComponent
   ],
   providers: [AuthService,ValidatorService,AuthGuard],
   bootstrap: [ AppComponent ]

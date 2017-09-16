@@ -25,4 +25,8 @@ export class CreateEventComponent implements OnInit {
     }
   }
 
+  createEvent(){
+    console.log('form submitted');
+  }
+
 }

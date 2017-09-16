@@ -120,9 +120,14 @@ p{
 }
 
 a{
-  color: #574799 !important;
+  color: #24242e !important;
 }
 
 h1, h2, h3, h4, h5{
   font-family: 'avenirNextCondensed' !important;
+}
+
+li .active{
+  background-color: #24242e;
+  color: #ffffff !important;
 }

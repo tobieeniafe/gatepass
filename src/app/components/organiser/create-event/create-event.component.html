@@ -7,35 +7,31 @@
 
 <!-- form starts here -->
   <div class="col m6 s12">
-    <form class="col s12">
+    <form class="col s12" (submit)="createEvent()" class="row" id="form" novalidate="">
       <div class="row">
         <div class="input-field col s12 m6">
           <label for="event_name">Event Name</label>
-          <input placeholder="Event Name" id="event_name" type="text" class="validate">
+          <input placeholder="Event Name" id="event_name" type="text" class="validate" name="event_name" [(ngModel)]="event_name">
         </div>
         <div class="input-field col s12 m6">
           <label for="event_location">Event Location</label>
-          <input placeholder='Event Location' id="event_location" type="text" class="validate">
+          <input placeholder='Event Location' id="event_location" type="text" class="validate" name="event_location" [(ngModel)]="event_location">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
           <label for="event_date">Date</label><br>
-          <input id="event_date" type="date" class="validate datepicker">
+          <input id="event_date" type="date" class="validate datepicker"  name="event_date" [(ngModel)]="event_date">
         </div>
         <div class="input-field col s12 m6">
           <label for="event_time">Time</label><br>
-          <input id="event_time" type="time" class="validate">
+          <input id="event_time" type="time" class="validate"  name="event_time" [(ngModel)]="event_time">
         </div>
       </div>
       <div class="row"><br>
         <div class="input-field col s12 m6">
-          <label for="price">Price</label>
-          <input placeholder="Price" id="price" type="text" class="validate">
-        </div>
-        <div class="input-field col s12 m6">
-          <label for="event_location">Event Location</label>
-          <input placeholder='Event Location' id="event_location" type="text" class="validate">
+          <label for="price">Base Price</label>
+          <input placeholder="Base Price" id="price" type="text" class="validate"  name="base_price" [(ngModel)]="base_price">
         </div>
       </div>
       <br><br>
@@ -45,16 +41,16 @@
       <div class="row">
         <div class="input-field col s12 m4">
           <label for="ticket_name">Ticket Name</label>
-          <input placeholder="e.g. Regular" id="price" type="text" class="validate">
+          <input placeholder="e.g. Regular" id="price" type="text" class="validate" name="ticket1_name" [(ngModel)]="ticket1_name">
         </div>
         <div class="input-field col s12 m4">
           <label for="ticket_price">Ticket Price</label>
-          <input placeholder='ticket Price' id="ticket_price" type="text" class="validate">
+          <input placeholder='ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price">
         </div>
         <div class="input-field col s7 m3">
           <div class="upload-btn-wrapper">
             <button class="upload-btn">ticket image</button>
-            <input type="file" name="myfile" />
+            <input type="file" name="myfile" name="ticket1_image" [(ngModel)]="ticket1_image">
           </div>
         </div>
         <div class='input-field col s5 m1'>
@@ -144,7 +140,7 @@
       </div>
       <br><br>
       <div class="row" align=center>
-        <button type="button" name="button" class="btn">Create Event</button>
+        <button type="submit" name="button" class="btn">Create Event</button>
       </div>
       <br><br>
     </form>

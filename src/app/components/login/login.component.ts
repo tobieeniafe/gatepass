@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location} from '@angular/common';
-import {AuthService} from '../../services/auth.service'
+import {AuthService} from '../../services/auth.service';
+declare var Materialize: any;
 
 
 @Component({
@@ -29,7 +30,10 @@ export class LoginComponent implements OnInit {
       }
 
       this._auth.loginUser(user).subscribe(data => {
-        if(data.status){
+        if(data.status == false){
+          Materialize.toast('Invalid email or password', 5000, 'red white-text');
+        }else if(data.status == true){
+          Materialize.toast('Login successful', 5000, 'green white-text');
           localStorage.setItem('token', data.token);
           console.log(data.token);
           this._router.navigate(['/events']);
