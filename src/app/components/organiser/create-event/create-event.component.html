@@ -48,10 +48,14 @@
           <input placeholder='ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price">
         </div>
         <div class="input-field col s7 m3">
-          <div class="upload-btn-wrapper">
-            <button class="upload-btn">ticket image</button>
-            <input type="file" name="myfile" name="ticket1_image" [(ngModel)]="ticket1_image">
-          </div>
+          <image-upload
+              [max]="1"
+              [url]="'https://api.imgur.com/3/upload'"
+              [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+              [buttonCaption]="'add image'"
+              [dropBoxMessage]="''"
+              (onFileUploadFinish)="imageUploaded($event)"
+            ></image-upload>
         </div>
         <div class='input-field col s5 m1'>
           <a class="btn-floating btn waves-effect waves-light"><i class="fa fa-plus"></i></a>
@@ -72,7 +76,7 @@
         <div class="input-field col s7 m3">
           <div class="upload-btn-wrapper">
             <button class="upload-btn">ticket image</button>
-            <input type="file" name="myfile" />
+            <input type="file" (change)="fileChange($event)" accept=".jpeg,.jpg,.png">
           </div>
         </div>
         <div class='input-field col s5 m1'>
@@ -151,7 +155,13 @@
 
   <div class="col m6 s12">
     <agm-map [latitude]="position.latitude" [longitude]="position.longitude" [zoom]='17' [minZoom]='15'>
-      <agm-marker [latitude]="position.latitude" [longitude]="position.longitude"></agm-marker>
+      <agm-marker [latitude]="position.latitude" [longitude]="position.longitude">
+        <agm-snazzy-info-window [isOpen]="true" [maxWidth]="200" [closeWhenOthersOpen]="true" backgroundColor='#0ff' border="{width: '5px', color: '#000'}">
+          <ng-template>
+            My first Snazzy Info Window!
+          </ng-template>
+        </agm-snazzy-info-window>
+      </agm-marker>
     </agm-map>
   </div>
 

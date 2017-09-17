@@ -8,16 +8,16 @@
         <li><a *ngIf="_auth.loggedIn()" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/profile' routerLinkActive='active'>Profile</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/settings' routerLinkActive='active'>Settings</a></li>
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Logout</a></li>
+        <li><a *ngIf="_auth.loggedIn()" (click)='logOut()'>Logout</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a *ngIf="!_auth.loggedIn()" routerLink='/register' routerLinkActive='active'>Get Started</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/events' routerLinkActive='active'>Events</a></li>
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/create*event' routerLinkActive='active'>Create Event</a></li>
+        <li><a *ngIf="_auth.loggedIn()" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/profile' routerLinkActive='active'>Profile</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/settings' routerLinkActive='active'>Settings</a></li>
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/#' routerLinkActive='active'>Logout</a></li>
+        <li><a *ngIf="_auth.loggedIn()" (click)='logOut()'>Logout</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="fa fa-bars primary-base-text"></i></a>
     </div>

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         }else if(data.status == true){
           Materialize.toast('Login successful', 5000, 'green white-text');
           localStorage.setItem('token', data.token);
-          console.log(data.token);
+          //console.log(data.token);
           this._router.navigate(['/events']);
         }else{
           this._router.navigate(['/login'])
