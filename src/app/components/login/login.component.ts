@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   private title: string = 'Login Page';
   email:String;
   password:String;
+  isDisabled: boolean = false;
 
 
   constructor(private router: Router, private _auth:AuthService, private _router:Router) { }
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit(){
 
+      this.isDisabled = true;
       const user = {
         email:this.email,
         password: this.password
@@ -32,13 +34,16 @@ export class LoginComponent implements OnInit {
       this._auth.loginUser(user).subscribe(data => {
         if(data.status == false){
           Materialize.toast('Invalid email or password', 5000, 'red white-text');
+          this.isDisabled = false;
         }else if(data.status == true){
           Materialize.toast('Login successful', 5000, 'green white-text');
           localStorage.setItem('token', data.token);
+          this.isDisabled = false;
           //console.log(data.token);
           this._router.navigate(['/events']);
         }else{
-          this._router.navigate(['/login'])
+          this.isDisabled = false;
+          this._router.navigate(['/login']);
         }
       });
 

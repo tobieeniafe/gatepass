@@ -22,6 +22,7 @@ import { NavComponent } from './components/nav/nav.component'
 import { AuthGuard } from './services/authguard.service'
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { CreateEventComponent } from './components/organiser/create-event/create-event.component';
+import { CreateEventService } from './components/organiser/create-event/create-event.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -58,7 +59,7 @@ const appRoutes: Routes = [
     NavComponent,
     CreateEventComponent
   ],
-  providers: [AuthService,ValidatorService,AuthGuard],
+  providers: [ AuthService, ValidatorService, AuthGuard, CreateEventService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

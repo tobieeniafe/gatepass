@@ -25,6 +25,8 @@ export class RegisterComponent implements OnInit {
   phone:String;
   password:String;
   email:String;
+  isDisabled: boolean = false;
+
   public location = '' ;
   ngOnInit (){
 
@@ -34,6 +36,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegisterSubmit(){
+    this.isDisabled = true;
     const user = {
       fullname: this.fullname,
       username: this.username,
@@ -57,15 +60,18 @@ export class RegisterComponent implements OnInit {
        console.log(data);
        if (data.status == false) {
          Materialize.toast(data.message+'s', 5000, 'red white-text');
+         this.isDisabled = false;
        }else if(data.status == true){
          //Flash message
          Materialize.toast('Registration successful', 5000, 'green white-text');
          localStorage.setItem('token', data.token);
          console.log(localStorage.setItem('token', data.token));
-         this._router.navigate(['/events'])
+         this._router.navigate(['/events']);
+         this.isDisabled = false;
        }else{
          //Flash message
          this._router.navigate(['/register'])
+         this.isDisabled = false;
        }
      })
   }

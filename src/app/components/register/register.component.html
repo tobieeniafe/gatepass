@@ -27,7 +27,7 @@
             <div class="input-field col s12">
               <input [(ngModel)]="password"  placeholder='Password' id="password" type="password" class="validate" name="password">
             </div>
-            <button style="background-color: #25252E !important" type="submit" name="button" class="btn waves-effect waves-light">Register</button>
+            <button type="submit" name="button" class="btn waves-effect waves-light" [disabled]='isDisabled'>Register</button>
 
             <h5 class="small">Already have an account? <a routerLink='/login'>Login</a></h5>
     	</form>
