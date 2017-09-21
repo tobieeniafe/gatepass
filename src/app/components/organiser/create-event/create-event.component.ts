@@ -36,17 +36,38 @@ export class CreateEventComponent implements OnInit {
   }
 
   createEvent(d, t){
+    // const event = {
+    //   coord: [this.position.latitude, this.position.longitude],
+    //   date: d,
+    //   image_url: 'http//:demo_img_url',
+    //   location: this.event_location,
+    //   name: this.event_name,
+    //   price: this.base_price,
+    //   table: ['001', '002', '003'],
+    //   time: t
+    // }
+
     const event = {
-      coord: [this.position.latitude, this.position.longitude],
-      date: d,
+      coord: [111, 111],
+      date: 'date',
       image_url: 'http//:demo_img_url',
-      location: this.event_location,
-      name: this.event_name,
-      price: this.base_price,
-      table: [],
-      time: t
+      location: 'club',
+      name: 'event_name',
+      price: 'base_price',
+      table: ['001', '002', '003'],
+      time: '10pm'
     }
-    console.log(event);
+
+    //console.log(event);
+    this.createEventService.postEvent(event).subscribe(
+       data => {
+         console.log(data);
+         console.log('event created');
+       },
+       err => console.log(err),
+       () => console.log('Request Completed')
+
+    );
   }
 
 }
