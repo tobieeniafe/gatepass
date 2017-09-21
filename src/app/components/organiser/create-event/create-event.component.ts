@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CreateEventService } from './create-event.service';
+declare var Materialize: any;
 
 @Component({
   selector: 'create-event',
@@ -36,33 +37,26 @@ export class CreateEventComponent implements OnInit {
   }
 
   createEvent(d, t){
-    // const event = {
-    //   coord: [this.position.latitude, this.position.longitude],
-    //   date: d,
-    //   image_url: 'http//:demo_img_url',
-    //   location: this.event_location,
-    //   name: this.event_name,
-    //   price: this.base_price,
-    //   table: ['001', '002', '003'],
-    //   time: t
-    // }
-
     const event = {
-      coord: [111, 111],
-      date: 'date',
+      coord: [this.position.latitude, this.position.longitude],
+      date: d,
       image_url: 'http//:demo_img_url',
-      location: 'club',
-      name: 'event_name',
-      price: 'base_price',
-      table: ['001', '002', '003'],
-      time: '10pm'
+      location: this.event_location,
+      name: this.event_name,
+      price: this.base_price,
+      table: ["59b6689090866e7214d4ca83", "59bbc4f8a27da7000782b3fd"],
+      time: t
     }
 
     //console.log(event);
     this.createEventService.postEvent(event).subscribe(
        data => {
-         console.log(data);
-         console.log('event created');
+         if(data.status == false){
+          Materialize.toast('Error while creating event', 5000, 'red white-text');
+        }else if(data.status == true){
+          console.log(data);
+          Materialize.toast('Event created', 5000, 'green white-text');
+        }
        },
        err => console.log(err),
        () => console.log('Request Completed')
