@@ -47,13 +47,15 @@
           <label for="ticket_price">Ticket Price</label>
           <input placeholder='ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price">
         </div>
-        <div class="input-field col s7 m3">
+        <div class="col s7 m3">
           <image-upload
-              [max]="1"
+              [max]="100"
               [url]="'https://api.imgur.com/3/upload'"
-              [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
-              [buttonCaption]="'add image'"
-              [dropBoxMessage]="''"
+              [headers]="[
+                {header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}
+              ]"
+              [buttonCaption]="'Select Images!'"
+              [dropBoxMessage]="'Drop your images here!'"
               (onFileUploadFinish)="imageUploaded($event)"
             ></image-upload>
         </div>

@@ -45,6 +45,8 @@ export class CreateEventService {
     })(jQuery);
   }
 
+
+
   postEvent(event) {
     console.log(event);
     let headers = new Headers({'Content-Type': 'application/json'});
@@ -56,6 +58,6 @@ export class CreateEventService {
     });
   }
 
-  
+   
 
 }

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CreateEventService } from './create-event.service';
 declare var Materialize: any;
+import {Http,Headers} from '@angular/http';
 
 @Component({
   selector: 'create-event',
@@ -23,8 +24,9 @@ export class CreateEventComponent implements OnInit {
   event_location: any;
   event_time: any;
   base_price: any;
+  tables: string[] = [] //This is the table you'll send back it will contain the table id's
 
-  constructor(private createEventService: CreateEventService,private router: Router) { }
+  constructor(private createEventService: CreateEventService,private router: Router,private _http: Http) { }
 
   ngOnInit() {
     if(navigator.geolocation){
@@ -35,7 +37,29 @@ export class CreateEventComponent implements OnInit {
       });
     }
   }
-
+imageUploaded(event){
+    const resp = event.serverResponse._body
+    const j = JSON.parse(resp)
+    const data  = {
+      "image_url": j.data.link,
+      "price": "2000",//replace with normal price
+      "title": "wsadasas", //replace
+    }
+    console.log(data)
+  
+    this.quicky(data).subscribe((resp)=>{
+      if (resp.status) {
+        this.tables.push(resp.table._id.$oid)
+        console.log(this.tables)
+      }
+    })
+  }
+  quicky(data){
+    let header = new Headers();
+    header.append('Content-Type','application/json');
+    header.append('Authorization', localStorage.getItem("token"));
+     return this._http.post("http://gatepassng.herokuapp.com/api/v1/table", data, {headers: header}).map(res => res.json())
+  }
   createEvent(d, t){
     const event = {
       coord: [this.position.latitude, this.position.longitude],
