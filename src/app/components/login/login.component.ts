@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
           this.isDisabled = false;
         }else if(data.status == true){
           Materialize.toast('Login successful', 5000, 'green white-text');
-          localStorage.setItem('token', data.token);
-          console.log(localStorage.getItem('token'));
+          localStorage.setItem('gatepass_token', data.token);
+          console.log(localStorage.getItem('gatepass_token'));
           this.isDisabled = false;
           //console.log(data.token);
           this.router.navigate(['/events']);

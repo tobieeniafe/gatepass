@@ -11,7 +11,7 @@ export class CreateEventService {
   token: any;
   constructor(public _http: Http) {
      this.http = _http;
-     this.token = localStorage.getItem('token');
+     this.token = localStorage.getItem('gatepass_token');
      (function($){
       $(function(){
 
@@ -58,6 +58,6 @@ export class CreateEventService {
     });
   }
 
-   
+
 
 }

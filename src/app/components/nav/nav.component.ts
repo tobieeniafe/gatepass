@@ -31,7 +31,7 @@ export class NavComponent implements OnInit {
   logOut(){
     console.log('logged out');
       Materialize.toast('Logout successful', 5000, 'green white-text');
-      localStorage.removeItem('token');
+      localStorage.removeItem('gatepass_token');
       this.router.navigate(['/login']);
       this.setLoggedIn(false);
   }
