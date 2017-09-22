@@ -24,6 +24,8 @@ export class CreateEventComponent implements OnInit {
   event_location: any;
   event_time: any;
   base_price: any;
+  ticket1_name: any
+  ticket1_price: any;
   tables: string[] = [] //This is the table you'll send back it will contain the table id's
 
   constructor(private createEventService: CreateEventService,private router: Router,private _http: Http) { }
@@ -42,11 +44,11 @@ imageUploaded(event){
     const j = JSON.parse(resp)
     const data  = {
       "image_url": j.data.link,
-      "price": "2000",//replace with normal price
-      "title": "wsadasas", //replace
+      "price": this.ticket1_price,
+      "title": this.ticket1_name
     }
     console.log(data)
-  
+
     this.quicky(data).subscribe((resp)=>{
       if (resp.status) {
         this.tables.push(resp.table._id.$oid)
@@ -68,7 +70,7 @@ imageUploaded(event){
       location: this.event_location,
       name: this.event_name,
       price: this.base_price,
-      table: ["59b6689090866e7214d4ca83", "59bbc4f8a27da7000782b3fd"],
+      table: this.tables,
       time: t
     }
 
@@ -80,6 +82,7 @@ imageUploaded(event){
         }else if(data.status == true){
           console.log(data);
           Materialize.toast('Event created', 5000, 'green white-text');
+          this.router.navigate(['/events']);
         }
        },
        err => console.log(err),

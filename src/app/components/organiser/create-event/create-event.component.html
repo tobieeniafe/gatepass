@@ -47,89 +47,12 @@
           <label for="ticket_price">Ticket Price</label>
           <input placeholder='ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price">
         </div>
-        <div class="col s7 m3">
-          <image-upload
-              [max]="100"
-              [url]="'https://api.imgur.com/3/upload'"
-              [headers]="[
-                {header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}
-              ]"
-              [buttonCaption]="'Select Images!'"
-              [dropBoxMessage]="'Drop your images here!'"
-              (onFileUploadFinish)="imageUploaded($event)"
-            ></image-upload>
-        </div>
-        <div class='input-field col s5 m1'>
-          <a class="btn-floating btn waves-effect waves-light"><i class="fa fa-plus"></i></a>
+        <div class="col s12 m4">
+          <image-upload  [max]="100"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          [buttonCaption]="'Ticket Image'"  [dropBoxMessage]="''"  (onFileUploadFinish)="imageUploaded($event)"></image-upload>
         </div>
       </div><br>
       <!-- ticket type 1 end-->
-
-      <!-- ticket type 2 -->
-      <div class="row">
-        <div class="input-field col s12 m4">
-          <label for="ticket_name">Ticket Name</label>
-          <input placeholder="e.g. Regular" id="price" type="text" class="validate">
-        </div>
-        <div class="input-field col s12 m4">
-          <label for="ticket_price">Ticket Price</label>
-          <input placeholder='ticket Price' id="ticket_price" type="text" class="validate">
-        </div>
-        <div class="input-field col s7 m3">
-          <div class="upload-btn-wrapper">
-            <button class="upload-btn">ticket image</button>
-            <input type="file" (change)="fileChange($event)" accept=".jpeg,.jpg,.png">
-          </div>
-        </div>
-        <div class='input-field col s5 m1'>
-          <a class="btn-floating btn waves-effect waves-light"><i class="fa fa-plus"></i></a>
-        </div>
-      </div><br>
-      <!-- ticket type 2 end -->
-
-      <!-- ticket type 3 -->
-      <div class="row">
-        <div class="input-field col s12 m4">
-          <label for="ticket_name">Ticket Name</label>
-          <input placeholder="e.g. Regular" id="price" type="text" class="validate">
-        </div>
-        <div class="input-field col s12 m4">
-          <label for="ticket_price">Ticket Price</label>
-          <input placeholder='ticket Price' id="ticket_price" type="text" class="validate">
-        </div>
-        <div class="input-field col s7 m3">
-          <div class="upload-btn-wrapper">
-            <button class="upload-btn">ticket image</button>
-            <input type="file" name="myfile" />
-          </div>
-        </div>
-        <div class='input-field col s5 m1'>
-          <a class="btn-floating btn waves-effect waves-light"><i class="fa fa-plus"></i></a>
-        </div>
-      </div><br>
-      <!-- ticket type 3 end -->
-
-      <!-- ticket type 4 -->
-      <div class="row">
-        <div class="input-field col s12 m4">
-          <label for="ticket_name">Ticket Name</label>
-          <input placeholder="e.g. Regular" id="price" type="text" class="validate">
-        </div>
-        <div class="input-field col s12 m4">
-          <label for="ticket_price">Ticket Price</label>
-          <input placeholder='ticket Price' id="ticket_price" type="text" class="validate">
-        </div>
-        <div class="input-field col s7 m3">
-          <div class="upload-btn-wrapper">
-            <button class="upload-btn">ticket image</button>
-            <input type="file" name="myfile" />
-          </div>
-        </div>
-        <div class='input-field col s5 m1'>
-          <a class="btn-floating btn waves-effect waves-light"><i class="fa fa-plus"></i></a>
-        </div>
-      </div><br>
-      <!-- ticket type 4 end -->
 
       <br><br>
       <div class="row">
@@ -169,3 +92,8 @@
 
 
 </div>
+
+<!-- <div class="upload-btn-wrapper">
+  <button class="upload-btn">ticket image</button>
+  <input type="file" (change)="fileChange($event)" accept=".jpeg,.jpg,.png">
+</div> -->

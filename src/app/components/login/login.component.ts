@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   isDisabled: boolean = false;
 
 
-  constructor(private router: Router, private _auth:AuthService, private _router:Router) { }
+  constructor(private router: Router, private _auth:AuthService) { }
 
   ngOnInit() { }
 
@@ -41,10 +41,10 @@ export class LoginComponent implements OnInit {
           console.log(localStorage.getItem('token'));
           this.isDisabled = false;
           //console.log(data.token);
-          this._router.navigate(['/events']);
+          this.router.navigate(['/events']);
         }else{
           this.isDisabled = false;
-          this._router.navigate(['/login']);
+          this.router.navigate(['/login']);
         }
       });
 
