@@ -21,7 +21,7 @@
             <td>{{event.price}}</td>
             <td>
               <div class="switch">
-                  <label>Off<input type="checkbox" checked=""><span class="lever"></span>On</label>
+                  <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus()'><span class="lever"></span>On</label>
                 </div>
             </td>
           </tr>

@@ -48,8 +48,8 @@
           <input placeholder='ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price">
         </div>
         <div class="col s12 m4">
-          <image-upload  [max]="100"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
-          [buttonCaption]="'Ticket Image'"  [dropBoxMessage]="''"  (onFileUploadFinish)="imageUploaded($event)"></image-upload>
+          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="imageUploaded($event)" [extensions]="['jpeg','png','jpg']" #ticketImg></image-upload>
         </div>
       </div><br>
       <!-- ticket type 1 end-->
@@ -58,13 +58,15 @@
       <div class="row">
         <div class="file-field input-field col s12">
           <h5 align='center'>Design Image</h5>
-          <div class="btn">
+          <!-- <div class="btn">
             <span>Upload</span>
             <input type="file">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text">
-          </div>
+          </div> -->
+          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          buttonCaption="Event Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="imageUploaded($event)" [extensions]="['jpeg','png','jpg']" #eventImg></image-upload>
         </div>
       </div>
       <br><br>

@@ -10,7 +10,7 @@ agm-map {
   height: 100vh;
 }
 
-.upload-btn-wrapper {
+/*.upload-btn-wrapper {
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -31,4 +31,4 @@ agm-map {
   left: 0;
   top: 0;
   opacity: 0;
-}
+}*/

@@ -66,7 +66,7 @@ imageUploaded(event){
     const event = {
       coord: [this.position.latitude, this.position.longitude],
       date: d,
-      image_url: 'http//:demo_img_url',
+      image_url: 'https://i.imgur.com/v0zECrf.jpg',
       location: this.event_location,
       name: this.event_name,
       price: this.base_price,
@@ -74,11 +74,11 @@ imageUploaded(event){
       time: t
     }
 
-    //console.log(event);
     this.createEventService.postEvent(event).subscribe(
        data => {
          if(data.status == false){
           Materialize.toast('Error while creating event', 5000, 'red white-text');
+          console.log(data);
         }else if(data.status == true){
           console.log(data);
           Materialize.toast('Event created', 5000, 'green white-text');
@@ -86,7 +86,7 @@ imageUploaded(event){
         }
        },
        err => console.log(err),
-       () => console.log('Request Completed')
+       () =>  console.log(event) //console.log('Request Completed')
 
     );
   }

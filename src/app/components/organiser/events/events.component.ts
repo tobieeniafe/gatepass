@@ -22,13 +22,18 @@ export class EventsComponent implements OnInit {
   viewEvents(){
     this.eventsService.getEvent().subscribe(
        data => {
-         this.events = data.events;
+         this.events = data;
+         //console.log(data);
         //console.log(Object.keys(this.events).length);
        },
        err => console.log(err),
-       () => console.log('Request Completed')
+       () => console.log(this.events)
 
     );
+  }
+
+  changeStatus(){
+    console.log('now false')
   }
 
 }
