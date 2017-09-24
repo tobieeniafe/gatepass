@@ -10,14 +10,14 @@ export class AuthService {
   registerUser(user){
     let header = new Headers();
     header.append('Content-Type','application/json');
-    return this._http.post('http://gatepassng.herokuapp.com/api/v1/organiser/register', user, {headers: header})
+    return this._http.post('https://gatepassng.herokuapp.com/api/v1/organiser/register', user, {headers: header})
                 .map(res => res.json());
   }
 
   loginUser(user){
   let header = new Headers();
   header.append('Content-Type','application/json');
-  return this._http.post('http://gatepassng.herokuapp.com/api/v1/organiser/login', user, {headers: header})
+  return this._http.post('https://gatepassng.herokuapp.com/api/v1/organiser/login', user, {headers: header})
               .map(res => res.json());
   }
 

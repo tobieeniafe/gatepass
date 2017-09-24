@@ -619,7 +619,7 @@ var CreateEventService = (function () {
         console.log(event);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('http://gatepassng.herokuapp.com/api/v1/events', event, { headers: headers })
+        return this.http.post('https://gatepassng.herokuapp.com/api/v1/events', event, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -765,7 +765,7 @@ var EventsService = (function () {
     EventsService.prototype.getEvent = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('http://gatepassng.herokuapp.com/api/v1/events', { headers: headers })
+        return this.http.get('https://gatepassng.herokuapp.com/api/v1/events', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1054,13 +1054,13 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
-        return this._http.post('http://gatepassng.herokuapp.com/api/v1/organiser/register', user, { headers: header })
+        return this._http.post('https://gatepassng.herokuapp.com/api/v1/organiser/register', user, { headers: header })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loginUser = function (user) {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
-        return this._http.post('http://gatepassng.herokuapp.com/api/v1/organiser/login', user, { headers: header })
+        return this._http.post('https://gatepassng.herokuapp.com/api/v1/organiser/login', user, { headers: header })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
