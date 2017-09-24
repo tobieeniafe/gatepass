@@ -516,6 +516,7 @@ var CreateEventComponent = (function () {
     CreateEventComponent.prototype.quicky = function (data) {
         var header = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
+        header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
         header.append('Authorization', localStorage.getItem('gatepass_token'));
         return this._http.post("http://gatepassng.herokuapp.com/api/v1/table", data, { headers: header }).map(function (res) { return res.json(); });
     };

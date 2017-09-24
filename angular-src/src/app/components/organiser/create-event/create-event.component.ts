@@ -61,6 +61,7 @@ imageUploaded(event){
   quicky(data){
     let header = new Headers();
     header.append('Content-Type','application/json');
+    header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
     header.append('Authorization', localStorage.getItem('gatepass_token'));
      return this._http.post("http://gatepassng.herokuapp.com/api/v1/table", data, {headers: header}).map(res => res.json())
   }
