@@ -11,20 +11,21 @@ import { EventsService } from './events.service';
 export class EventsComponent implements OnInit {
 
   events: any;
+  noEvent: boolean = false;
 
   constructor(private eventsService:EventsService, private router: Router) {
     this.viewEvents();
   }
 
   ngOnInit(){}
-  message: string = 'events here';
 
   viewEvents(){
     this.eventsService.getEvent().subscribe(
        data => {
          this.events = data;
-         //console.log(data);
-        //console.log(Object.keys(this.events).length);
+         if (this.events.length == 0) {
+             this.noEvent = true;
+         }
        },
        err => console.log(err),
        () => console.log(this.events)

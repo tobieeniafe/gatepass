@@ -10,6 +10,8 @@ agm-map {
   height: 100vh;
 }
 
+/deep/ image-upload label.upload.button { background-color: #24242e; }
+
 /*.upload-btn-wrapper {
   position: relative;
   overflow: hidden;

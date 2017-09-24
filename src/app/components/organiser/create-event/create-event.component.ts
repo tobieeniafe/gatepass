@@ -27,6 +27,7 @@ export class CreateEventComponent implements OnInit {
   ticket1_name: any
   ticket1_price: any;
   tables: string[] = [] //This is the table you'll send back it will contain the table id's
+  isDisabled: boolean = true;
 
   constructor(private createEventService: CreateEventService,private router: Router,private _http: Http) { }
 
@@ -51,8 +52,9 @@ imageUploaded(event){
 
     this.quicky(data).subscribe((resp)=>{
       if (resp.status) {
-        this.tables.push(resp.table._id.$oid)
-        console.log(this.tables)
+        this.tables.push(resp.table._id.$oid);
+        console.log(this.tables);
+        this.isDisabled = false;
       }
     })
   }
