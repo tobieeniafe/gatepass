@@ -12,6 +12,6 @@
   },
    "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd angular-src && ng build && cd .. && node app"
+    "start": "cd angular-src && npm run build && cd .. && node app"
   }
 }
