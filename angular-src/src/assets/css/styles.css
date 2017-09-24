@@ -1,0 +1,133 @@
+html, body, app-root , router-outlet, .body{
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+@font-face {
+    font-family: 'avenirNextCondensed';
+    src: url('/assets/fonts/AvenirNextCondensed-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'sassoonSans';
+    src: url('/assets/fonts/Sassoon Sans Bold.ttf');
+}
+html {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+body {
+  /*position: relative;*/
+  margin: 0;
+  min-height: 100% !important;
+  width: 100% !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+footer {
+  /*position: absolute;*/
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.primary-base{
+  background-color: #24242e !important;
+  color: #ffffff !important;
+}
+
+.primary-base-text{
+  color: #24242e !important;
+}
+
+.primary-light{
+  background-color: #4c4c57 !important;
+  color: #ffffff !important;
+}
+
+.primary-light-text{
+  color: #4c4c57 !important;
+}
+
+.primary-dark{
+  background-color: #000004 !important;
+  color: #ffffff !important;
+}
+
+.primary-dark-text{
+  color: #000004 !important;
+}
+
+.secondary-base{
+  background-color: #271f6a !important;
+  color: #ffffff !important;
+}
+
+.secondary-base-text{
+  color: #271f6a !important;
+}
+
+.secondary-light{
+  background-color: #574799 !important;
+  color: #ffffff !important;
+}
+
+.secondary-light-text{
+  color: #574799 !important;
+}
+
+.secondary-dark{
+  background-color: #00003f !important;
+  color: #ffffff !important;
+}
+
+.secondary-dark-text{
+  color: #00003f !important;
+}
+
+.col, .row{
+  margin: auto !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+button .getStarted{
+  margin: auto;
+  align-items: center;
+}
+
+.brand-logo{
+  font-family: 'sassoonSans';
+  font-size: 15px !important;
+  color: #574799 !important;
+}
+
+h3{
+  font-family: 'avenirNextCondensed';
+  font-size: 72px;
+}
+
+p{
+  font-family: 'avenirNextCondensed';
+  font-size: 20px;
+  /*font-size: 25px;*/
+}
+
+a{
+  color: #24242e !important;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'avenirNextCondensed' !important;
+}
+
+li .active{
+  background-color: #24242e;
+  color: #ffffff !important;
+}
