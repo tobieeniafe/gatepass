@@ -2,8 +2,8 @@
   "name": "gatepass-web",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://sagaya@bitbucket.org/four11/gatepass-web.git",
-  "author": "Sagaya Abdulhafeez <harpheezsagaya@gmail.com>",
+  "repository": "https://tobie_eniafe@bitbucket.org/four11/gatepass-web.git",
+  "author": "tobie",
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.4"
