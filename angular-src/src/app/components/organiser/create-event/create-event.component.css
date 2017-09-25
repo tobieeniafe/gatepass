@@ -2,6 +2,7 @@
   min-height: 100vh;
   padding-bottom: 70px;
 }
+
 label{
   font-size: 12px !important;
 }
@@ -10,27 +11,11 @@ agm-map {
   height: 100vh;
 }
 
-/deep/ image-upload label.upload.button { background-color: #24242e; }
-
-/*.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
+/deep/ image-upload label.upload.button {
+  background-color: #24242e;
+  text-transform: lowercase;
+  font-weight: normal;
+  padding: 6px;
+  border-radius: 3px;
+  font-family: 'avenirNextCondensed';
 }
-
-.upload-btn {
-  border: 1px solid #24242e;
-  color: #24242e;
-  background-color: #fff;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 18px !important;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}*/

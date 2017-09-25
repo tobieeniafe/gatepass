@@ -2,3 +2,10 @@
   min-height: 80vh !important;
   padding: 70px;
 }
+
+@media only screen and (max-width: 800px) {
+  .body{
+    min-height: 85vh !important;
+    padding: 5px;
+  }
+}

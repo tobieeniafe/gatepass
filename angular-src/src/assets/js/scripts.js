@@ -5,8 +5,8 @@
       $('.parallax').parallax();
 
       $('.datepicker').pickadate({
-        format: 'yyyy-mm-dd',
-        formatSubmit: 'yyyy-mm-dd',
+        format: 'dd/mm/yyyy',
+        formatSubmit: 'dd/mm/yyyy',
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 10, // Creates a dropdown of 10 years to control year,
         today: 'Today',

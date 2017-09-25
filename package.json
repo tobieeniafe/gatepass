@@ -14,6 +14,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd angular-src  && cd .. && node app",
     "go_angular": "cd angular-src",
-    "deploy": "cd angular-src && ng build && cd .. && git add . && git commit -m 'Goofy' && git push origin master && git push heroku master"
+    "deploy": "cd angular-src && ng build && cd .. && git add . && git commit -m 'deploy' && git push origin master && git push heroku master"
   }
 }
