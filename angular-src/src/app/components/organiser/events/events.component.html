@@ -22,7 +22,7 @@
               <td>{{event.price}}</td>
               <td *ngIf='!event.disabled'>
                 <div class="switch">
-                    <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}"><span class="lever"></span>On</label>
+                    <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}"  [disabled]='loading'><span class="lever"></span>On</label>
                 </div>
               </td>
               <td class="red-text" *ngIf='event.disabled'>Expired Event</td>

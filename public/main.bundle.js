@@ -682,7 +682,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"striped\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h2 align=center>You have no events at this time</h2></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.price}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"progress\">\r\n        <div class=\"indeterminate\"></div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"striped\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h2 align=center>You have no events at this time</h2></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.price}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"progress\">\r\n        <div class=\"indeterminate\"></div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -717,6 +717,7 @@ var EventsComponent = (function () {
         this.preloader = true;
         this.event_id = [];
         this.event_status = [];
+        this.loading = false;
         this.viewEvents();
         this.token = localStorage.getItem('token');
     }
@@ -732,6 +733,8 @@ var EventsComponent = (function () {
         }, function (err) { return console.log(err); }, function () { return console.log(_this.events); });
     };
     EventsComponent.prototype.changeStatus = function (e) {
+        var _this = this;
+        this.loading = true;
         if (e.is_online == true) {
             this.message = { "is_online": false };
         }
@@ -742,9 +745,11 @@ var EventsComponent = (function () {
             console.log(data);
             if (data.status == true) {
                 Materialize.toast("Event " + e.name + "'s status updated", 3000, 'green white-text');
+                _this.loading = false;
             }
             else {
                 Materialize.toast("Error updating " + e.name + "'s status", 3000, 'red white-text');
+                _this.loading = false;
             }
         });
     };

@@ -19,6 +19,7 @@ export class EventsComponent implements OnInit {
   event_id: any[] = [];
   event_status: any[] = [];
   message: any;
+  loading: boolean = false;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -42,6 +43,7 @@ export class EventsComponent implements OnInit {
   }
 
   changeStatus(e){
+    this.loading = true;
     if (e.is_online == true) {
       this.message = { "is_online": false };
     } else if (e.is_online == false) {
@@ -52,8 +54,10 @@ export class EventsComponent implements OnInit {
       console.log(data);
       if (data.status == true) {
           Materialize.toast(`Event ${e.name}'s status updated`, 3000, 'green white-text');
+          this.loading = false;
       } else {
         Materialize.toast(`Error updating ${e.name}'s status`, 3000, 'red white-text');
+        this.loading = false;
       }
 
     })
