@@ -23,4 +23,14 @@ export class EventsService {
     });
   }
 
+  updateStatus(id, message){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.token );
+
+    return this.http.put(`https://gatepassng.herokuapp.com/api/v1/event/online/${id}`, message, {headers: headers})
+    .map(res => {
+        return res.json();
+    });
+  }
+
 }

@@ -611,7 +611,7 @@ var CreateEventService = (function () {
                 $('.timepicker').pickatime({
                     default: 'now',
                     fromnow: 0,
-                    twelvehour: false,
+                    twelvehour: true,
                     donetext: 'OK',
                     cleartext: 'Clear',
                     canceltext: 'Cancel',
@@ -682,7 +682,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"striped\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Purchase</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h2 align=center>You have no events at this time</h2></td></tr>\r\n          <tr *ngFor=\"let event of events; let i = index\">\r\n            <td>{{i+1}}</td>\r\n            <td>{{event.name}}</td>\r\n            <td>{{event.location}}</td>\r\n            <td>{{event.date}}</td>\r\n            <td>{{event.price}}</td>\r\n            <td>\r\n              <div class=\"switch\">\r\n                  <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus()'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n  </table>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"striped\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h2 align=center>You have no events at this time</h2></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.price}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"progress\">\r\n        <div class=\"indeterminate\"></div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -693,6 +693,7 @@ module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"striped\">\r\n   
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_service__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -706,25 +707,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EventsComponent = (function () {
-    function EventsComponent(eventsService, router) {
+    function EventsComponent(eventsService, router, http) {
         this.eventsService = eventsService;
         this.router = router;
+        this.http = http;
         this.noEvent = false;
+        this.preloader = true;
+        this.event_id = [];
+        this.event_status = [];
         this.viewEvents();
+        this.token = localStorage.getItem('token');
     }
     EventsComponent.prototype.ngOnInit = function () { };
     EventsComponent.prototype.viewEvents = function () {
         var _this = this;
         this.eventsService.getEvent().subscribe(function (data) {
             _this.events = data;
+            _this.preloader = false;
             if (_this.events.length == 0) {
                 _this.noEvent = true;
             }
         }, function (err) { return console.log(err); }, function () { return console.log(_this.events); });
     };
-    EventsComponent.prototype.changeStatus = function () {
-        console.log('now false');
+    EventsComponent.prototype.changeStatus = function (e) {
+        if (e.is_online == true) {
+            this.message = { "is_online": false };
+        }
+        else if (e.is_online == false) {
+            this.message = { "is_online": true };
+        }
+        this.eventsService.updateStatus(e._id.$oid, this.message).subscribe(function (data) {
+            console.log(data);
+            if (data.status == true) {
+                Materialize.toast("Event " + e.name + "'s status updated", 3000, 'green white-text');
+            }
+            else {
+                Materialize.toast("Error updating " + e.name + "'s status", 3000, 'red white-text');
+            }
+        });
     };
     return EventsComponent;
 }());
@@ -734,10 +756,10 @@ EventsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/organiser/events/events.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/organiser/events/events.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]) === "function" && _c || Object])
 ], EventsComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=events.component.js.map
 
 /***/ }),
@@ -773,6 +795,14 @@ var EventsService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
         return this.http.get('https://gatepassng.herokuapp.com/api/v1/events', { headers: headers })
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    EventsService.prototype.updateStatus = function (id, message) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.token);
+        return this.http.put("https://gatepassng.herokuapp.com/api/v1/event/online/" + id, message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
