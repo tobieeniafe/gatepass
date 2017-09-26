@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CreateEventService } from './create-event.service';
+import { Http, Headers } from '@angular/http';
 declare var Materialize: any;
-import {Http,Headers} from '@angular/http';
 
 @Component({
   selector: 'create-event',
@@ -28,6 +28,7 @@ export class CreateEventComponent implements OnInit {
   ticket1_price: any;
   tables: string[] = [] //This is the table you'll send back it will contain the table id's
   isDisabled: boolean = true;
+  image_url: any;
 
   constructor(private createEventService: CreateEventService,private router: Router,private _http: Http) { }
 
@@ -40,7 +41,8 @@ export class CreateEventComponent implements OnInit {
       });
     }
   }
-imageUploaded(event){
+
+ticketImageUpload(event){
     const resp = event.serverResponse._body
     const j = JSON.parse(resp)
     const data  = {
@@ -58,6 +60,7 @@ imageUploaded(event){
       }
     })
   }
+
   quicky(data){
     let header = new Headers();
     header.append('Content-Type','application/json');
@@ -65,11 +68,19 @@ imageUploaded(event){
     header.append('Authorization', localStorage.getItem('token'));
      return this._http.post("https://gatepassng.herokuapp.com/api/v1/table", data, {headers: header}).map(res => res.json())
   }
+
+  eventImageUpload(event){
+    const resp = event.serverResponse._body
+    const j = JSON.parse(resp);
+    this.image_url = j.data.link;
+    console.log(this.image_url);
+  }
+
   createEvent(d, t){
     const event = {
       coord: [this.position.latitude, this.position.longitude],
       date: d,
-      image_url: 'https://i.imgur.com/v0zECrf.jpg',
+      image_url: this.image_url,
       location: this.event_location,
       name: this.event_name,
       price: this.base_price,

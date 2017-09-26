@@ -2,3 +2,9 @@
   min-width: 100% !important;
   min-height: 100% !important;
 }
+
+div .container a img{
+  width: 230px !important;
+  height: 55px !important;
+
+}

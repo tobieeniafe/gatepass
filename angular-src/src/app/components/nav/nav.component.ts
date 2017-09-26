@@ -11,7 +11,7 @@ declare var Materialize: any;
 })
 export class NavComponent implements OnInit {
 
-  private logo: string = 'assets/img/logo1.png';
+  private logo: string = 'assets/img/logo.png';
   loggedIn: boolean;
   loggedIn$ = new BehaviorSubject<boolean>(this.loggedIn);
 

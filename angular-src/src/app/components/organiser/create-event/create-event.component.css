@@ -19,3 +19,19 @@ agm-map {
   border-radius: 3px;
   font-family: 'avenirNextCondensed';
 }
+
+/deep/ image-upload label.clear span{
+  text-transform: lowercase;
+  font-weight: normal;
+  background-color: #d32f2f;
+}
+
+/deep/ image-upload label.clear.button{
+  background-color: #d32f2f;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+/deep/ image-upload div.image-container.hr-inline-group{
+  background-color: #f8f8f8;
+}

@@ -28,6 +28,9 @@
               <input [(ngModel)]="password"  placeholder='Password' id="password" type="password" class="validate" name="password">
             </div>
             <button type="submit" name="button" class="btn waves-effect waves-light" [disabled]='isDisabled'>Register</button>
+            <div class="progress" *ngIf='isDisabled'>
+                <div class="indeterminate"></div>
+            </div>
 
             <h5 class="small">Already have an account? <a routerLink='/login'>Login</a></h5>
     	</form>
