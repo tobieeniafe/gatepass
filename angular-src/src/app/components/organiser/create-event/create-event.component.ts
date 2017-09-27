@@ -3,7 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CreateEventService } from './create-event.service';
 import { Http, Headers } from '@angular/http';
+import { } from '@types/googlemaps';
 declare var Materialize: any;
+declare var google: any;
 
 @Component({
   selector: 'create-event',

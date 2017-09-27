@@ -38,7 +38,7 @@ export class EventsComponent implements OnInit {
          }
        },
        err => console.log(err),
-       () => console.log(this.events)
+       () => console.log()//this.events
     );
   }
 

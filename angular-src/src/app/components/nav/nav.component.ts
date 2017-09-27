@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   loggedIn$ = new BehaviorSubject<boolean>(this.loggedIn);
 
   constructor(public _auth:AuthService, private router: Router) {
-    console.log(this._auth.loggedIn())
+    //console.log(this._auth.loggedIn())
    }
 
   ngOnInit() {

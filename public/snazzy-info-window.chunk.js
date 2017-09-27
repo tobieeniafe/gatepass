@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp(["snazzy-info-window"],{
 
 /***/ "../../../../snazzy-info-window/dist/snazzy-info-window.min.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -13,4 +13,4 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ })
 
 });
-//# sourceMappingURL=0.chunk.js.map
+//# sourceMappingURL=snazzy-info-window.chunk.js.map
