@@ -159,6 +159,10 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
+"@types/googlemaps@^3.29.0":
+  version "3.29.0"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.29.0.tgz#503530b2cbbfd396b958c8b939cb2124849c8417"
+
 "@types/jasmine@2.5.45":
   version "2.5.45"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.45.tgz#58928a621d014ce6ab59c5a9c41071f7328b0ca9"

@@ -74,7 +74,7 @@
 
 
   <div class="col m6 s12">
-    <agm-map [latitude]="position.latitude" [longitude]="position.longitude" [zoom]='17' [minZoom]='15'>
+    <agm-map [latitude]="position.latitude" [longitude]="position.longitude" [zoom]='17' [minZoom]='15' [scrollwheel]="false">
       <agm-marker [latitude]="position.latitude" [longitude]="position.longitude">
         <!-- <agm-snazzy-info-window [isOpen]="true" [maxWidth]="200" [closeWhenOthersOpen]="true" backgroundColor='#0ff' border="{width: '5px', color: '#000'}">
           <ng-template>
@@ -87,8 +87,3 @@
 
 
 </div>
-
-<!-- <div class="upload-btn-wrapper">
-  <button class="upload-btn">ticket image</button>
-  <input type="file" (change)="fileChange($event)" accept=".jpeg,.jpg,.png">
-</div> -->
