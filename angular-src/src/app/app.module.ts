@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ImageUploadModule } from 'angular2-image-upload';
 
 import { AgmCoreModule } from '@agm/core';
-import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
@@ -42,11 +41,13 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    CommonModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k'
+      apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k',
+      libraries: ["places"]
     }),
-    AgmSnazzyInfoWindowModule,
     ImageUploadModule.forRoot()
   ],
   declarations: [

@@ -82,11 +82,11 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_image_upload__ = __webpack_require__("../../../../angular2-image-upload/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_image_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_image_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__agm_snazzy_info_window__ = __webpack_require__("../../../../@agm/snazzy-info-window/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__ = __webpack_require__("../../../../angular2-image-upload/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_index_index_component__ = __webpack_require__("../../../../../src/app/components/index/index.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
@@ -149,14 +149,16 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-            __WEBPACK_IMPORTED_MODULE_6__agm_core__["a" /* AgmCoreModule */].forRoot({
-                apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k'
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+            __WEBPACK_IMPORTED_MODULE_7__agm_core__["a" /* AgmCoreModule */].forRoot({
+                apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k',
+                libraries: ["places"]
             }),
-            __WEBPACK_IMPORTED_MODULE_7__agm_snazzy_info_window__["a" /* AgmSnazzyInfoWindowModule */],
-            __WEBPACK_IMPORTED_MODULE_5_angular2_image_upload__["ImageUploadModule"].forRoot()
+            __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__["ImageUploadModule"].forRoot()
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
@@ -255,7 +257,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#loginBody{\r\n  height: 600px;\r\n  width: 100%;\r\n  padding-top: 65px;\r\n  -webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */\r\n  filter: contrast(100%);\r\n  z-index: -500;\r\n}\r\n\r\n\r\n.form{\r\n  background-color: #fff;\r\n  height: 387px;\r\n  margin: auto;\r\n  margin-top: 450px;\r\n  margin-bottom: 100px;\r\n  padding-top: 30px;\r\n  /*margin-left: 33%;*/\r\n  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n.transparent{\r\n  background-color: rgba(64, 64, 64, 0.5) !important;\r\n  height: 300px;\r\n  color: #ffffff;\r\n}\r\n\r\n.transparent-btn{\r\n  background-color: rgba(255, 255, 255, 0.1) !important;\r\n  border: 1px solid #fff;\r\n  border-radius: 5px;\r\n}\r\n\r\n.small{\r\n  display: none;\r\n}\r\n\r\n@media only screen and (max-width: 1200px) {\r\n  loginBody{\r\n    height: inherit;\r\n    padding-top: 65px;\r\n  }\r\n\r\n  .form{\r\n    background-color: #fff;\r\n    height: 320px;\r\n    margin: auto;\r\n    margin-top: 450px;\r\n    margin-bottom: 100px;\r\n    /*margin-left: 33%;*/\r\n    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n    margin: auto;\r\n  }\r\n\r\n  .transparent{\r\n    display: none;\r\n  }\r\n\r\n  .small{\r\n    display: block;\r\n  }\r\n}\r\n", ""]);
+exports.push([module.i, "#loginBody{\r\n  height: 600px;\r\n  width: 100%;\r\n  padding-top: 65px;\r\n  -webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */\r\n  filter: contrast(100%);\r\n  z-index: -500;\r\n}\r\n\r\n\r\n.form{\r\n  background-color: #fff;\r\n  height: 387px;\r\n  margin: auto;\r\n  margin-top: 450px;\r\n  margin-bottom: 100px;\r\n  padding-top: 30px;\r\n  /*margin-left: 33%;*/\r\n  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n.transparent{\r\n  background-color: rgba(64, 64, 64, 0.5) !important;\r\n  height: 300px;\r\n  color: #ffffff;\r\n}\r\n\r\n.transparent-btn{\r\n  background-color: rgba(255, 255, 255, 0.1) !important;\r\n  border: 1px solid #fff;\r\n  border-radius: 5px;\r\n}\r\n\r\n.small{\r\n  display: none;\r\n}\r\n\r\n@media only screen and (max-width: 1200px) {\r\n  loginBody{\r\n    height: inherit;\r\n    padding-top: 65px;\r\n  }\r\n\r\n  .form{\r\n    background-color: #fff;\r\n    height: 350px;\r\n    margin: auto;\r\n    margin-top: 450px;\r\n    margin-bottom: 100px;\r\n    /*margin-left: 33%;*/\r\n    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n    margin: auto;\r\n  }\r\n\r\n  .transparent{\r\n    display: none;\r\n  }\r\n\r\n  .small{\r\n    display: block;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -316,7 +318,7 @@ var LoginComponent = (function () {
             else if (data.status == true) {
                 Materialize.toast('Login successful', 5000, 'green white-text');
                 localStorage.setItem('token', data.token);
-                console.log(localStorage.getItem('token'));
+                //console.log(localStorage.getItem('token'));
                 _this.isDisabled = false;
                 //console.log(data.token);
                 _this.router.navigate(['/events']);
@@ -351,7 +353,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".body{\r\n  min-width: 100% !important;\r\n  min-height: 100% !important;\r\n}\r\n\r\ndiv .container a img{\r\n  width: 210px !important;\r\n  height: 55px !important;\r\n\r\n}\r\n", ""]);
+exports.push([module.i, ".body{\r\n  min-width: 100% !important;\r\n  min-height: 100% !important;\r\n}\r\n\r\ndiv .container a img{\r\n  width: 210px !important;\r\n  height: 55px !important;\r\n\r\n}\r\n\r\n@media only screen and (max-width: 400px) {\r\n  div .container a img{\r\n    width: 180px !important;\r\n    height: 55px !important;\r\n\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -450,7 +452,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/create-event/create-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n    <h5>Create Event</h5>\r\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m6 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_name\">Event Name</label>\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_location\">Event Location</label>\r\n          <input placeholder='Event Location' id=\"event_location\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_date\">Date</label><br>\r\n          <input id=\"event_date\" type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_time\">Time</label><br>\r\n          <input id=\"event_time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"price\">Base Price</label>\r\n          <input placeholder=\"Base Price\" id=\"price\" type=\"text\" class=\"validate\"  name=\"base_price\" [(ngModel)]=\"base_price\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5>Ticket Details</h5><br>\r\n\r\n      <!-- ticket type 1 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <label for=\"ticket_name\">Ticket Name</label>\r\n          <input placeholder=\"e.g. Regular\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket1_name\" [(ngModel)]=\"ticket1_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <label for=\"ticket_price\">Ticket Price</label>\r\n          <input placeholder='ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket1_price\" [(ngModel)]=\"ticket1_price\">\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #ticketImg></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 1 end-->\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n\r\n  <div class=\"col m6 s12\">\r\n    <agm-map [latitude]=\"position.latitude\" [longitude]=\"position.longitude\" [zoom]='17' [minZoom]='15' [scrollwheel]=\"false\">\r\n      <agm-marker [latitude]=\"position.latitude\" [longitude]=\"position.longitude\">\r\n        <!-- <agm-snazzy-info-window [isOpen]=\"true\" [maxWidth]=\"200\" [closeWhenOthersOpen]=\"true\" backgroundColor='#0ff' border=\"{width: '5px', color: '#000'}\">\r\n          <ng-template>\r\n            My first Snazzy Info Window!\r\n          </ng-template>\r\n        </agm-snazzy-info-window> -->\r\n      </agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n    <h5>Create Event</h5>\r\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m6 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_name\">Event Name</label>\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_location\">Event Location</label>\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_date\">Date</label><br>\r\n          <input id=\"event_date\" type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_time\">Time</label><br>\r\n          <input id=\"event_time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"price\">Base Price</label>\r\n          <input placeholder=\"Base Price\" id=\"price\" type=\"text\" class=\"validate\"  name=\"base_price\" [(ngModel)]=\"base_price\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5>Ticket Details</h5><br>\r\n\r\n      <!-- ticket type 1 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <label for=\"ticket_name\">Ticket Name</label>\r\n          <input placeholder=\"e.g. Regular\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket1_name\" [(ngModel)]=\"ticket1_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <label for=\"ticket_price\">Ticket Price</label>\r\n          <input placeholder='ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket1_price\" [(ngModel)]=\"ticket1_price\">\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #ticketImg></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 1 end-->\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n\r\n  <div class=\"col m6 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -460,9 +462,11 @@ module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateEventComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -476,28 +480,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var CreateEventComponent = (function () {
-    function CreateEventComponent(createEventService, router, _http) {
+    function CreateEventComponent(createEventService, router, _http, mapsAPILoader, ngZone) {
         this.createEventService = createEventService;
         this.router = router;
         this._http = _http;
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
         this.mapTitle = 'google map';
-        this.position = {
-            'longitude': 4.673671399999989,
-            'latitude': 8.4793627
-        };
-        this.tables = []; //This is the table you'll send back it will contain the table id's
+        this.tables = [];
         this.isDisabled = true;
     }
     CreateEventComponent.prototype.ngOnInit = function () {
         var _this = this;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                _this.position = position.coords;
-                //console.log(this.position.longitude);
-                //console.log(this.position.latitude);
+                //console.log(position.coords);
+                _this.latitude = position.coords.latitude;
+                _this.longitude = position.coords.longitude;
             });
         }
+        this.searchControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormControl */]();
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(function () {
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {});
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    var place = autocomplete.getPlace();
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    _this.latitude = place.geometry.location.lat();
+                    _this.longitude = place.geometry.location.lng();
+                    _this.formatted_address = place.formatted_address;
+                    //console.log(`${this.formatted_address}  ${this.latitude}   ${this.longitude}`);
+                });
+            });
+        });
     };
     CreateEventComponent.prototype.ticketImageUpload = function (event) {
         var _this = this;
@@ -518,7 +539,7 @@ var CreateEventComponent = (function () {
         });
     };
     CreateEventComponent.prototype.quicky = function (data) {
-        var header = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        var header = new __WEBPACK_IMPORTED_MODULE_5__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
         header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
         header.append('Authorization', localStorage.getItem('token'));
@@ -533,10 +554,10 @@ var CreateEventComponent = (function () {
     CreateEventComponent.prototype.createEvent = function (d, t) {
         var _this = this;
         var event = {
-            coord: [this.position.latitude, this.position.longitude],
+            coord: [this.latitude, this.longitude],
             date: d,
             image_url: this.image_url,
-            location: this.event_location,
+            location: this.formatted_address,
             name: this.event_name,
             price: this.base_price,
             table: this.tables,
@@ -552,22 +573,26 @@ var CreateEventComponent = (function () {
                 Materialize.toast('Event created', 5000, 'green white-text');
                 _this.router.navigate(['/events']);
             }
-        }, function (err) { return console.log(err); }, function () { return console.log(event); } //console.log('Request Completed')
+        }, function (err) { return console.log(err); }, function () { return console.log(); } //console.log('Request Completed') event
         );
     };
     return CreateEventComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("search"),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], CreateEventComponent.prototype, "searchElementRef", void 0);
 CreateEventComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'create-event',
         template: __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.css"), __webpack_require__("../../../../../src/app/components/organiser/create-event/snazzy-info-window.css")],
-        providers: [__WEBPACK_IMPORTED_MODULE_2__create_event_service__["a" /* CreateEventService */]]
+        styles: [__webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.css")],
+        providers: [__WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__create_event_service__["a" /* CreateEventService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__create_event_service__["a" /* CreateEventService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _f || Object])
 ], CreateEventComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=create-event.component.js.map
 
 /***/ }),
@@ -627,7 +652,7 @@ var CreateEventService = (function () {
         })(jQuery);
     }
     CreateEventService.prototype.postEvent = function (event) {
-        console.log(event);
+        //console.log(event);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
         return this.http.post('https://gatepassng.herokuapp.com/api/v1/events', event, { headers: headers })
@@ -644,24 +669,6 @@ CreateEventService = __decorate([
 
 var _a;
 //# sourceMappingURL=create-event.service.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/organiser/create-event/snazzy-info-window.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".si-float-wrapper {\r\n  position: absolute;\r\n  width: 100%; }\r\n  .si-float-wrapper,\r\n  .si-float-wrapper * {\r\n    box-sizing: border-box; }\r\n\r\n[class*='si-wrapper'] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  position: absolute;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  font-size: 14px;\r\n  cursor: default; }\r\n\r\n.si-wrapper-top {\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\r\n  margin-top: -40px;\r\n  margin-left: 0px;\r\n  -webkit-transform: translate(-50%, -100%);\r\n          transform: translate(-50%, -100%); }\r\n\r\n.si-wrapper-bottom {\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: reverse;\r\n      -ms-flex-direction: column-reverse;\r\n          flex-direction: column-reverse;\r\n  margin-top: 0px;\r\n  margin-left: 0px;\r\n  -webkit-transform: translate(-50%, 0);\r\n          transform: translate(-50%, 0); }\r\n\r\n.si-wrapper-left {\r\n  margin-top: -20px;\r\n  margin-left: -11px;\r\n  -webkit-transform: translate(-100%, -50%);\r\n          transform: translate(-100%, -50%); }\r\n\r\n.si-wrapper-right {\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: reverse;\r\n      -ms-flex-direction: row-reverse;\r\n          flex-direction: row-reverse;\r\n  margin-top: -20px;\r\n  margin-left: 11px;\r\n  -webkit-transform: translate(0, -50%);\r\n          transform: translate(0, -50%); }\r\n\r\n[class*='si-shadow-wrapper'] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  opacity: 0.29804;\r\n  z-index: 1; }\r\n\r\n.si-shadow-wrapper-top,\r\n.si-shadow-wrapper-bottom {\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column; }\r\n\r\n.si-shadow-pointer-bottom,\r\n.si-shadow-pointer-right {\r\n  -webkit-box-ordinal-group: 0;\r\n      -ms-flex-order: -1;\r\n          order: -1; }\r\n\r\n.si-shadow-frame {\r\n  box-shadow: 0 1px 3px 0 #000; }\r\n\r\n[class*='si-shadow-pointer'] {\r\n  position: relative;\r\n  width: 15px;\r\n  height: 15px;\r\n  margin: auto; }\r\n\r\n[class*='si-shadow-inner-pointer'] {\r\n  position: absolute;\r\n  width: 141%;\r\n  height: 141%;\r\n  box-shadow: -0.70711px 0.70711px 3px 0 #000; }\r\n\r\n.si-shadow-inner-pointer-top {\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\r\n          transform: translate(-50%, -50%) rotate(-45deg); }\r\n\r\n.si-shadow-inner-pointer-bottom {\r\n  bottom: 0;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, 50%) rotate(-45deg);\r\n          transform: translate(-50%, 50%) rotate(-45deg); }\r\n\r\n.si-shadow-inner-pointer-left {\r\n  top: 50%;\r\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\r\n          transform: translate(-50%, -50%) rotate(-45deg); }\r\n\r\n.si-shadow-inner-pointer-right {\r\n  top: 50%;\r\n  right: 0;\r\n  -webkit-transform: translate(50%, -50%) rotate(-45deg);\r\n          transform: translate(50%, -50%) rotate(-45deg); }\r\n\r\n.si-frame {\r\n  position: relative;\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n  border-radius: 3px;\r\n  overflow: hidden;\r\n  z-index: 2; }\r\n\r\n.si-content-wrapper {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  max-height: 100%;\r\n  padding: 30px;\r\n  background-color: #fff; }\r\n  .si-has-border .si-content-wrapper {\r\n    border: 1px solid #bbb; }\r\n\r\n.si-content {\r\n  overflow: auto; }\r\n\r\n.si-close-button {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  border: 0;\r\n  outline: none;\r\n  background-color: transparent;\r\n  color: inherit;\r\n  font-family: Arial, Baskerville, monospace;\r\n  font-size: 24px;\r\n  cursor: pointer;\r\n  opacity: 0.5;\r\n  -webkit-appearance: none;\r\n     -moz-appearance: none;\r\n          appearance: none; }\r\n  .si-close-button:hover, .si-close-button:focus {\r\n    opacity: 0.7; }\r\n\r\n[class*='si-pointer-border'] {\r\n  position: absolute;\r\n  border: 15px solid transparent;\r\n  z-index: 3; }\r\n\r\n[class*='si-pointer-bg'] {\r\n  position: relative;\r\n  border: 15px solid transparent;\r\n  z-index: 4; }\r\n  .si-has-border [class*='si-pointer-bg'] {\r\n    border-width: 15px; }\r\n\r\n.si-pointer-border-top,\r\n.si-pointer-border-bottom {\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, 0);\r\n          transform: translate(-50%, 0); }\r\n\r\n.si-pointer-border-left,\r\n.si-pointer-border-right {\r\n  top: 50%;\r\n  -webkit-transform: translate(0, -50%);\r\n          transform: translate(0, -50%); }\r\n\r\n.si-pointer-top {\r\n  border-bottom: 0; }\r\n\r\n.si-pointer-border-top {\r\n  bottom: 0;\r\n  border-top-color: #bbb; }\r\n\r\n.si-pointer-bg-top {\r\n  border-top-color: #fff; }\r\n  .si-has-border .si-pointer-bg-top {\r\n    top: -1px;\r\n    margin-bottom: 0px; }\r\n\r\n.si-pointer-bottom {\r\n  border-top: 0; }\r\n\r\n.si-pointer-border-bottom {\r\n  top: 0;\r\n  border-bottom-color: #bbb; }\r\n\r\n.si-pointer-bg-bottom {\r\n  border-bottom-color: #fff; }\r\n  .si-has-border .si-pointer-bg-bottom {\r\n    bottom: -1px;\r\n    margin-top: 0px; }\r\n\r\n.si-pointer-left {\r\n  border-right: 0; }\r\n\r\n.si-pointer-border-left {\r\n  right: 0;\r\n  border-left-color: #bbb; }\r\n\r\n.si-pointer-bg-left {\r\n  border-left-color: #fff; }\r\n  .si-has-border .si-pointer-bg-left {\r\n    left: -1px;\r\n    margin-right: 0px; }\r\n\r\n.si-pointer-right {\r\n  border-left: 0; }\r\n\r\n.si-pointer-border-right {\r\n  left: 0;\r\n  border-right-color: #bbb; }\r\n\r\n.si-pointer-bg-right {\r\n  border-right-color: #fff; }\r\n  .si-has-border .si-pointer-bg-right {\r\n    right: -1px;\r\n    margin-left: 0px; }\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
 
 /***/ }),
 
@@ -686,7 +693,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"striped\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h2 align=center>You have no events at this time</h2></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.price}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"progress\">\r\n        <div class=\"indeterminate\"></div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.price}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -959,7 +966,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#registerBody{\r\n  height: 600px;\r\n  width: 100%;\r\n  padding-top: 65px;\r\n  -webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */\r\n  filter: contrast(100%);\r\n  z-index: -500;\r\n}\r\n\r\n\r\n.form{\r\n  background-color: #fff;\r\n  height: 450px;\r\n  margin: auto;\r\n  margin-top: 450px;\r\n  margin-bottom: 100px;\r\n  /*padding-top: 30px;*/\r\n  /*margin-right: 33%;*/\r\n  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n.transparent{\r\n  background-color: rgba(64, 64, 64, 0.5) !important;\r\n  height: 300px;\r\n  color: #ffffff;\r\n}\r\n\r\n.transparent-btn{\r\n  background-color: rgba(255, 255, 255, 0.1) !important;\r\n  border: 1px solid #fff;\r\n  border-radius: 5px;\r\n}\r\n\r\n.small{\r\n  display: none;\r\n}\r\n\r\n@media only screen and (max-width: 1050px) {\r\n  .registerBody{\r\n    height: inherit;\r\n    padding-top: 65px;\r\n  }\r\n\r\n  .form{\r\n    background-color: #fff;\r\n    height: 470px;\r\n    margin: auto;\r\n    margin-top: 450px;\r\n    margin-bottom: 100px;\r\n    /*margin-right: 33%;*/\r\n    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n  }\r\n\r\n  .transparent{\r\n    display: none;\r\n  }\r\n\r\n  .small{\r\n    display: block;\r\n  }\r\n\r\n}\r\n", ""]);
+exports.push([module.i, "#registerBody{\r\n  height: 600px;\r\n  width: 100%;\r\n  padding-top: 65px;\r\n  -webkit-filter: contrast(100%); /* Safari 6.0 - 9.0 */\r\n  filter: contrast(100%);\r\n  z-index: -500;\r\n}\r\n\r\n\r\n.form{\r\n  background-color: #fff;\r\n  height: 470px;\r\n  margin: auto;\r\n  margin-top: 450px;\r\n  margin-bottom: 100px;\r\n  /*padding-top: 30px;*/\r\n  /*margin-right: 33%;*/\r\n  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n}\r\n\r\n.transparent{\r\n  background-color: rgba(64, 64, 64, 0.5) !important;\r\n  height: 300px;\r\n  color: #ffffff;\r\n}\r\n\r\n.transparent-btn{\r\n  background-color: rgba(255, 255, 255, 0.1) !important;\r\n  border: 1px solid #fff;\r\n  border-radius: 5px;\r\n}\r\n\r\n.small{\r\n  display: none;\r\n}\r\n\r\n@media only screen and (max-width: 1050px) {\r\n  .registerBody{\r\n    height: inherit;\r\n    padding-top: 65px;\r\n  }\r\n\r\n  .form{\r\n    background-color: #fff;\r\n    height: 470px;\r\n    margin: auto;\r\n    margin-top: 450px;\r\n    margin-bottom: 100px;\r\n    /*margin-right: 33%;*/\r\n    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);\r\n  }\r\n\r\n  .transparent{\r\n    display: none;\r\n  }\r\n\r\n  .small{\r\n    display: block;\r\n  }\r\n\r\n}\r\n", ""]);
 
 // exports
 
@@ -1043,7 +1050,7 @@ var RegisterComponent = (function () {
                 //Flash message
                 Materialize.toast('Registration successful', 5000, 'green white-text');
                 localStorage.setItem('token', data.token);
-                console.log(localStorage.setItem('token', data.token));
+                //console.log(localStorage.setItem('token', data.token));
                 _this._router.navigate(['/events']);
                 _this.isDisabled = false;
             }

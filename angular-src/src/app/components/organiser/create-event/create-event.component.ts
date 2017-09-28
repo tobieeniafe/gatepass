@@ -1,25 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from "@angular/forms";
+import { MapsAPILoader } from '@agm/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CreateEventService } from './create-event.service';
 import { Http, Headers } from '@angular/http';
 import { } from '@types/googlemaps';
 declare var Materialize: any;
-declare var google: any;
 
 @Component({
   selector: 'create-event',
   templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.css', './snazzy-info-window.css'],
+  styleUrls: ['./create-event.component.css'],
   providers: [ CreateEventService ]
 })
 export class CreateEventComponent implements OnInit {
 
   mapTitle: string = 'google map';
-  position:any = {
-    'longitude': 4.673671399999989,
-    'latitude': 8.4793627
-  };
+  longitude: any;
+  latitude: any;
   event: any;
   event_date: any;
   event_name: any;
@@ -28,20 +27,49 @@ export class CreateEventComponent implements OnInit {
   base_price: any;
   ticket1_name: any
   ticket1_price: any;
-  tables: string[] = [] //This is the table you'll send back it will contain the table id's
+  tables: string[] = [];
   isDisabled: boolean = true;
   image_url: any;
+  searchControl: FormControl;
+  formatted_address: string;
 
-  constructor(private createEventService: CreateEventService,private router: Router,private _http: Http) { }
+   @ViewChild("search")
+  public searchElementRef: ElementRef;
+
+  constructor(private createEventService: CreateEventService,private router: Router,private _http: Http, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) { }
 
   ngOnInit() {
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
-        this.position = position.coords;
-        //console.log(this.position.longitude);
-        //console.log(this.position.latitude);
+        //console.log(position.coords);
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
       });
     }
+
+    this.searchControl = new FormControl();
+
+    //load Places Autocomplete
+    this.mapsAPILoader.load().then(() => {
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        //types: ["address"]
+      });
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          this.latitude = place.geometry.location.lat();
+          this.longitude = place.geometry.location.lng();
+          this.formatted_address = place.formatted_address;
+          //console.log(`${this.formatted_address}  ${this.latitude}   ${this.longitude}`);
+        });
+      });
+    });
+
   }
 
 ticketImageUpload(event){
@@ -80,10 +108,10 @@ ticketImageUpload(event){
 
   createEvent(d, t){
     const event = {
-      coord: [this.position.latitude, this.position.longitude],
+      coord: [this.latitude, this.longitude],
       date: d,
       image_url: this.image_url,
-      location: this.event_location,
+      location: this.formatted_address,//this.event_location,
       name: this.event_name,
       price: this.base_price,
       table: this.tables,
@@ -102,7 +130,7 @@ ticketImageUpload(event){
         }
        },
        err => console.log(err),
-       () =>  console.log(event) //console.log('Request Completed')
+       () =>  console.log() //console.log('Request Completed') event
 
     );
   }

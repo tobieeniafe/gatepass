@@ -15,7 +15,7 @@
         </div>
         <div class="input-field col s12 m6">
           <label for="event_location">Event Location</label>
-          <input placeholder='Event Location' id="event_location" type="text" class="validate" name="event_location" [(ngModel)]="event_location">
+          <input placeholder='Event Location' id="event_location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="validate" name="event_location" [(ngModel)]="event_location" #search [formControl]="searchControl">
         </div>
       </div>
       <div class="row">
@@ -74,16 +74,9 @@
 
 
   <div class="col m6 s12">
-    <agm-map [latitude]="position.latitude" [longitude]="position.longitude" [zoom]='17' [minZoom]='15' [scrollwheel]="false">
-      <agm-marker [latitude]="position.latitude" [longitude]="position.longitude">
-        <!-- <agm-snazzy-info-window [isOpen]="true" [maxWidth]="200" [closeWhenOthersOpen]="true" backgroundColor='#0ff' border="{width: '5px', color: '#000'}">
-          <ng-template>
-            My first Snazzy Info Window!
-          </ng-template>
-        </agm-snazzy-info-window> -->
-      </agm-marker>
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]='17' [minZoom]='15'>
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
     </agm-map>
   </div>
-
 
 </div>

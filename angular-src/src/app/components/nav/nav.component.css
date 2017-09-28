@@ -8,3 +8,11 @@ div .container a img{
   height: 55px !important;
 
 }
+
+@media only screen and (max-width: 400px) {
+  div .container a img{
+    width: 180px !important;
+    height: 55px !important;
+
+  }
+}

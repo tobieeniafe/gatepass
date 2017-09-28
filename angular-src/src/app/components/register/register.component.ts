@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
          //Flash message
          Materialize.toast('Registration successful', 5000, 'green white-text');
          localStorage.setItem('token', data.token);
-         console.log(localStorage.setItem('token', data.token));
+         //console.log(localStorage.setItem('token', data.token));
          this._router.navigate(['/events']);
          this.isDisabled = false;
        }else{

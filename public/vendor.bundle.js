@@ -90,7 +90,7 @@ AgmCoreModule.ctorParameters = function () { return []; };
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_data_layer__ = __webpack_require__("../../../../@agm/core/directives/data-layer.js");
 /* unused harmony reexport AgmDataLayer */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_marker__ = __webpack_require__("../../../../@agm/core/directives/marker.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_5__directives_marker__["a"]; });
+/* unused harmony reexport AgmMarker */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_polygon__ = __webpack_require__("../../../../@agm/core/directives/polygon.js");
 /* unused harmony reexport AgmPolygon */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline__ = __webpack_require__("../../../../@agm/core/directives/polyline.js");
@@ -2053,11 +2053,9 @@ AgmPolyline.propDecorators = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives__ = __webpack_require__("../../../../@agm/core/directives.js");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["a"]; });
+/* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__("../../../../@agm/core/services.js");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["c"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_module__ = __webpack_require__("../../../../@agm/core/core.module.js");
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__core_module__["a"]; });
 // main modules
@@ -2076,13 +2074,13 @@ AgmPolyline.propDecorators = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__ = __webpack_require__("../../../../@agm/core/services/google-maps-api-wrapper.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__["a"]; });
+/* unused harmony reexport GoogleMapsAPIWrapper */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__("../../../../@agm/core/services/managers/circle-manager.js");
 /* unused harmony reexport CircleManager */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__ = __webpack_require__("../../../../@agm/core/services/managers/info-window-manager.js");
 /* unused harmony reexport InfoWindowManager */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__ = __webpack_require__("../../../../@agm/core/services/managers/marker-manager.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__["a"]; });
+/* unused harmony reexport MarkerManager */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__ = __webpack_require__("../../../../@agm/core/services/managers/polygon-manager.js");
 /* unused harmony reexport PolygonManager */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__ = __webpack_require__("../../../../@agm/core/services/managers/polyline-manager.js");
@@ -2096,7 +2094,7 @@ AgmPolyline.propDecorators = {
 /* unused harmony reexport LAZY_MAPS_API_CONFIG */
 /* unused harmony reexport LazyMapsAPILoader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_maps_api_loader_maps_api_loader__ = __webpack_require__("../../../../@agm/core/services/maps-api-loader/maps-api-loader.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_9__services_maps_api_loader_maps_api_loader__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_9__services_maps_api_loader_maps_api_loader__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_noop_maps_api_loader__ = __webpack_require__("../../../../@agm/core/services/maps-api-loader/noop-maps-api-loader.js");
 /* unused harmony reexport NoOpMapsAPILoader */
 
@@ -3124,284 +3122,6 @@ var DocumentRef = (function () {
 
 var BROWSER_GLOBALS_PROVIDERS = [WindowRef, DocumentRef];
 //# sourceMappingURL=browser-globals.js.map
-
-/***/ }),
-
-/***/ "../../../../@agm/snazzy-info-window/directives/snazzy-info-window.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmSnazzyInfoWindow; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-
-
-var AgmSnazzyInfoWindow = (function () {
-    function AgmSnazzyInfoWindow(_marker, _wrapper, _manager, _loader) {
-        this._marker = _marker;
-        this._wrapper = _wrapper;
-        this._manager = _manager;
-        this._loader = _loader;
-        /**
-         * Changes the open status of the snazzy info window.
-         */
-        this.isOpen = false;
-        /**
-         * Emits when the open status changes.
-         */
-        this.isOpenChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        /**
-         * Choose where you want the info window to be displayed, relative to the marker.
-         */
-        this.placement = 'top';
-        /**
-         * The max width in pixels of the info window.
-         */
-        this.maxWidth = 200;
-        /**
-         * The max height in pixels of the info window.
-         */
-        this.maxHeight = 200;
-        /**
-         * Determines if the info window will open when the marker is clicked.
-         * An internal listener is added to the Google Maps click event which calls the open() method.
-         */
-        this.openOnMarkerClick = true;
-        /**
-         * Determines if the info window will close when the map is clicked. An internal listener is added to the Google Maps click event which calls the close() method.
-         * This will not activate on the Google Maps drag event when the user is panning the map.
-         */
-        this.closeOnMapClick = true;
-        /**
-         * Determines if the info window will close when any other Snazzy Info Window is opened.
-         */
-        this.closeWhenOthersOpen = false;
-        /**
-         * Determines if the info window will show a close button.
-         */
-        this.showCloseButton = true;
-        /**
-         * Determines if the info window will be panned into view when opened.
-         */
-        this.panOnOpen = true;
-        /**
-         * Emits before the info window opens.
-         */
-        this.beforeOpen = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        /**
-         * Emits before the info window closes.
-         */
-        this.afterClose = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this._snazzyInfoWindowInitialized = null;
-    }
-    /**
-     * @internal
-     */
-    AgmSnazzyInfoWindow.prototype.ngOnChanges = function (changes) {
-        if (this._nativeSnazzyInfoWindow == null) {
-            return;
-        }
-        if ('isOpen' in changes && this.isOpen) {
-            this._openInfoWindow();
-        }
-        else if ('isOpen' in changes && !this.isOpen) {
-            this._closeInfoWindow();
-        }
-        if (('latitude' in changes || 'longitude' in changes) && this._marker == null) {
-            this._updatePosition();
-        }
-    };
-    /**
-     * @internal
-     */
-    AgmSnazzyInfoWindow.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        var m = this._manager != null ? this._manager.getNativeMarker(this._marker) : null;
-        this._snazzyInfoWindowInitialized = this._loader.load()
-            .then(function () { return __webpack_require__.e/* import() */("snazzy-info-window").then(__webpack_require__.bind(null, "../../../../snazzy-info-window/dist/snazzy-info-window.min.js")); })
-            .then(function (module) { return Promise.all([module, m, _this._wrapper.getNativeMap()]); })
-            .then(function (elems) {
-            var options = {
-                map: elems[2],
-                content: '',
-                placement: _this.placement,
-                maxWidth: _this.maxWidth,
-                maxHeight: _this.maxHeight,
-                backgroundColor: _this.backgroundColor,
-                padding: _this.padding,
-                border: _this.border,
-                borderRadius: _this.borderRadius,
-                fontColor: _this.fontColor,
-                pointer: _this.pointer,
-                shadow: _this.shadow,
-                openOnMarkerClick: _this.openOnMarkerClick,
-                closeWhenOthersOpen: _this.closeWhenOthersOpen,
-                showCloseButton: _this.showCloseButton,
-                panOnOpen: _this.panOnOpen,
-                wrapperClass: _this.wrapperClass,
-                callbacks: {
-                    beforeOpen: function () {
-                        _this._createViewContent();
-                        _this.beforeOpen.emit();
-                    },
-                    afterOpen: function () {
-                        _this.isOpenChange.emit(_this.openStatus());
-                    },
-                    afterClose: function () {
-                        _this.afterClose.emit();
-                        _this.isOpenChange.emit(_this.openStatus());
-                    }
-                }
-            };
-            if (elems[1] != null) {
-                options.marker = elems[1];
-            }
-            else {
-                options.position = {
-                    lat: _this.latitude,
-                    lng: _this.longitude
-                };
-            }
-            _this._nativeSnazzyInfoWindow = new elems[0](options);
-        });
-        this._snazzyInfoWindowInitialized.then(function () {
-            if (_this.isOpen) {
-                _this._openInfoWindow();
-            }
-        });
-    };
-    AgmSnazzyInfoWindow.prototype._openInfoWindow = function () {
-        var _this = this;
-        this._snazzyInfoWindowInitialized.then(function () {
-            _this._createViewContent();
-            _this._nativeSnazzyInfoWindow.open();
-        });
-    };
-    AgmSnazzyInfoWindow.prototype._closeInfoWindow = function () {
-        var _this = this;
-        this._snazzyInfoWindowInitialized.then(function () {
-            _this._nativeSnazzyInfoWindow.close();
-        });
-    };
-    AgmSnazzyInfoWindow.prototype._createViewContent = function () {
-        if (this._viewContainerRef.length === 1) {
-            return;
-        }
-        var evr = this._viewContainerRef.createEmbeddedView(this._templateRef);
-        this._nativeSnazzyInfoWindow.setContent(this._outerWrapper.nativeElement);
-        // we have to run this in a separate cycle.
-        setTimeout(function () {
-            evr.detectChanges();
-        });
-    };
-    AgmSnazzyInfoWindow.prototype._updatePosition = function () {
-        this._nativeSnazzyInfoWindow.setPosition({
-            lat: this.latitude,
-            lng: this.longitude
-        });
-    };
-    /**
-     * Returns true when the Snazzy Info Window is initialized and open.
-     */
-    AgmSnazzyInfoWindow.prototype.openStatus = function () {
-        return this._nativeSnazzyInfoWindow && this._nativeSnazzyInfoWindow.isOpen();
-    };
-    /**
-     * @internal
-     */
-    AgmSnazzyInfoWindow.prototype.ngOnDestroy = function () {
-        if (this._nativeSnazzyInfoWindow) {
-            this._nativeSnazzyInfoWindow.destroy();
-        }
-    };
-    return AgmSnazzyInfoWindow;
-}());
-
-AgmSnazzyInfoWindow.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                // tslint:disable-next-line:component-selector
-                selector: 'agm-snazzy-info-window',
-                template: '<div #outerWrapper><div #viewContainer></div></div><ng-content></ng-content>'
-            },] },
-];
-/** @nocollapse */
-AgmSnazzyInfoWindow.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* AgmMarker */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["SkipSelf"] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* GoogleMapsAPIWrapper */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__agm_core__["e" /* MarkerManager */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__agm_core__["d" /* MapsAPILoader */], },
-]; };
-AgmSnazzyInfoWindow.propDecorators = {
-    'latitude': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'longitude': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'isOpen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'isOpenChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'maxWidth': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'maxHeight': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'backgroundColor': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'padding': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'border': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'borderRadius': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'fontColor': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'fontSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'pointer': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'shadow': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'openOnMarkerClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'closeOnMapClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'wrapperClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'closeWhenOthersOpen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showCloseButton': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'panOnOpen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'beforeOpen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'afterClose': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    '_outerWrapper': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"], args: ['outerWrapper', { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] },] },],
-    '_viewContainerRef': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"], args: ['viewContainer', { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"] },] },],
-    '_templateRef': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"],] },],
-};
-//# sourceMappingURL=snazzy-info-window.js.map
-
-/***/ }),
-
-/***/ "../../../../@agm/snazzy-info-window/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snazzy_info_window_module__ = __webpack_require__("../../../../@agm/snazzy-info-window/snazzy-info-window.module.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__snazzy_info_window_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_snazzy_info_window__ = __webpack_require__("../../../../@agm/snazzy-info-window/directives/snazzy-info-window.js");
-/* unused harmony reexport AgmSnazzyInfoWindow */
-// public API
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../../../../@agm/snazzy-info-window/snazzy-info-window.module.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmSnazzyInfoWindowModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_snazzy_info_window__ = __webpack_require__("../../../../@agm/snazzy-info-window/directives/snazzy-info-window.js");
-
-
-var AgmSnazzyInfoWindowModule = (function () {
-    function AgmSnazzyInfoWindowModule() {
-    }
-    return AgmSnazzyInfoWindowModule;
-}());
-
-AgmSnazzyInfoWindowModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                declarations: [__WEBPACK_IMPORTED_MODULE_1__directives_snazzy_info_window__["a" /* AgmSnazzyInfoWindow */]],
-                exports: [__WEBPACK_IMPORTED_MODULE_1__directives_snazzy_info_window__["a" /* AgmSnazzyInfoWindow */]]
-            },] },
-];
-/** @nocollapse */
-AgmSnazzyInfoWindowModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=snazzy-info-window.module.js.map
 
 /***/ }),
 
@@ -56174,14 +55894,14 @@ function transition$$1(stateChangeExpr, steps) {
 /* unused harmony export FormBuilder */
 /* unused harmony export AbstractControl */
 /* unused harmony export FormArray */
-/* unused harmony export FormControl */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormControl; });
 /* unused harmony export FormGroup */
 /* unused harmony export NG_ASYNC_VALIDATORS */
 /* unused harmony export NG_VALIDATORS */
 /* unused harmony export Validators */
 /* unused harmony export VERSION */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormsModule; });
-/* unused harmony export ReactiveFormsModule */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FormsModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ReactiveFormsModule; });
 /* unused harmony export ɵba */
 /* unused harmony export ɵz */
 /* unused harmony export ɵx */

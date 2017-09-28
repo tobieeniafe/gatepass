@@ -48,7 +48,7 @@ export class CreateEventService {
 
 
   postEvent(event) {
-    console.log(event);
+    //console.log(event);
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
     return this.http.post('https://gatepassng.herokuapp.com/api/v1/events', event, {headers: headers})

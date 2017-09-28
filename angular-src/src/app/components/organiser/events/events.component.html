@@ -1,6 +1,6 @@
 <div class="body">
 
-  <table class="striped">
+  <table class="highlight">
         <thead>
           <tr>
               <th data-field="#"></th>
@@ -13,7 +13,7 @@
         </thead>
 
         <tbody *ngIf='events'>
-          <tr *ngIf='noEvent'><td colspan="6"><h2 align=center>You have no events at this time</h2></td></tr>
+          <tr *ngIf='noEvent'><td colspan="6"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>
             <tr *ngFor="let event of events; let i = index">
               <td>{{i+1}}</td>
               <td>{{event.name}}</td>
@@ -32,8 +32,16 @@
   <br><br><br>
   <div *ngIf='preloader' align='center'>
     <h5>Loading events</h5>
-    <div class="progress">
-        <div class="indeterminate"></div>
+    <div class="preloader-wrapper small active">
+      <div class="spinner-layer">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
     </div>
   </div>
 
