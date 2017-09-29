@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n  <app-nav></app-nav>\r\n  <router-outlet></router-outlet>\r\n\r\n<footer class=\"page-footer\">\r\n    <div class=\"footer-copyright\">\r\n      <div class=\"container\">\r\n        &copy; Company 2017.\r\n      </div>\r\n    </div>\r\n</footer>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n  <app-nav></app-nav>\r\n\r\n  <router-outlet></router-outlet>\r\n\r\n<footer class=\"page-footer\">\r\n    <div class=\"footer-copyright\">\r\n      <div class=\"container\">\r\n        &copy; Company 2017.\r\n      </div>\r\n    </div>\r\n</footer>\r\n<p style=\"display: none\">{{computerIsOnline | async}}</p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -48,17 +48,33 @@ module.exports = "<div class=\"body\">\r\n  <app-nav></app-nav>\r\n  <router-out
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
-//import { NgStyle } from '@angular/common';
+
+
 var AppComponent = (function () {
     function AppComponent() {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].interval(1000).subscribe(function () {
+            _this.computerIsOnline = __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].merge(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].of(navigator.onLine), __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].fromEvent(window, 'online').map(function () { return true; }), __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].fromEvent(window, 'offline').map(function () {
+                Materialize.toast("Seems you're offline", 3000, 'grey darken-3 white-text');
+                //return false
+            }));
+        });
     }
+    AppComponent.prototype.ngOnInit = function () { };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -66,7 +82,8 @@ AppComponent = __decorate([
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-    })
+    }),
+    __metadata("design:paramtypes", [])
 ], AppComponent);
 
 //# sourceMappingURL=app.component.js.map
@@ -452,7 +469,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/create-event/create-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n    <h5>Create Event</h5>\r\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m6 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_name\">Event Name</label>\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_location\">Event Location</label>\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_date\">Date</label><br>\r\n          <input id=\"event_date\" type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"event_time\">Time</label><br>\r\n          <input id=\"event_time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <label for=\"price\">Base Price</label>\r\n          <input placeholder=\"Base Price\" id=\"price\" type=\"text\" class=\"validate\"  name=\"base_price\" [(ngModel)]=\"base_price\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5>Ticket Details</h5><br>\r\n\r\n      <!-- ticket type 1 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <label for=\"ticket_name\">Ticket Name</label>\r\n          <input placeholder=\"e.g. Regular\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket1_name\" [(ngModel)]=\"ticket1_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <label for=\"ticket_price\">Ticket Price</label>\r\n          <input placeholder='ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket1_price\" [(ngModel)]=\"ticket1_price\">\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #ticketImg></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 1 end-->\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n\r\n  <div class=\"col m6 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n    <h5>Create Event</h5>\r\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m6 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Base Price\" id=\"price\" type=\"text\" class=\"validate\"  name=\"base_price\" [(ngModel)]=\"base_price\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5>Ticket Details</h5><br>\r\n\r\n      <!-- ticket type 1 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Regular\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket1_name\" [(ngModel)]=\"ticket1_name\" #ticket1Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket1_price\" [(ngModel)]=\"ticket1_price\" #ticket1Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket1Name.value, ticket1Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 1 end-->\r\n\r\n      <!-- ticket type 2 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. VIP\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket2_name\" [(ngModel)]=\"ticket2_name\" #ticket2Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket2_price\" [(ngModel)]=\"ticket2_price\" #ticket2Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket2Name.value, ticket2Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 2 end-->\r\n\r\n      <!-- ticket type 3 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Table of 4\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket3_name\" [(ngModel)]=\"ticket3_name\" #ticket3Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket3_price\" [(ngModel)]=\"ticket3_price\" #ticket3Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket3Name.value, ticket3Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 3 end-->\r\n\r\n      <!-- ticket type 4 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Table of 6\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket4_name\" [(ngModel)]=\"ticket4_name\" #ticket4Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket4_price\" [(ngModel)]=\"ticket4_price\" #ticket4Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket4Name.value, ticket4Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 4 end-->\r\n\r\n      <!-- ticket type 5 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Table of 8\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket5_name\" [(ngModel)]=\"ticket5_name\" #ticket5Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket5_price\" [(ngModel)]=\"ticket5_price\" #ticket5Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket5Name.value, ticket5Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 5 end-->\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n\r\n  <div class=\"col m6 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -509,7 +526,7 @@ var CreateEventComponent = (function () {
             autocomplete.addListener("place_changed", function () {
                 _this.ngZone.run(function () {
                     var place = autocomplete.getPlace();
-                    if (place.geometry === undefined || place.geometry === null) {
+                    if (place.geometry == undefined || place.geometry == null) {
                         return;
                     }
                     _this.latitude = place.geometry.location.lat();
@@ -520,14 +537,14 @@ var CreateEventComponent = (function () {
             });
         });
     };
-    CreateEventComponent.prototype.ticketImageUpload = function (event) {
+    CreateEventComponent.prototype.ticketImageUpload = function (event, n, p) {
         var _this = this;
         var resp = event.serverResponse._body;
         var j = JSON.parse(resp);
         var data = {
             "image_url": j.data.link,
-            "price": this.ticket1_price,
-            "title": this.ticket1_name
+            "price": p,
+            "title": n
         };
         console.log(data);
         this.quicky(data).subscribe(function (resp) {
@@ -553,11 +570,17 @@ var CreateEventComponent = (function () {
     };
     CreateEventComponent.prototype.createEvent = function (d, t) {
         var _this = this;
+        if (this.formatted_address == null || this.formatted_address == undefined) {
+            this.event_location = this.event_location;
+        }
+        else {
+            this.event_location = this.formatted_address;
+        }
         var event = {
             coord: [this.latitude, this.longitude],
             date: d,
             image_url: this.image_url,
-            location: this.formatted_address,
+            location: this.event_location,
             name: this.event_name,
             price: this.base_price,
             table: this.tables,
@@ -693,7 +716,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.price}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.purchased}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 

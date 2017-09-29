@@ -10,27 +10,22 @@
     <form class="col s12" (submit)="createEvent(eventDate.value, eventTime.value)" class="row" id="form" novalidate="">
       <div class="row">
         <div class="input-field col s12 m6">
-          <label for="event_name">Event Name</label>
           <input placeholder="Event Name" id="event_name" type="text" class="validate" name="event_name" [(ngModel)]="event_name">
         </div>
         <div class="input-field col s12 m6">
-          <label for="event_location">Event Location</label>
           <input placeholder='Event Location' id="event_location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="validate" name="event_location" [(ngModel)]="event_location" #search [formControl]="searchControl">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-          <label for="event_date">Date</label><br>
-          <input id="event_date" type="text" class="datepicker" #eventDate name="event_date" [(ngModel)]="event_date">
+          <input id="event_date" placeholder='Date' type="text" class="datepicker" #eventDate name="event_date" [(ngModel)]="event_date">
         </div>
         <div class="input-field col s12 m6">
-          <label for="event_time">Time</label><br>
-          <input id="event_time" type="text" class="timepicker" #eventTime name="event_time" [(ngModel)]="event_time">
+          <input id="event_time" placeholder="Time" type="text" class="timepicker" #eventTime name="event_time" [(ngModel)]="event_time">
         </div>
       </div>
       <div class="row"><br>
         <div class="input-field col s12 m6">
-          <label for="price">Base Price</label>
           <input placeholder="Base Price" id="price" type="text" class="validate"  name="base_price" [(ngModel)]="base_price">
         </div>
       </div>
@@ -40,19 +35,77 @@
       <!-- ticket type 1 -->
       <div class="row">
         <div class="input-field col s12 m4">
-          <label for="ticket_name">Ticket Name</label>
-          <input placeholder="e.g. Regular" id="price" type="text" class="validate" name="ticket1_name" [(ngModel)]="ticket1_name">
+          <input placeholder="e.g. Regular" id="price" type="text" class="validate" name="ticket1_name" [(ngModel)]="ticket1_name" #ticket1Name>
         </div>
         <div class="input-field col s12 m4">
-          <label for="ticket_price">Ticket Price</label>
-          <input placeholder='ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price">
+          <input placeholder='Ticket Price' id="ticket_price" type="text" class="validate" name="ticket1_price" [(ngModel)]="ticket1_price" #ticket1Price>
         </div>
         <div class="col s12 m4">
           <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
-          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event)" [extensions]="['jpeg','png','jpg']" #ticketImg></image-upload>
+          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, ticket1Name.value, ticket1Price.value)" [extensions]="['jpeg','png','jpg']"></image-upload>
         </div>
       </div><br>
       <!-- ticket type 1 end-->
+
+      <!-- ticket type 2 -->
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <input placeholder="e.g. VIP" id="price" type="text" class="validate" name="ticket2_name" [(ngModel)]="ticket2_name" #ticket2Name>
+        </div>
+        <div class="input-field col s12 m4">
+          <input placeholder='Ticket Price' id="ticket_price" type="text" class="validate" name="ticket2_price" [(ngModel)]="ticket2_price" #ticket2Price>
+        </div>
+        <div class="col s12 m4">
+          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, ticket2Name.value, ticket2Price.value)" [extensions]="['jpeg','png','jpg']"></image-upload>
+        </div>
+      </div><br>
+      <!-- ticket type 2 end-->
+
+      <!-- ticket type 3 -->
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <input placeholder="e.g. Table of 4" id="price" type="text" class="validate" name="ticket3_name" [(ngModel)]="ticket3_name" #ticket3Name>
+        </div>
+        <div class="input-field col s12 m4">
+          <input placeholder='Ticket Price' id="ticket_price" type="text" class="validate" name="ticket3_price" [(ngModel)]="ticket3_price" #ticket3Price>
+        </div>
+        <div class="col s12 m4">
+          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, ticket3Name.value, ticket3Price.value)" [extensions]="['jpeg','png','jpg']"></image-upload>
+        </div>
+      </div><br>
+      <!-- ticket type 3 end-->
+
+      <!-- ticket type 4 -->
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <input placeholder="e.g. Table of 6" id="price" type="text" class="validate" name="ticket4_name" [(ngModel)]="ticket4_name" #ticket4Name>
+        </div>
+        <div class="input-field col s12 m4">
+          <input placeholder='Ticket Price' id="ticket_price" type="text" class="validate" name="ticket4_price" [(ngModel)]="ticket4_price" #ticket4Price>
+        </div>
+        <div class="col s12 m4">
+          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, ticket4Name.value, ticket4Price.value)" [extensions]="['jpeg','png','jpg']"></image-upload>
+        </div>
+      </div><br>
+      <!-- ticket type 4 end-->
+
+      <!-- ticket type 5 -->
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <input placeholder="e.g. Table of 8" id="price" type="text" class="validate" name="ticket5_name" [(ngModel)]="ticket5_name" #ticket5Name>
+        </div>
+        <div class="input-field col s12 m4">
+          <input placeholder='Ticket Price' id="ticket_price" type="text" class="validate" name="ticket5_price" [(ngModel)]="ticket5_price" #ticket5Price>
+        </div>
+        <div class="col s12 m4">
+          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, ticket5Name.value, ticket5Price.value)" [extensions]="['jpeg','png','jpg']"></image-upload>
+        </div>
+      </div><br>
+      <!-- ticket type 5 end-->
 
       <br><br>
       <div class="row">

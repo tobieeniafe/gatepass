@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-//import { NgStyle } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/Rx';
+declare var Materialize: any;
 
 @Component({
   selector: 'app-root',
@@ -8,8 +11,22 @@ import { Component } from '@angular/core';
 })
 
 
+export class AppComponent implements OnInit {
 
+  computerIsOnline: Observable<boolean>;
 
-export class AppComponent {
+  constructor() {
+    Observable.interval(1000).subscribe(() => {
+      this.computerIsOnline = Observable.merge(
+        Observable.of(navigator.onLine),
+        Observable.fromEvent(window, 'online').map(() => true),
+        Observable.fromEvent(window, 'offline').map(() => {
+          Materialize.toast(`Seems you're offline`, 3000, 'grey darken-3 white-text')
+          //return false
+        })
+      );
+    });
+  }
 
+  ngOnInit() {}
 }

@@ -19,7 +19,7 @@
               <td>{{event.name}}</td>
               <td>{{event.location}}</td>
               <td>{{event.date}}</td>
-              <td>{{event.price}}</td>
+              <td>{{event.purchased}}</td>
               <td *ngIf='!event.disabled'>
                 <div class="switch">
                     <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}"  [disabled]='loading'><span class="lever"></span>On</label>

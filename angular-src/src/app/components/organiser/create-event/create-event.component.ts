@@ -58,7 +58,7 @@ export class CreateEventComponent implements OnInit {
         this.ngZone.run(() => {
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          if (place.geometry === undefined || place.geometry === null) {
+          if (place.geometry == undefined || place.geometry == null) {
             return;
           }
 
@@ -72,13 +72,13 @@ export class CreateEventComponent implements OnInit {
 
   }
 
-ticketImageUpload(event){
+ticketImageUpload(event, n, p){
     const resp = event.serverResponse._body
     const j = JSON.parse(resp)
     const data  = {
       "image_url": j.data.link,
-      "price": this.ticket1_price,
-      "title": this.ticket1_name
+      "price": p,
+      "title": n
     }
     console.log(data)
 
@@ -96,7 +96,7 @@ ticketImageUpload(event){
     header.append('Content-Type','application/json');
     header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
     header.append('Authorization', localStorage.getItem('token'));
-     return this._http.post("https://gatepassng.herokuapp.com/api/v1/table", data, {headers: header}).map(res => res.json())
+     return this._http.post(`https://gatepassng.herokuapp.com/api/v1/table`, data, {headers: header}).map(res => res.json())
   }
 
   eventImageUpload(event){
@@ -107,11 +107,18 @@ ticketImageUpload(event){
   }
 
   createEvent(d, t){
+
+    if (this.formatted_address == null || this.formatted_address == undefined) {
+        this.event_location = this.event_location;
+    } else {
+      this.event_location = this.formatted_address;
+    }
+
     const event = {
       coord: [this.latitude, this.longitude],
       date: d,
       image_url: this.image_url,
-      location: this.formatted_address,//this.event_location,
+      location: this.event_location,
       name: this.event_name,
       price: this.base_price,
       table: this.tables,
