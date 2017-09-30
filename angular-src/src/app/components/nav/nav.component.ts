@@ -3,6 +3,8 @@ import {AuthService} from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 declare var Materialize: any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-nav',
@@ -16,7 +18,15 @@ export class NavComponent implements OnInit {
   loggedIn$ = new BehaviorSubject<boolean>(this.loggedIn);
 
   constructor(public _auth:AuthService, private router: Router) {
-    //console.log(this._auth.loggedIn())
+      //console.log(this._auth.loggedIn())
+      (function($){
+        $(function(){
+          $('.button-collapse').sideNav({
+            closeOnClick: true,
+            draggable: true
+          });
+        });
+      })(jQuery);
    }
 
   ngOnInit() {

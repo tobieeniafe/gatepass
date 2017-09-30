@@ -33,10 +33,10 @@ export class LoginComponent implements OnInit {
 
       this._auth.loginUser(user).subscribe(data => {
         if(data.status == false){
-          Materialize.toast('Invalid email or password', 5000, 'red white-text');
+          Materialize.toast('Invalid email or password', 3000, 'red white-text');
           this.isDisabled = false;
         }else if(data.status == true){
-          Materialize.toast('Login successful', 5000, 'green white-text');
+          Materialize.toast('Login successful', 3000, 'green white-text');
           localStorage.setItem('token', data.token);
           //console.log(localStorage.getItem('token'));
           this.isDisabled = false;

@@ -15,9 +15,6 @@ export class CreateEventService {
      (function($){
       $(function(){
 
-        $('.button-collapse').sideNav();
-        $('.parallax').parallax();
-
         $('.datepicker').pickadate({
           format: 'dd/mm/yyyy',
           formatSubmit: 'dd/mm/yyyy',

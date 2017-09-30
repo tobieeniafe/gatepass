@@ -125,7 +125,16 @@ h1, h2, h3, h4, h5, p{
   font-family: 'avenirNextCondensed' !important;
 }
 
-li .active{
+li .active, li .active i {
   background-color: #24242e;
   color: #ffffff !important;
+}
+
+.fa{
+  font-weight: lighter !important;
+  font-size: 1.3rem !important;
+}
+
+.side-nav li > a:hover {
+    background-color: #24242e;
 }

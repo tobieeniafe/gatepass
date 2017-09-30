@@ -59,11 +59,11 @@ export class RegisterComponent implements OnInit {
      this._auth.registerUser(user).subscribe(data => {
        console.log(data);
        if (data.status == false) {
-         Materialize.toast(data.message+'s', 5000, 'red white-text');
+         Materialize.toast(data.message+'s', 3000, 'red white-text');
          this.isDisabled = false;
        }else if(data.status == true){
          //Flash message
-         Materialize.toast('Registration successful', 5000, 'green white-text');
+         Materialize.toast('Registration successful', 3000, 'green white-text');
          localStorage.setItem('token', data.token);
          //console.log(localStorage.setItem('token', data.token));
          this._router.navigate(['/events']);
