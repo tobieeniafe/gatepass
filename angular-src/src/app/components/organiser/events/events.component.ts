@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { EventsService } from './events.service';
 import { Http, Headers } from '@angular/http';
 declare var Materialize: any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'events',
@@ -24,6 +26,19 @@ export class EventsComponent implements OnInit {
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
     this.token = localStorage.getItem('token');
+    $(document).ready(function(){
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            opacity: .5, // Opacity of modal background
+            inDuration: 300, // Transition in duration
+            outDuration: 200, // Transition out duration
+            startingTop: '4%', // Starting top style attribute
+            endingTop: '10%', // Ending top style attribute
+            ready: function(){},
+            complete: function(){} // Callback for Modal close
+          });
+    });
   }
 
   ngOnInit(){}

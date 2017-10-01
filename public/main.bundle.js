@@ -166,10 +166,10 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_7__agm_core__["a" /* AgmCoreModule */].forRoot({
                 apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k',
@@ -329,11 +329,11 @@ var LoginComponent = (function () {
         };
         this._auth.loginUser(user).subscribe(function (data) {
             if (data.status == false) {
-                Materialize.toast('Invalid email or password', 5000, 'red white-text');
+                Materialize.toast('Invalid email or password', 3000, 'red white-text');
                 _this.isDisabled = false;
             }
             else if (data.status == true) {
-                Materialize.toast('Login successful', 5000, 'green white-text');
+                Materialize.toast('Login successful', 3000, 'green white-text');
                 localStorage.setItem('token', data.token);
                 //console.log(localStorage.getItem('token'));
                 _this.isDisabled = false;
@@ -370,7 +370,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".body{\r\n  min-width: 100% !important;\r\n  min-height: 100% !important;\r\n}\r\n\r\ndiv .container a img{\r\n  width: 210px !important;\r\n  height: 55px !important;\r\n\r\n}\r\n\r\n@media only screen and (max-width: 400px) {\r\n  div .container a img{\r\n    width: 180px !important;\r\n    height: 55px !important;\r\n\r\n  }\r\n}\r\n", ""]);
+exports.push([module.i, ".body{\r\n  min-width: 100% !important;\r\n  min-height: 100% !important;\r\n}\r\n\r\ndiv .container a img{\r\n  width: 210px !important;\r\n  height: 55px !important;\r\n\r\n}\r\n\r\n@media only screen and (max-width: 400px) {\r\n  div .container a img{\r\n    width: 150px !important;\r\n    height: 50px !important;\r\n\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -383,7 +383,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><img src=\"{{logo}}\"></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><img src=\"{{logo}}\"></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings <i class=\"fa fa-cogs\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -417,6 +417,14 @@ var NavComponent = (function () {
         this.logo = 'assets/img/logo.png';
         this.loggedIn$ = new __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__["BehaviorSubject"](this.loggedIn);
         //console.log(this._auth.loggedIn())
+        (function ($) {
+            $(function () {
+                $('.button-collapse').sideNav({
+                    closeOnClick: true,
+                    draggable: true
+                });
+            });
+        })(jQuery);
     }
     NavComponent.prototype.ngOnInit = function () {
     };
@@ -456,7 +464,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".body{\r\n  min-height: 100vh;\r\n  padding-bottom: 70px;\r\n}\r\n\r\nlabel{\r\n  font-size: 12px !important;\r\n}\r\n\r\nagm-map {\r\n  height: 100vh;\r\n}\r\n\r\n/deep/ image-upload label.upload.button {\r\n  background-color: #24242e;\r\n  text-transform: lowercase;\r\n  font-weight: normal;\r\n  padding: 6px;\r\n  border-radius: 3px;\r\n  font-family: 'avenirNextCondensed';\r\n}\r\n\r\n/deep/ image-upload label.clear span{\r\n  text-transform: lowercase;\r\n  font-weight: normal;\r\n  background-color: #d32f2f;\r\n}\r\n\r\n/deep/ image-upload label.clear.button{\r\n  background-color: #d32f2f;\r\n  border-radius: 3px;\r\n  padding: 6px;\r\n}\r\n\r\n/deep/ image-upload div.image-container.hr-inline-group{\r\n  background-color: #f8f8f8;\r\n}\r\n", ""]);
+exports.push([module.i, ".body{\r\n  min-height: 100vh;\r\n  padding-bottom: 70px;\r\n}\r\n\r\nlabel{\r\n  font-size: 12px !important;\r\n}\r\n\r\nagm-map {\r\n  height: 100vh;\r\n}\r\n\r\n/deep/ image-upload label.upload.button {\r\n  background-color: #24242e;\r\n  text-transform: lowercase;\r\n  font-weight: normal;\r\n  padding: 6px;\r\n  border-radius: 3px;\r\n  font-family: 'avenirNextCondensed';\r\n}\r\n\r\n/deep/ image-upload label.clear span{\r\n  text-transform: lowercase;\r\n  font-weight: normal;\r\n  background-color: #d32f2f;\r\n}\r\n\r\n/deep/ image-upload label.clear.button{\r\n  background-color: #d32f2f;\r\n  border-radius: 3px;\r\n  padding: 6px;\r\n}\r\n\r\n/deep/ image-upload div.image-container.hr-inline-group{\r\n  background-color: #f8f8f8;\r\n}\r\n\r\nh6, h6 .fa{\r\n  font-size: 20px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -469,7 +477,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/create-event/create-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n    <h5>Create Event</h5>\r\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m6 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Base Price\" id=\"price\" type=\"text\" class=\"validate\"  name=\"base_price\" [(ngModel)]=\"base_price\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5>Ticket Details</h5><br>\r\n\r\n      <!-- ticket type 1 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Regular\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket1_name\" [(ngModel)]=\"ticket1_name\" #ticket1Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket1_price\" [(ngModel)]=\"ticket1_price\" #ticket1Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket1Name.value, ticket1Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 1 end-->\r\n\r\n      <!-- ticket type 2 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. VIP\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket2_name\" [(ngModel)]=\"ticket2_name\" #ticket2Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket2_price\" [(ngModel)]=\"ticket2_price\" #ticket2Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket2Name.value, ticket2Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 2 end-->\r\n\r\n      <!-- ticket type 3 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Table of 4\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket3_name\" [(ngModel)]=\"ticket3_name\" #ticket3Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket3_price\" [(ngModel)]=\"ticket3_price\" #ticket3Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket3Name.value, ticket3Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 3 end-->\r\n\r\n      <!-- ticket type 4 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Table of 6\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket4_name\" [(ngModel)]=\"ticket4_name\" #ticket4Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket4_price\" [(ngModel)]=\"ticket4_price\" #ticket4Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket4Name.value, ticket4Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 4 end-->\r\n\r\n      <!-- ticket type 5 -->\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder=\"e.g. Table of 8\" id=\"price\" type=\"text\" class=\"validate\" name=\"ticket5_name\" [(ngModel)]=\"ticket5_name\" #ticket5Name>\r\n        </div>\r\n        <div class=\"input-field col s12 m4\">\r\n          <input placeholder='Ticket Price' id=\"ticket_price\" type=\"text\" class=\"validate\" name=\"ticket5_price\" [(ngModel)]=\"ticket5_price\" #ticket5Price>\r\n        </div>\r\n        <div class=\"col s12 m4\">\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, ticket5Name.value, ticket5Price.value)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n        </div>\r\n      </div><br>\r\n      <!-- ticket type 5 end-->\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n\r\n  <div class=\"col m6 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12\">\r\n    <h5>Create Event</h5>\r\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m8 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Base Price\" id=\"price\" type=\"text\" class=\"validate\"  name=\"base_price\" [(ngModel)]=\"base_price\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5>Ticket Details</h5><br>\r\n\r\n      <form [formGroup]=\"ticketForm\" novalidate>\r\n          <div formArrayName=\"tickets\" class=\"row\">\r\n              <div *ngFor=\"let ticket of ticketForm.controls.tickets.controls; let i=index\" class=\"row\">\r\n                  <div class=\"col m7\" [formGroupName]=\"i\">\r\n                    <div class=\"col m6 s12\">\r\n                        <input type=\"text\" formControlName=\"ticketName\" placeholder=\"e.g. Regular, VIP\">\r\n                    </div>\r\n                    <div class=\"col m6 s12\">\r\n                        <input type=\"text\" formControlName=\"ticketPrice\" placeholder='Ticket Price'>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"col m3 s10\">\r\n                    <image-upload  [max]=\"1\" *ngIf=\"ticketForm.controls.tickets.controls[i].controls.ticketName.valid\" [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n                    buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, i)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n                  </div>\r\n                  <div class=\"col m2 s2\">\r\n                      <a class=\"btn white-text btn-floating waves-effect waves-light\" *ngIf=\"ticketForm.controls.tickets.controls.length > 1\" (click)=\"removeTicket(i)\"><i class=\"fa fa-trash\"></i></a>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n          <div class=\"col\">\r\n              <a style=\"float: left\" (click)=\"addTicket()\"><h6>Add another ticket <i class=\"fa fa-plus\"></i></h6></a>\r\n          </div>\r\n      </form>\r\n\r\n\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://api.imgur.com/3/upload'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n<!-- map here -->\r\n  <div class=\"col m4 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n<!-- map ends here -->\r\n"
 
 /***/ }),
 
@@ -500,12 +508,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var CreateEventComponent = (function () {
-    function CreateEventComponent(createEventService, router, _http, mapsAPILoader, ngZone) {
+    function CreateEventComponent(createEventService, router, _http, mapsAPILoader, ngZone, _fb) {
         this.createEventService = createEventService;
         this.router = router;
         this._http = _http;
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
+        this._fb = _fb;
         this.mapTitle = 'google map';
         this.tables = [];
         this.isDisabled = true;
@@ -519,7 +528,12 @@ var CreateEventComponent = (function () {
                 _this.longitude = position.coords.longitude;
             });
         }
-        this.searchControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormControl */]();
+        this.ticketForm = this._fb.group({
+            tickets: this._fb.array([
+                this.initTicket(),
+            ])
+        });
+        this.searchControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]();
         //load Places Autocomplete
         this.mapsAPILoader.load().then(function () {
             var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {});
@@ -531,20 +545,34 @@ var CreateEventComponent = (function () {
                     }
                     _this.latitude = place.geometry.location.lat();
                     _this.longitude = place.geometry.location.lng();
-                    _this.formatted_address = place.formatted_address;
-                    //console.log(`${this.formatted_address}  ${this.latitude}   ${this.longitude}`);
+                    _this.formatted_address = place.name + ", " + place.formatted_address;
+                    //console.log(`${place.name}, ${place.formatted_address}`);
                 });
             });
         });
     };
-    CreateEventComponent.prototype.ticketImageUpload = function (event, n, p) {
+    CreateEventComponent.prototype.initTicket = function () {
+        return this._fb.group({
+            ticketName: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* Validators */].required],
+            ticketPrice: ['']
+        });
+    };
+    CreateEventComponent.prototype.addTicket = function () {
+        var control = this.ticketForm.controls['tickets'];
+        control.push(this.initTicket());
+    };
+    CreateEventComponent.prototype.removeTicket = function (i) {
+        var control = this.ticketForm.controls['tickets'];
+        control.removeAt(i);
+    };
+    CreateEventComponent.prototype.ticketImageUpload = function (event, i) {
         var _this = this;
         var resp = event.serverResponse._body;
         var j = JSON.parse(resp);
         var data = {
             "image_url": j.data.link,
-            "price": p,
-            "title": n
+            "price": this.ticketForm.value.tickets[i].ticketPrice,
+            "title": this.ticketForm.value.tickets[i].ticketName
         };
         console.log(data);
         this.quicky(data).subscribe(function (resp) {
@@ -612,10 +640,10 @@ CreateEventComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.css")],
         providers: [__WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _g || Object])
 ], CreateEventComponent);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=create-event.component.js.map
 
 /***/ }),
@@ -648,8 +676,6 @@ var CreateEventService = (function () {
         this.token = localStorage.getItem('token');
         (function ($) {
             $(function () {
-                $('.button-collapse').sideNav();
-                $('.parallax').parallax();
                 $('.datepicker').pickadate({
                     format: 'dd/mm/yyyy',
                     formatSubmit: 'dd/mm/yyyy',
@@ -703,7 +729,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".body{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n\r\n@media only screen and (max-width: 800px) {\r\n  .body{\r\n    min-height: 85vh !important;\r\n    padding: 5px;\r\n  }\r\n}\r\n", ""]);
+exports.push([module.i, ".body{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n\r\n#checkoutModal, #otpModal{\r\n  width: 350px !important;\r\n}\r\n\r\n@media only screen and (max-width: 800px) {\r\n  .body{\r\n    min-height: 85vh !important;\r\n    padding: 5px;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -716,7 +742,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.purchased}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>Expired Event</td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n          <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.purchased}}</td>\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>\r\n                <a class=\"waves-effect waves-light btn modal-trigger white-text\" href=\"#checkoutModal\">Checkout</a>\r\n              </td>\r\n            </tr>\n        </tbody>\r\n  </table>\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div><div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n    <a class=\"waves-effect waves-light btn modal-trigger white-text\" href=\"#checkoutModal\">Checkout</a>\r\n    <a class=\"waves-effect waves-light btn modal-trigger white-text\" href=\"#otpModal\">OTP</a>\r\n\r\n    <!-- Checkout Modal -->\r\n    <div id=\"checkoutModal\" class=\"modal\">\r\n      <div class=\"modal-content\">\r\n        <h4 align='center' class=\"green-text\">&#8358;20,000</h4>\r\n        <h5 align='center' class=\"grey-text\">Choose your bank</h5>\r\n        <p></p>\r\n          <hr>\r\n            <input class=\"with-gap\" name=\"bank\" id='gtb' type=\"radio\" checked>\r\n            <label for=\"gtb\">Guarantee Trust Bank</label>\r\n          <hr>\r\n            <input class=\"with-gap\" name=\"bank\" id='fbplc' type=\"radio\">\r\n            <label for=\"fbplc\">First Bank PLC</label>\r\n          <hr>\r\n            <input class=\"with-gap\" name=\"bank\" id='acb' type=\"radio\">\r\n            <label for=\"acb\">Access Bank</label>\r\n          <hr>\r\n            <input class=\"with-gap\" name=\"bank\" id='fb' type=\"radio\">\r\n            <label for=\"fb\">Fidelity Bank</label>\r\n          <hr>\r\n          <div class=\"col\">\r\n            <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\">Get Payed</button>\r\n          </div>\r\n          <h5 align='center' class=\"grey-text\">Add a new bank</h5>\r\n      </div>\r\n    </div>\r\n    <!-- Checkout Modal End -->\r\n\r\n    <!-- OTP Modal -->\r\n    <div id=\"otpModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">OTP</h4>\r\n        <p class=\"grey-text\">An OTP code has been sent to your registered phone number</p>\r\n          <input class=\"\" type=\"text\" placeholder=\"OTP code\">\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\">Proceed</button>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- OTP Modal End -->\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -754,6 +780,19 @@ var EventsComponent = (function () {
         this.loading = false;
         this.viewEvents();
         this.token = localStorage.getItem('token');
+        $(document).ready(function () {
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal({
+                dismissible: true,
+                opacity: .5,
+                inDuration: 300,
+                outDuration: 200,
+                startingTop: '4%',
+                endingTop: '10%',
+                ready: function () { },
+                complete: function () { } // Callback for Modal close
+            });
+        });
     }
     EventsComponent.prototype.ngOnInit = function () { };
     EventsComponent.prototype.viewEvents = function () {
@@ -1066,12 +1105,12 @@ var RegisterComponent = (function () {
         this._auth.registerUser(user).subscribe(function (data) {
             console.log(data);
             if (data.status == false) {
-                Materialize.toast(data.message + 's', 5000, 'red white-text');
+                Materialize.toast(data.message + 's', 3000, 'red white-text');
                 _this.isDisabled = false;
             }
             else if (data.status == true) {
                 //Flash message
-                Materialize.toast('Registration successful', 5000, 'green white-text');
+                Materialize.toast('Registration successful', 3000, 'green white-text');
                 localStorage.setItem('token', data.token);
                 //console.log(localStorage.setItem('token', data.token));
                 _this._router.navigate(['/events']);

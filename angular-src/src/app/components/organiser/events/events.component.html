@@ -25,7 +25,9 @@
                     <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}"  [disabled]='loading'><span class="lever"></span>On</label>
                 </div>
               </td>
-              <td class="red-text" *ngIf='event.disabled'>Expired Event</td>
+              <td class="red-text" *ngIf='event.disabled'>
+                <a class="waves-effect waves-light btn modal-trigger white-text" href="#checkoutModal">Checkout</a>
+              </td>
             </tr>
         </tbody>
   </table>
@@ -44,5 +46,49 @@
       </div>
     </div>
   </div>
+
+
+    <a class="waves-effect waves-light btn modal-trigger white-text" href="#checkoutModal">Checkout</a>
+    <a class="waves-effect waves-light btn modal-trigger white-text" href="#otpModal">OTP</a>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content">
+        <h4 align='center' class="green-text">&#8358;20,000</h4>
+        <h5 align='center' class="grey-text">Choose your bank</h5>
+        <p></p>
+          <hr>
+            <input class="with-gap" name="bank" id='gtb' type="radio" checked>
+            <label for="gtb">Guarantee Trust Bank</label>
+          <hr>
+            <input class="with-gap" name="bank" id='fbplc' type="radio">
+            <label for="fbplc">First Bank PLC</label>
+          <hr>
+            <input class="with-gap" name="bank" id='acb' type="radio">
+            <label for="acb">Access Bank</label>
+          <hr>
+            <input class="with-gap" name="bank" id='fb' type="radio">
+            <label for="fb">Fidelity Bank</label>
+          <hr>
+          <div class="col">
+            <button type="button" name="button" class="btn waves-effect waves-light">Get Payed</button>
+          </div>
+          <h5 align='center' class="grey-text">Add a new bank</h5>
+      </div>
+    </div>
+    <!-- Checkout Modal End -->
+
+    <!-- OTP Modal -->
+    <div id="otpModal" class="modal row" align="center">
+      <div class="col m1 s1"></div>
+      <div class="modal-content col m10 s10">
+        <h4 align='center' class="grey-text">OTP</h4>
+        <p class="grey-text">An OTP code has been sent to your registered phone number</p>
+          <input class="" type="text" placeholder="OTP code">
+          <button type="button" name="button" class="btn waves-effect waves-light">Proceed</button>
+      </div>
+      <div class="col m1 s1"></div>
+    </div>
+    <!-- OTP Modal End -->
 
 </div>

@@ -119,13 +119,43 @@ p{
 
 a{
   color: #24242e !important;
+  cursor: pointer !important;
 }
 
-h1, h2, h3, h4, h5, p{
+h1, h2, h3, h4, h5, h6, p{
   font-family: 'avenirNextCondensed' !important;
 }
 
-li .active{
+li .active, li .active i {
   background-color: #24242e;
   color: #ffffff !important;
+}
+
+.fa{
+  font-weight: lighter !important;
+  font-size: 1.3rem !important;
+}
+
+.side-nav li > a:hover {
+    background-color: #24242e;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #4c4c57;
 }

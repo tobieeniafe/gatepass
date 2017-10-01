@@ -1,5 +1,5 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from "@angular/forms";
+import { FormControl, ReactiveFormsModule, FormGroup, FormArray, FormBuilder, Validators } from "@angular/forms";
 import { MapsAPILoader } from '@agm/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -25,18 +25,17 @@ export class CreateEventComponent implements OnInit {
   event_location: any;
   event_time: any;
   base_price: any;
-  ticket1_name: any
-  ticket1_price: any;
   tables: string[] = [];
   isDisabled: boolean = true;
   image_url: any;
   searchControl: FormControl;
   formatted_address: string;
+   ticketForm: FormGroup;
 
    @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  constructor(private createEventService: CreateEventService,private router: Router,private _http: Http, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) { }
+  constructor(private createEventService: CreateEventService,private router: Router,private _http: Http, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private _fb: FormBuilder) { }
 
   ngOnInit() {
     if(navigator.geolocation){
@@ -46,6 +45,12 @@ export class CreateEventComponent implements OnInit {
         this.longitude = position.coords.longitude;
       });
     }
+
+    this.ticketForm = this._fb.group({
+        tickets: this._fb.array([
+            this.initTicket(),
+        ])
+    });
 
     this.searchControl = new FormControl();
 
@@ -64,21 +69,38 @@ export class CreateEventComponent implements OnInit {
 
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
-          this.formatted_address = place.formatted_address;
-          //console.log(`${this.formatted_address}  ${this.latitude}   ${this.longitude}`);
+          this.formatted_address = `${place.name}, ${place.formatted_address}`;
+          //console.log(`${place.name}, ${place.formatted_address}`);
         });
       });
     });
 
   }
 
-ticketImageUpload(event, n, p){
+  initTicket() {
+      return this._fb.group({
+          ticketName: ['', Validators.required],
+          ticketPrice: ['']
+      });
+  }
+
+  addTicket() {
+      const control = <FormArray>this.ticketForm.controls['tickets'];
+      control.push(this.initTicket());
+  }
+
+  removeTicket(i: number) {
+      const control = <FormArray>this.ticketForm.controls['tickets'];
+      control.removeAt(i);
+  }
+
+ticketImageUpload(event,i){
     const resp = event.serverResponse._body
     const j = JSON.parse(resp)
     const data  = {
       "image_url": j.data.link,
-      "price": p,
-      "title": n
+      "price": this.ticketForm.value.tickets[i].ticketPrice,
+      "title": this.ticketForm.value.tickets[i].ticketName
     }
     console.log(data)
 
@@ -142,4 +164,12 @@ ticketImageUpload(event, n, p){
     );
   }
 
+
+
+}
+
+
+export interface Ticket {
+    ticketName: string;
+    ticketPrice: string;
 }
