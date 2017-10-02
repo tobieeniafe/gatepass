@@ -25,12 +25,13 @@ export class CreateEventComponent implements OnInit {
   event_location: any;
   event_time: any;
   base_price: any;
+  contact: any;
   tables: string[] = [];
   isDisabled: boolean = true;
   image_url: any;
   searchControl: FormControl;
   formatted_address: string;
-   ticketForm: FormGroup;
+  ticketForm: FormGroup;
 
    @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -144,7 +145,8 @@ ticketImageUpload(event,i){
       name: this.event_name,
       price: this.base_price,
       table: this.tables,
-      time: t
+      time: t,
+      contact: this.contact
     }
 
     this.createEventService.postEvent(event).subscribe(

@@ -37,7 +37,9 @@ export class EventsComponent implements OnInit {
             endingTop: '10%', // Ending top style attribute
             ready: function(){},
             complete: function(){} // Callback for Modal close
-          });
+      });
+
+
     });
   }
 
@@ -76,7 +78,11 @@ export class EventsComponent implements OnInit {
       }
 
     })
+  }
 
+  showOtpModal(){
+    $('#checkoutModal').modal('close');
+    $('#otpModal').modal('open');
   }
 
 }

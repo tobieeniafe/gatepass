@@ -19,7 +19,7 @@
               <td>{{event.name}}</td>
               <td>{{event.location}}</td>
               <td>{{event.date}}</td>
-              <td>{{event.purchased}}</td>
+              <td>{{event.purchased?.length}}</td>
               <td *ngIf='!event.disabled'>
                 <div class="switch">
                     <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}"  [disabled]='loading'><span class="lever"></span>On</label>
@@ -48,9 +48,6 @@
   </div>
 
 
-    <a class="waves-effect waves-light btn modal-trigger white-text" href="#checkoutModal">Checkout</a>
-    <a class="waves-effect waves-light btn modal-trigger white-text" href="#otpModal">OTP</a>
-
     <!-- Checkout Modal -->
     <div id="checkoutModal" class="modal">
       <div class="modal-content">
@@ -71,7 +68,7 @@
             <label for="fb">Fidelity Bank</label>
           <hr>
           <div class="col">
-            <button type="button" name="button" class="btn waves-effect waves-light">Get Payed</button>
+            <a class="waves-effect waves-light btn white-text" (click)='showOtpModal()'>Get Payed</a>
           </div>
           <h5 align='center' class="grey-text">Add a new bank</h5>
       </div>
