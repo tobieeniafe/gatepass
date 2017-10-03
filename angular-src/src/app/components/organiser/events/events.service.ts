@@ -16,6 +16,7 @@ export class EventsService {
   getEvent() {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
+    headers.append('Access-Control-Allow-Origin:', '*');
 
     return this.http.get('https://gatepassng.herokuapp.com/api/v1/events', {headers: headers})
     .map(res => {
