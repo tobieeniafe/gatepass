@@ -878,7 +878,6 @@ var EventsService = (function () {
     EventsService.prototype.getEvent = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        headers.append('Access-Control-Allow-Origin:', '*');
         return this.http.get('https://gatepassng.herokuapp.com/api/v1/events', { headers: headers })
             .map(function (res) {
             return res.json();
