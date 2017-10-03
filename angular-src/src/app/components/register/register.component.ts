@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-import {AuthService} from '../../services/auth.service'
-import {ValidatorService} from '../../services/validator.service'
-
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location} from '@angular/common';
+import {AuthService} from '../../services/auth.service'
+import {ValidatorService} from '../../services/validator.service'
 
 declare var Materialize: any;
 
