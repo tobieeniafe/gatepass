@@ -4,7 +4,12 @@
 }
 
 #checkoutModal, #otpModal{
-  width: 350px !important;
+  width: 370px !important;
+  min-height: 370px;
+}
+
+#addBankModal {
+  height: 400px;
 }
 
 @media only screen and (max-width: 800px) {

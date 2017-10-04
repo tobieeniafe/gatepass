@@ -33,4 +33,24 @@ export class EventsService {
     });
   }
 
+  getBanks() {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.token );
+
+    return this.http.get('https://gatepassng.herokuapp.com/api/v1/organiser/bank', {headers: headers})
+    .map(res => {
+        return res.json();
+    });
+  }
+
+  addBank(details){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.token );
+    console.log(details)
+    return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/bank', details, {headers: headers})
+    .map(res => {
+        return res.json();
+    });
+  }
+
 }

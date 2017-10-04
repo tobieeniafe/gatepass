@@ -13,13 +13,14 @@
         </thead>
 
         <tbody *ngIf='events'>
-          <tr *ngIf='noEvent'><td colspan="6"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>
+            <tr *ngIf='noEvent'><td colspan="6"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>
             <tr *ngFor="let event of events; let i = index">
-              <td>{{i+1}}</td>
+              <td>{{i+1}}<i class="fa fa-arrow-circle-down"></i></td>
               <td>{{event.name}}</td>
               <td>{{event.location}}</td>
               <td>{{event.date}}</td>
               <td>{{event.purchased?.length}}</td>
+
               <td *ngIf='!event.disabled'>
                 <div class="switch">
                     <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}"  [disabled]='loading'><span class="lever"></span>On</label>
@@ -31,6 +32,7 @@
             </tr>
         </tbody>
   </table>
+
   <br><br><br>
   <div *ngIf='preloader' align='center'>
     <h5>Loading events</h5>
@@ -38,9 +40,11 @@
       <div class="spinner-layer">
         <div class="circle-clipper left">
           <div class="circle"></div>
-        </div><div class="gap-patch">
+        </div>
+        <div class="gap-patch">
           <div class="circle"></div>
-        </div><div class="circle-clipper right">
+        </div>
+        <div class="circle-clipper right">
           <div class="circle"></div>
         </div>
       </div>
@@ -52,25 +56,20 @@
     <div id="checkoutModal" class="modal">
       <div class="modal-content">
         <h4 align='center' class="green-text">&#8358;20,000</h4>
-        <h5 align='center' class="grey-text">Choose your bank</h5>
+        <h5 align='center' class="grey-text">Your banks</h5>
         <p></p>
           <hr>
-            <input class="with-gap" name="bank" id='gtb' type="radio" checked>
-            <label for="gtb">Guarantee Trust Bank</label>
-          <hr>
-            <input class="with-gap" name="bank" id='fbplc' type="radio">
-            <label for="fbplc">First Bank PLC</label>
-          <hr>
-            <input class="with-gap" name="bank" id='acb' type="radio">
-            <label for="acb">Access Bank</label>
-          <hr>
-            <input class="with-gap" name="bank" id='fb' type="radio">
-            <label for="fb">Fidelity Bank</label>
-          <hr>
+          <span *ngFor='let bank of myBanks; let i = index'>
+            <input class="with-gap" id='{{i}}' type="radio" name="banks">
+            <label for="{{i}}">{{bank.bank_name}} {{bank.account_number}}</label>
+            <hr>
+          </span>
+
           <div class="col">
             <a class="waves-effect waves-light btn white-text" (click)='showOtpModal()'>Get Payed</a>
+            <br>
+            <a class="modal-trigger" href="#addBankModal"><h5 class="grey-text">Add a new bank</h5></a>
           </div>
-          <h5 align='center' class="grey-text">Add a new bank</h5>
       </div>
     </div>
     <!-- Checkout Modal End -->
@@ -87,5 +86,37 @@
       <div class="col m1 s1"></div>
     </div>
     <!-- OTP Modal End -->
+
+    <!-- Add Bank Modal -->
+    <div id="addBankModal" class="modal row" align="center">
+      <div class="col m1 s1"></div>
+      <div class="modal-content col m10 s10">
+        <h4 align='center' class="grey-text">Add New Bank</h4>
+          <div class="input-field col s12">
+            <select #selectedBank>
+              <option *ngFor='let bank of allBanks' [value]='bank.code'> {{bank.name}} </option>
+            </select>
+          </div>
+          <div class="input-field col s12">
+            <input class="" type="text" placeholder="Account Number" [(ngModel)]='accountNumber'>
+          </div>
+          <button type="button" name="button" class="btn waves-effect waves-light" (click)='addBank(selectedBank.value)' [disabled]='addingBank'>Add Bank</button>
+          <br><br>
+          <div class="preloader-wrapper small active" *ngIf='addingBank'>
+            <div class="spinner-layer">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col m1 s1"></div>
+    </div>
+    <!-- Add Bank Modal End -->
+
 
 </div>
