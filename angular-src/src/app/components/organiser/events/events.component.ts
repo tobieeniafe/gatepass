@@ -50,9 +50,11 @@ export class EventsComponent implements OnInit {
     {name:"Providus Bank",slug:"providus-bank",code:"101",longcode:"",gateway:null,pay_with_bank:false,active:true,is_deleted:null,id:25,createdAt:"2017-03-27T16:09:29.000Z",updatedAt:"2017-03-27T16:09:29.000Z"},
     {name:"Parallex Bank",slug:"parallex-bank",code:"526",longcode:"",gateway:null,pay_with_bank:false,active:true,is_deleted:null,id:26,createdAt:"2017-03-31T13:54:29.000Z",updatedAt:"2017-03-31T13:54:29.000Z"}
   ];
-  selectedBank: any;
   accountNumber: any;
-  addingBank: boolean =  false;
+  addingBank: boolean = false;
+  noBank: boolean = false;
+  checkoutValue: any;
+  transferBankCode: any;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -99,7 +101,7 @@ export class EventsComponent implements OnInit {
     }
 
     this.eventsService.updateStatus(e._id.$oid, this.message).subscribe(data => {
-      console.log(data);
+      //console.log(data);
       if (data.status == true) {
           Materialize.toast(`Event ${e.name}'s status updated`, 3000, 'green white-text');
           this.loading = false;
@@ -115,6 +117,9 @@ export class EventsComponent implements OnInit {
     this.eventsService.getBanks().subscribe(
        data => {
          this.myBanks = data;
+         if(this.myBanks.length == 0){
+           this.noBank = true;
+         }
          console.log(data);
        },
        err => console.log(err),
@@ -147,9 +152,28 @@ export class EventsComponent implements OnInit {
 
   }
 
-  showOtpModal(){
+  radioSelectChange(b) {
+    this.transferBankCode = b.recipient_code;
+  }
+
+  getPayed(){
     $('#checkoutModal').modal('close');
     $('#otpModal').modal('open');
+    const message = {
+      amount: this.checkoutValue,
+      recipient_code: this.transferBankCode
+    }
+    this.eventsService.getPayed(message).subscribe(
+       data => {
+         console.log(data)
+       },
+       err => console.log(err),
+       () => console.log()
+    );
+  }
+
+  passTotalPurchased(e){
+    this.checkoutValue = e.total_purchase;
   }
 
 }

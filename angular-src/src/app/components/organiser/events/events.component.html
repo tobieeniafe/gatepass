@@ -27,7 +27,7 @@
                 </div>
               </td>
               <td class="red-text" *ngIf='event.disabled'>
-                <a class="waves-effect waves-light btn modal-trigger white-text" href="#checkoutModal">Checkout</a>
+                <a class="waves-effect waves-light btn modal-trigger white-text" href='#checkoutModal' (click)='passTotalPurchased(event)'>Checkout</a>
               </td>
             </tr>
         </tbody>
@@ -55,19 +55,22 @@
     <!-- Checkout Modal -->
     <div id="checkoutModal" class="modal">
       <div class="modal-content">
-        <h4 align='center' class="green-text">&#8358;20,000</h4>
+        <h4 align='center' class="green-text">&#8358;{{checkoutValue}}</h4>
         <h5 align='center' class="grey-text">Your banks</h5>
         <p></p>
+        <div *ngIf='!noBank'>
           <hr>
           <span *ngFor='let bank of myBanks; let i = index'>
-            <input class="with-gap" id='{{i}}' type="radio" name="banks">
+            <input class="with-gap" id='{{i}}' type="radio" name="banks" [value]='bank.recepient_code' (change)="radioSelectChange(bank)">
             <label for="{{i}}">{{bank.bank_name}} {{bank.account_number}}</label>
             <hr>
           </span>
+          <div class="col">
+            <a class="waves-effect waves-light btn white-text" (click)='getPayed()'>Get Payed</a>
+          </div>
+        </div>
 
           <div class="col">
-            <a class="waves-effect waves-light btn white-text" (click)='showOtpModal()'>Get Payed</a>
-            <br>
             <a class="modal-trigger" href="#addBankModal"><h5 class="grey-text">Add a new bank</h5></a>
           </div>
       </div>

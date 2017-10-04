@@ -46,8 +46,16 @@ export class EventsService {
   addBank(details){
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
-    console.log(details)
     return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/bank', details, {headers: headers})
+    .map(res => {
+        return res.json();
+    });
+  }
+
+  getPayed(message){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.token );
+    return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/transfer', message, {headers: headers})
     .map(res => {
         return res.json();
     });
