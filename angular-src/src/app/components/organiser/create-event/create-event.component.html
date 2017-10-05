@@ -47,7 +47,7 @@
                     </div>
                   </div>
                   <div class="col m3 s10">
-                    <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketName.valid" [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+                    <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketName.valid" [url]="'https://gatepassng.herokuapp.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
                     buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, i)" [extensions]="['jpeg','png','jpg']"></image-upload>
                   </div>
                   <div class="col m2 s2">
@@ -66,7 +66,7 @@
       <div class="row">
         <div class="col s12 m12">
           <h5 align='center'>Event Design Image</h5>
-          <image-upload  [max]="1"  [url]="'https://api.imgur.com/3/upload'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          <image-upload  [max]="1"  [url]="'https://gatepassng.herokuapp.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
           buttonCaption="Event Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="eventImageUpload($event)" [extensions]="['jpeg','png','jpg']" #eventImg></image-upload>
         </div>
       </div>

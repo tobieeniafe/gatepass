@@ -3226,11 +3226,10 @@ exports.FileDropDirective = FileDropDirective;
 
 "use strict";
 
-var common_1 = __webpack_require__("../../../common/@angular/common.es5.js");
 var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var file_drop_directive_1 = __webpack_require__("../../../../angular2-image-upload/lib/file-drop.directive.js");
 var image_upload_component_1 = __webpack_require__("../../../../angular2-image-upload/lib/image-upload/image-upload.component.js");
+var file_drop_directive_1 = __webpack_require__("../../../../angular2-image-upload/lib/file-drop.directive.js");
+var common_1 = __webpack_require__("../../../common/@angular/common.es5.js");
 var image_service_1 = __webpack_require__("../../../../angular2-image-upload/lib/image.service.js");
 var ImageUploadModule = (function () {
     function ImageUploadModule() {
@@ -3245,10 +3244,7 @@ var ImageUploadModule = (function () {
 }());
 ImageUploadModule.decorators = [
     { type: core_1.NgModule, args: [{
-                imports: [
-                    common_1.CommonModule,
-                    http_1.HttpModule
-                ],
+                imports: [common_1.CommonModule],
                 declarations: [
                     image_upload_component_1.ImageUploadComponent,
                     file_drop_directive_1.FileDropDirective
@@ -3293,13 +3289,16 @@ var ImageUploadComponent = (function () {
         this.isFileOver = false;
         this.buttonCaption = 'Select Images';
         this.dropBoxMessage = 'Drop your images here!';
+        this.supportedExtensions = ['image/*'];
         this.pendingFilesCounter = 0;
     }
     ImageUploadComponent.prototype.ngOnInit = function () {
         if (!this.fileTooLargeMessage) {
             this.fileTooLargeMessage = 'An image was too large and was not uploaded.' + (this.maxFileSize ? (' The maximum file size is ' + this.maxFileSize / 1024) + 'KiB.' : '');
         }
-        this.supportedExtensions = this.supportedExtensions ? this.supportedExtensions.map(function (ext) { return 'image/' + ext; }) : ['image/*'];
+        if (this.supportedExtensions) {
+            this.supportedExtensions = this.supportedExtensions.map(function (ext) { return 'image/' + ext; });
+        }
     };
     ImageUploadComponent.prototype.fileChange = function (files) {
         var remainingSlots = this.countRemainingSlots();
@@ -3319,8 +3318,6 @@ var ImageUploadComponent = (function () {
         this.onRemove.emit(file);
     };
     ImageUploadComponent.prototype.deleteAll = function () {
-        var _this = this;
-        this.files.forEach(function (f) { return _this.onRemove.emit(f); });
         this.files = [];
         this.fileCounter = 0;
         this.inputElement.nativeElement.value = '';

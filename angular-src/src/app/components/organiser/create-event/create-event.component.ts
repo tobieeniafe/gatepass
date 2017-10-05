@@ -99,7 +99,7 @@ ticketImageUpload(event,i){
     const resp = event.serverResponse._body
     const j = JSON.parse(resp)
     const data  = {
-      "image_url": j.data.link,
+      "image_url": j.image_url,
       "price": this.ticketForm.value.tickets[i].ticketPrice,
       "title": this.ticketForm.value.tickets[i].ticketName
     }
@@ -125,7 +125,7 @@ ticketImageUpload(event,i){
   eventImageUpload(event){
     const resp = event.serverResponse._body
     const j = JSON.parse(resp);
-    this.image_url = j.data.link;
+    this.image_url = j.image_url;
     console.log(this.image_url);
   }
 
