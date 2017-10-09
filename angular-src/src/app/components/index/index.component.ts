@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+declare var Materialize: any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'index',
@@ -18,9 +21,11 @@ export class IndexComponent{
 
 
   constructor (){
-      //Observable.interval(3000).subscribe(() => {
-          //this.slideShow();
-      //});
+    $(document).ready(function(){
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+    });
     }
 
   }

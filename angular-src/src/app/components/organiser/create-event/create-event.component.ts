@@ -81,7 +81,8 @@ export class CreateEventComponent implements OnInit {
   initTicket() {
       return this._fb.group({
           ticketName: ['', Validators.required],
-          ticketPrice: ['']
+          ticketPrice: [''],
+          ticketLimit: ['']
       });
   }
 
@@ -101,7 +102,8 @@ ticketImageUpload(event,i){
     const data  = {
       "image_url": j.image_url,
       "price": this.ticketForm.value.tickets[i].ticketPrice,
-      "title": this.ticketForm.value.tickets[i].ticketName
+      "title": this.ticketForm.value.tickets[i].ticketName,
+      "limit": this.ticketForm.value.tickets[i].ticketLimit
     }
     console.log(data)
 
@@ -174,4 +176,5 @@ ticketImageUpload(event,i){
 export interface Ticket {
     ticketName: string;
     ticketPrice: string;
+    ticketLimit: number;
 }

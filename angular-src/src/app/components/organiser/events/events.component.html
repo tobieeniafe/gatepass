@@ -15,11 +15,11 @@
         <tbody *ngIf='events'>
             <tr *ngIf='noEvent'><td colspan="6"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>
             <tr *ngFor="let event of events; let i = index">
-              <td>{{i+1}}<i class="fa fa-arrow-circle-down"></i></td>
+              <td>{{i+1}}</td>
               <td>{{event.name}}</td>
               <td>{{event.location}}</td>
               <td>{{event.date}}</td>
-              <td>{{event.purchased?.length}}</td>
+              <td>{{event.purchased?.length}}  <a href="#ticketDetailsModal" class="modal-trigger green-text">View Details</a></td>
 
               <td *ngIf='!event.disabled'>
                 <div class="switch">
@@ -89,6 +89,16 @@
       <div class="col m1 s1"></div>
     </div>
     <!-- OTP Modal End -->
+
+    <!-- Ticket Details Modal -->
+    <div id="ticketDetailsModal" class="modal row" align="center">
+      <h4>Ticket Details Here</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <!-- Ticket Details Modal End -->
 
     <!-- Add Bank Modal -->
     <div id="addBankModal" class="modal row" align="center">

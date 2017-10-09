@@ -26,7 +26,7 @@
       </div>
       <div class="row"><br>
         <div class="input-field col s12 m6">
-          <input placeholder="Base Price &#8358;" id="price" type="text" class="validate"  name="base_price" [(ngModel)]="base_price">
+          <input placeholder="Base Price &#8358;" id="price" type="number" class="validate"  name="base_price" [(ngModel)]="base_price">
         </div>
         <div class="input-field col s12 m6">
           <input placeholder="Contact Number" id="contact" type="text" class="validate"  name="contact" [(ngModel)]="contact">
@@ -38,20 +38,25 @@
       <form [formGroup]="ticketForm" novalidate>
           <div formArrayName="tickets" class="row">
               <div *ngFor="let ticket of ticketForm.controls.tickets.controls; let i=index" class="row">
-                  <div class="col m7" [formGroupName]="i">
-                    <div class="col m6 s12">
+                  <div class="col m7 s12" [formGroupName]="i">
+                    <div class="col m5 s12">
                         <input type="text" formControlName="ticketName" placeholder="e.g. Regular, VIP">
                     </div>
-                    <div class="col m6 s12">
-                        <input type="text" formControlName="ticketPrice" placeholder='Ticket Price &#8358;'>
+                    <div class="col m4 s6">
+                        <input type="number" formControlName="ticketPrice" placeholder='Ticket Price in &#8358;'>
+                    </div>
+                    <div class="col m3 s6">
+                      <input type="number" formControlName="ticketLimit" placeholder="Limit">
                     </div>
                   </div>
-                  <div class="col m3 s10">
+
+                  <div class="col m3 s8">
                     <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketName.valid" [url]="'https://gatepassng.herokuapp.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
                     buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, i)" [extensions]="['jpeg','png','jpg']"></image-upload>
                   </div>
                   <div class="col m2 s2">
-                      <a class="btn white-text btn-floating waves-effect waves-light" *ngIf="ticketForm.controls.tickets.controls.length > 1" (click)="removeTicket(i)"><i class="fa fa-trash"></i></a>
+                    <br>
+                      <a class="primary-base-text" *ngIf="ticketForm.controls.tickets.controls.length > 1" (click)="removeTicket(i)"><i class="fa fa-trash"></i></a>
                   </div>
               </div>
           </div>

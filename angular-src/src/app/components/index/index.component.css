@@ -4,11 +4,6 @@
   color: #ffffff;
 }
 
-#divTwo{
-  height: 300px;
-  padding-top: 30px;
-}
-
 #divThree{
   height: 700px;
 }
@@ -26,7 +21,7 @@ div{
         width: 100%;
     }
     #divThree{
-      height: 700px;
+      height: 450px;
     }
     h3{
       font-size: 36px;
@@ -34,8 +29,12 @@ div{
     p{
       font-size: 18px;
     }
-    #sliderDiv{
-      height: 600px;
-      padding-top: 30px;
-    }
+}
+
+.carousel.carousel-slider .carousel-item{
+  height: 400px !important;
+}
+
+.carousel .carousel-slider .initialized{
+  height: 400px !important;
 }
