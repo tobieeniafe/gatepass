@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 declare var Materialize: any;
 declare var jQuery: any;
 declare var $: any;
+declare var particlesJS: any;
 
 @Component({
   selector: 'index',
@@ -26,6 +27,11 @@ export class IndexComponent{
         fullWidth: true
       });
     });
-    }
+
+    particlesJS.load('particles-js', 'assets/particles.json', function() {
+      console.log('good to go');
+    });
 
   }
+
+}
