@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
 declare var Materialize: any;
 declare var jQuery: any;
 declare var $: any;
+declare var WOW: any;
 declare var particlesJS: any;
 
 @Component({
@@ -12,6 +15,9 @@ declare var particlesJS: any;
 
 export class IndexComponent{
 
+  @ViewChild('container')
+  private container: ElementRef;
+
   public title: string = 'GatePassNG';
   private sliderImages: any = ['assets/img/1.png', 'assets/img/2.png', 'assets/img/1.jpg', 'assets/img/4.jpg', 'assets/img/5.jpg', 'assets/img/6.jpg'];
   private image: string = this.sliderImages[2];
@@ -21,7 +27,7 @@ export class IndexComponent{
   private playstore: string = 'assets/img/playstore.png';
 
 
-  constructor (){
+  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any){
     $(document).ready(function(){
       $('.carousel.carousel-slider').carousel({
         fullWidth: true
@@ -32,6 +38,11 @@ export class IndexComponent{
       console.log('good to go');
     });
 
+    new WOW().init();
+
+     PageScrollConfig.defaultDuration = 1200;
+
   }
+
 
 }

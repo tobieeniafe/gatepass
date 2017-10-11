@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/Rx';
 declare var Materialize: any;
+declare var $: any;
 
 @Component({
   selector: 'app-root',

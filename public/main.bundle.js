@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".fa-angle-double-up {\r\n  padding: 10px 15px !important;\r\n  color: #fff;\r\n  border: 1px solid #ccc !important;\r\n  background:rgba(0,0,0,0.4) !important;\r\n  font-size:1.6em !important;\r\n  transition: all 0.5s;\r\n}\r\n\r\n.fa-angle-double-up:hover{\r\n  background:rgba(0,0,0,0.7);\r\n  box-shadow:2px 1px 2px 2px rgba(0,0,0,0.3);\r\n}", ""]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n  <app-nav></app-nav>\r\n\r\n  <router-outlet></router-outlet>\r\n\r\n<footer class=\"page-footer\">\r\n    <div class=\"footer-copyright\">\r\n      <div class=\"container\">\r\n        &copy; Company 2017.\r\n      </div>\r\n    </div>\r\n</footer>\r\n<p style=\"display: none\">{{computerIsOnline | async}}</p>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n  <app-nav></app-nav>\r\n\r\n  <router-outlet></router-outlet>\r\n\r\n<footer class=\"page-footer\">\r\n    <div class=\"footer-copyright\">\r\n      <div class=\"container\">\r\n        &copy; Company 2017.\r\n      </div>\r\n      <a pageScroll href=\"#topOfPage\" class=\"white-text\" style=\"padding-right: 20px;\"><i class=\"fa fa-angle-double-up\"></i></a>\r\n    </div>\r\n</footer>\r\n<p style=\"display: none\">{{computerIsOnline | async}}</p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -104,26 +104,28 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__ = __webpack_require__("../../../../angular2-image-upload/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_index_index_component__ = __webpack_require__("../../../../../src/app/components/index/index.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_organiser_events_events_component__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_service__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_organiser_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/organiser/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_organiser_settings_settings_component__ = __webpack_require__("../../../../../src/app/components/organiser/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_validator_service__ = __webpack_require__("../../../../../src/app/services/validator.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_nav_nav_component__ = __webpack_require__("../../../../../src/app/components/nav/nav.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_authguard_service__ = __webpack_require__("../../../../../src/app/services/authguard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_organiser_create_event_create_event_component__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_page_scroll__ = __webpack_require__("../../../../ng2-page-scroll/ng2-page-scroll.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_index_index_component__ = __webpack_require__("../../../../../src/app/components/index/index.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_organiser_events_events_service__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/organiser/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_organiser_settings_settings_component__ = __webpack_require__("../../../../../src/app/components/organiser/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_validator_service__ = __webpack_require__("../../../../../src/app/services/validator.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_nav_nav_component__ = __webpack_require__("../../../../../src/app/components/nav/nav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_authguard_service__ = __webpack_require__("../../../../../src/app/services/authguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_component__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_organiser_create_event_create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -148,13 +150,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
-    { path: 'index', component: __WEBPACK_IMPORTED_MODULE_9__components_index_index_component__["a" /* IndexComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'events', component: __WEBPACK_IMPORTED_MODULE_12__components_organiser_events_events_component__["a" /* EventsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_15__components_organiser_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_organiser_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'create-event', component: __WEBPACK_IMPORTED_MODULE_20__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] }
+    { path: 'index', component: __WEBPACK_IMPORTED_MODULE_10__components_index_index_component__["a" /* IndexComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'events', component: __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__["a" /* EventsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
+    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_16__components_organiser_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
+    { path: 'create-event', component: __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] }
     //{ path: '**', component: LoginComponent }
 ];
 var AppModule = (function () {
@@ -170,26 +172,27 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["e" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_7__agm_core__["a" /* AgmCoreModule */].forRoot({
                 apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k',
                 libraries: ["places"]
             }),
-            __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__["ImageUploadModule"].forRoot()
+            __WEBPACK_IMPORTED_MODULE_6_angular2_image_upload__["ImageUploadModule"].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_8_ng2_page_scroll__["a" /* Ng2PageScrollModule */]
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_index_index_component__["a" /* IndexComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_organiser_events_events_component__["a" /* EventsComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_organiser_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_organiser_settings_settings_component__["a" /* SettingsComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_nav_nav_component__["a" /* NavComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_index_index_component__["a" /* IndexComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__["a" /* EventsComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_organiser_settings_settings_component__["a" /* SettingsComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_nav_nav_component__["a" /* NavComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_17__services_validator_service__["a" /* ValidatorService */], __WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_service__["a" /* CreateEventService */], __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_service__["a" /* EventsService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_18__services_validator_service__["a" /* ValidatorService */], __WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_22__components_organiser_create_event_create_event_service__["a" /* CreateEventService */], __WEBPACK_IMPORTED_MODULE_14__components_organiser_events_events_service__["a" /* EventsService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -205,7 +208,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#sliderDiv{\r\n  height: 600px;\r\n  padding-top: 50px;\r\n  color: #ffffff;\r\n}\r\n\r\n#divThree{\r\n  height: 700px;\r\n}\r\n\r\nh1, h2, h3, h4, h5, p{\r\n  text-align: center;\r\n}\r\ndiv{\r\n  margin: auto !important;\r\n  text-align: center;\r\n}\r\n\r\n@media only screen and (max-width: 1200px) {\r\n    .ribbon {\r\n        width: 100%;\r\n    }\r\n    #divThree{\r\n      height: 450px;\r\n    }\r\n    h3{\r\n      font-size: 36px;\r\n    }\r\n    p{\r\n      font-size: 18px;\r\n    }\r\n}\r\n\r\n.carousel.carousel-slider .carousel-item{\r\n  height: 400px !important;\r\n}\r\n\r\n.carousel .carousel-slider .initialized{\r\n  height: 400px !important;\r\n}\r\n", ""]);
+exports.push([module.i, ".body{\r\n  min-height: 100vh !important;\r\n}\r\n\r\nh1, h2, h3, h4, h5, p{\r\n  text-align: center;\r\n}\r\n\r\ndiv{\r\n  margin: auto !important;\r\n  text-align: center;\r\n}\r\n\r\n.app{\r\n  width: 185px;\r\n  height: 60px;\r\n}\r\n\r\n.divThree{\r\n   height: 700px;\r\n }\r\n\r\n#particles-js{\r\n  width: 100%;\r\n  min-height: 100vh !important;\r\n  background-color: #24242e;\r\n  background-image: url(" + __webpack_require__("../../../../../src/assets/img/landing-background.png") + ");\r\n  background-size: cover;\r\n  background-position: 50% 50%;\r\n  background-repeat: no-repeat;\r\n  margin: auto;\r\n  position: relative;\r\n}\r\n\r\n.mobile-apps{\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: inherit;\r\n}\r\n\r\n@media only screen and (max-width: 1200px) {\r\n    .ribbon {\r\n        width: 100%;\r\n    }\r\n    h3{\r\n      font-size: 36px;\r\n    }\r\n    p{\r\n      font-size: 18px;\r\n    }\r\n    #particles-js{\r\n      height: 50vh !important;\r\n      width: 100vw !important;\r\n    }\r\n    .divThree{\r\n      height: 450px;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .app{\r\n    width: 75px;\r\n    height: 30px;\r\n  }\r\n  #particles-js{\r\n  width: 100%;\r\n  min-height: 500px !important;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -218,7 +221,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/index/index.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n<div class=\"sliderDiv\" id='sliderDiv' [ngStyle]=\"{'background-image': 'url(' + image + ')'}\">\r\n  <h3>Sell Tickets Fast</h3>\r\n  <h3>Get Paid Faster</h3>\r\n  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore .\r\n    <br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.\r\n    <br>Duis aute irure dolor voluptate velit esse cillum dolore eu fugiat.\r\n    <br>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.\r\n  </p>\r\n  <br><br>\r\n  <div class=\"row\">\r\n    <div class=\"col s1 m3\"></div>\r\n    <div class=\"col s12 m3\">\r\n      <img src=\"{{appstore}}\" [ngStyle]=\"{'width': '185px', 'height': '60px'}\">\r\n    </div>\r\n    <div class=\"col s12 m3\">\r\n      <img src=\"{{playstore}}\" [ngStyle]=\"{'width': '185px', 'height': '60px'}\">\r\n    </div>\r\n    <div class=\"col s1 m3\"></div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"carousel carousel-slider center\" data-indicators=\"true\" style=\"height: 400px;\">\r\n\r\n    <div class=\"carousel-item grey darken-1 white-text\" href=\"#one!\">\r\n      <div class=\"col s12 m5\">\r\n        <h4>No More Long Lines</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n          <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n          <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n          <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n          <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n          <br>cupidatat non proident, sunt in culpa qui officia .\r\n        </p>\r\n        <!-- <img src=\"{{iosApp}}\"> -->\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"carousel-item grey darken-2 white-text\" href=\"#two!\">\r\n      <div class=\"col s12 m5\">\r\n        <h4>No More Long Lines</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n          <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n          <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n          <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n          <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n          <br>cupidatat non proident, sunt in culpa qui officia .\r\n        </p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"carousel-item grey darken-3 white-text\" href=\"#three!\">\r\n      <div class=\"col s12 m5\">\r\n        <h4>No More Long Lines</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n          <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n          <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n          <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n          <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n          <br>cupidatat non proident, sunt in culpa qui officia .\r\n        </p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"carousel-item grey darken-4 white-text\" href=\"#four!\">\r\n      <div class=\"col s12 m5\">\r\n        <h4>No More Long Lines</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n          <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n          <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n          <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n          <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n          <br>cupidatat non proident, sunt in culpa qui officia .\r\n        </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n<div class=\"divThree row\" id=\"divThree\">\r\n  <div class=\"col s12 m12\">\r\n    <h3>Bring Your Event To Life</h3>\r\n    <img src=\"{{ribbon}}\" class=\"ribbon\">\r\n  </div>\r\n  <br><br><br>\r\n  <div class=\"col s12 m12\">\r\n    <a routerLink='/login' routerLinkActive='active'><button style=\"background-color:#25252E !important\" type=\"button\" name=\"button\" class=\"btn-large getStarted waves-effect waves-light\">Get Started</button></a>\r\n  </div>\r\n</div>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\t<div id=\"particles-js\" class=\"wow jello\" data-wow-duration=\"1.5s\" data-wow-delay=\"1s\" data-wow-offset='0'>\r\n\t\t<div class=\"row mobile-apps\">\r\n\t\t\t<div class=\"col s3 m3\"></div>\r\n\t\t\t<div class=\"col s3 m3\">\r\n\t\t\t\t<img src=\"{{appstore}}\" class=\"app wow tada\" data-wow-duration=\"1.5s\" data-wow-delay=\"5s\" data-wow-offset='0' data-wow-iteration=\"3\">\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s3 m3\">\r\n\t\t\t\t<img src=\"{{playstore}}\" class=\"app wow tada\" data-wow-duration=\"1.5s\" data-wow-delay=\"5s\" data-wow-offset='0' data-wow-iteration=\"3\">\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s3 m3\"></div>\r\n\t\t\t<br><br>\r\n\t\t\t<div class=\"col s12 m12\">\r\n\t\t\t\t<a pageScroll href=\"#here\" class=\"white-text\"><i class=\"fa fa-angle-double-down animated infinite bounce\"></i></a>\r\n\t\t\t\t<br><br>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"divTwo row\">\r\n\t\t<br><br>\r\n\t  <div class=\"col s1 m1\"></div>\r\n\t  <div class=\"col s11 m5 wow slideInLeft\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.5s\" id=\"here\" data-wow-offset='0'>\r\n\t    <h4>No More Long Lines</h4>\r\n\t    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n\t      <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n\t      <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n\t      <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n\t      <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\t      <br>cupidatat non proident, sunt in culpa qui officia .\r\n\t    </p>\r\n\t  </div>\r\n\t  <div class=\"col s12 m6 wow slideInRight\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.5s\" data-wow-offset='0'>\r\n\t    <img src=\"{{iosApp}}\">\r\n\t  </div>\r\n\t</div>\r\n\r\n\t<div class=\"divThree row\">\r\n\t\t<div class=\"col s12 m12 wow zoomIn\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.5s\" data-wow-offset='0'>\r\n\t    \t<h3>Bring Your Event To Life</h3>\r\n\t    \t<img src=\"{{ribbon}}\" class=\"ribbon\">\r\n\t    </div>\r\n\t    <br><br><br><br><br>\r\n\t    <div class=\"col s12 m12\">\r\n\t    \t<a routerLink='/login' class=\"\"><button type=\"button\" name=\"button\" class=\"animated infinite bounce btn-large getStarted waves-effect waves-light\">Get Started</button></a>\r\n\t    </div>\r\n\t</div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -228,6 +231,8 @@ module.exports = "<div class=\"body\">\r\n<div class=\"sliderDiv\" id='sliderDiv
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IndexComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__ = __webpack_require__("../../../../ng2-page-scroll/ng2-page-scroll.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -237,9 +242,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
 
 var IndexComponent = (function () {
-    function IndexComponent() {
+    function IndexComponent(pageScrollService, document) {
+        this.pageScrollService = pageScrollService;
+        this.document = document;
         this.title = 'GatePassNG';
         this.sliderImages = ['assets/img/1.png', 'assets/img/2.png', 'assets/img/1.jpg', 'assets/img/4.jpg', 'assets/img/5.jpg', 'assets/img/6.jpg'];
         this.image = this.sliderImages[2];
@@ -252,18 +264,29 @@ var IndexComponent = (function () {
                 fullWidth: true
             });
         });
+        particlesJS.load('particles-js', 'assets/particles.json', function () {
+            console.log('good to go');
+        });
+        new WOW().init();
+        __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["b" /* PageScrollConfig */].defaultDuration = 1200;
     }
     return IndexComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('container'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], IndexComponent.prototype, "container", void 0);
 IndexComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'index',
         template: __webpack_require__("../../../../../src/app/components/index/index.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/index/index.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__angular_common__["DOCUMENT"])),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["c" /* PageScrollService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["c" /* PageScrollService */]) === "function" && _b || Object, Object])
 ], IndexComponent);
 
+var _a, _b;
 //# sourceMappingURL=index.component.js.map
 
 /***/ }),
@@ -356,7 +379,7 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], LoginComponent);
 
 var _a, _b;
@@ -385,7 +408,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><img src=\"{{logo}}\"></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings <i class=\"fa fa-cogs\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\" id=\"topOfPage\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><img src=\"{{logo}}\"></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings <i class=\"fa fa-cogs\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -450,7 +473,7 @@ NavComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/nav/nav.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/nav/nav.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]) === "function" && _b || Object])
 ], NavComponent);
 
 var _a, _b;
@@ -645,7 +668,7 @@ CreateEventComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.css")],
         providers: [__WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__create_event_service__["a" /* CreateEventService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["d" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _g || Object])
 ], CreateEventComponent);
 
 var _a, _b, _c, _d, _e, _f, _g;
@@ -930,7 +953,7 @@ EventsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/organiser/events/events.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/organiser/events/events.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__events_service__["a" /* EventsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]) === "function" && _c || Object])
 ], EventsComponent);
 
 var _a, _b, _c;
@@ -1033,7 +1056,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".body{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n\r\nlabel{\r\n\tfloat: left;\r\n}", ""]);
 
 // exports
 
@@ -1046,7 +1069,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  profile works!\n</p>\n"
+module.exports = "<div class=\"body row\">\n\t<div class=\"row col s12 m7\">\n\t\t<h4>Update Account Details</h4>\n\t\t<div class=\"col s12 m12\">\n\t\t\t<label>Fullname</label>\n\t\t\t<input type=\"text\" value=\"John Doe\">\n\t\t</div>\n\t\t<div class=\"col s12 m12\">\n\t\t\t<label>Phone number</label>\n\t\t\t<input type=\"text\" value=\"0810 123 4567\">\n\t\t</div>\n\t\t<div class=\"col s12 m12\">\n\t\t\t<label>Email</label>\n\t\t\t<input type=\"text\" value=\"johndoe@mail.com\">\n\t\t</div>\n\t\t<div class=\"col s12 m12\">\n\t\t\t<label>Current password</label>\n\t\t\t<input type=\"password\" value=\"********\">\n\t\t</div>\n\t\t<div class=\"col s12 m12\">\n\t\t\t<label>New password</label>\n\t\t\t<input type=\"password\" value=\"********\">\n\t\t</div>\n\t\t<div class=\"col s12 m12\">\n\t\t\t<button type=\"button\" class=\"btn\">Update Account</button>\n\t\t</div>\n\t\t\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -1258,7 +1281,7 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/register/register.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_validator_service__["a" /* ValidatorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_validator_service__["a" /* ValidatorService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_validator_service__["a" /* ValidatorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_validator_service__["a" /* ValidatorService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _c || Object])
 ], RegisterComponent);
 
 var _a, _b, _c;
@@ -1360,7 +1383,7 @@ var AuthGuard = (function () {
 }());
 AuthGuard = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object])
 ], AuthGuard);
 
 var _a, _b;
@@ -1407,6 +1430,13 @@ ValidatorService = __decorate([
 ], ValidatorService);
 
 //# sourceMappingURL=validator.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/assets/img/landing-background.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "landing-background.f192bcbdb03120631a78.png";
 
 /***/ }),
 

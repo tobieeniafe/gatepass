@@ -6,7 +6,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ImageUploadModule } from 'angular2-image-upload';
 
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { AgmCoreModule } from '@agm/core';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
@@ -16,11 +18,10 @@ import { EventsComponent } from './components/organiser/events/events.component'
 import { EventsService } from './components/organiser/events/events.service';
 import { ProfileComponent } from './components/organiser/profile/profile.component';
 import { SettingsComponent } from './components/organiser/settings/settings.component';
-import { AuthService } from './services/auth.service'
+import { AuthService } from './services/auth.service';
 import { ValidatorService } from './services/validator.service';
-import { NavComponent } from './components/nav/nav.component'
-import { AuthGuard } from './services/authguard.service'
-import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { NavComponent } from './components/nav/nav.component';
+import { AuthGuard } from './services/authguard.service';
 import { CreateEventComponent } from './components/organiser/create-event/create-event.component';
 import { CreateEventService } from './components/organiser/create-event/create-event.service';
 
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyBQTeEyrwUuonblZu8k9cCxErVDCw7qn1k',
       libraries: ["places"]
     }),
-    ImageUploadModule.forRoot()
+    ImageUploadModule.forRoot(),
+    Ng2PageScrollModule
   ],
   declarations: [
     AppComponent,

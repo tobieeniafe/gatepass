@@ -1,38 +1,50 @@
 <div class="body">
-<div id="particles-js">
-	  <div class="row mobile-apps">
-	    <div class="col s3 m3"></div>
-	    <div class="col s3 m3">
-	      <img src="{{appstore}}" class="app">
-	    </div>
-	    <div class="col s3 m3">
-	      <img src="{{playstore}}" class="app">
-	    </div>
-	    <div class="col s3 m3"></div>
-	    <br><br>
-	    <div class="col s12 m12">
-	    	<a href="#here" class="white-text"><i class="fa fa-angle-double-down"></i></a>
-	    	<br><br>
-	    </div>
-	  </div>
-</div>
+	<div id="particles-js" class="wow jello" data-wow-duration="1.5s" data-wow-delay="1s" data-wow-offset='0'>
+		<div class="row mobile-apps">
+			<div class="col s3 m3"></div>
+			<div class="col s3 m3">
+				<img src="{{appstore}}" class="app wow tada" data-wow-duration="1.5s" data-wow-delay="5s" data-wow-offset='0' data-wow-iteration="3">
+			</div>
+			<div class="col s3 m3">
+				<img src="{{playstore}}" class="app wow tada" data-wow-duration="1.5s" data-wow-delay="5s" data-wow-offset='0' data-wow-iteration="3">
+			</div>
+			<div class="col s3 m3"></div>
+			<br><br>
+			<div class="col s12 m12">
+				<a pageScroll href="#here" class="white-text"><i class="fa fa-angle-double-down animated infinite bounce"></i></a>
+				<br><br>
+			</div>
+		</div>
+	</div>
 
-<div class="parallax-container row">
-	<br><br>
-  <div class="col s12 m1"></div>
-  <div class="col s12 m5" id="here">
-    <h4>No More Long Lines</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <br> Ut enim ad minim veniam, quis nostrud exercitation
-      <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      <br>cupidatat non proident, sunt in culpa qui officia .
-    </p>
-  </div>
-  <div class="col s12 m6">
-    <img src="{{iosApp}}" id="sliderImage">
-  </div>
-</div>
+	<div class="divTwo row">
+		<br><br>
+	  <div class="col s1 m1"></div>
+	  <div class="col s11 m5 wow slideInLeft" data-wow-duration="1.5s" data-wow-delay="0.5s" id="here" data-wow-offset='0'>
+	    <h4>No More Long Lines</h4>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	      <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	      <br> Ut enim ad minim veniam, quis nostrud exercitation
+	      <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+	      <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	      <br>cupidatat non proident, sunt in culpa qui officia .
+	    </p>
+	  </div>
+	  <div class="col s12 m6 wow slideInRight" data-wow-duration="1.5s" data-wow-delay="0.5s" data-wow-offset='0'>
+	    <img src="{{iosApp}}">
+	  </div>
+	</div>
+
+	<div class="divThree row">
+		<div class="col s12 m12 wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.5s" data-wow-offset='0'>
+	    	<h3>Bring Your Event To Life</h3>
+	    	<img src="{{ribbon}}" class="ribbon">
+	    </div>
+	    <br><br><br><br><br>
+	    <div class="col s12 m12">
+	    	<a routerLink='/login' class=""><button type="button" name="button" class="animated infinite bounce btn-large getStarted waves-effect waves-light">Get Started</button></a>
+	    </div>
+	</div>
+
 
 </div>
