@@ -19,7 +19,7 @@
               <td>{{event.name}}</td>
               <td>{{event.location}}</td>
               <td>{{event.date}}</td>
-              <td>{{event.purchased?.length}}  <a href="#ticketDetailsModal" class="modal-trigger green-text">View Details</a></td>
+              <td>{{event.sold}}  <a href="#ticketDetailsModal" class="modal-trigger green-text">View Details</a></td>
 
               <td *ngIf='!event.disabled'>
                 <div class="switch">
@@ -83,8 +83,8 @@
       <div class="modal-content col m10 s10">
         <h4 align='center' class="grey-text">OTP</h4>
         <p class="grey-text">An OTP code has been sent to your registered phone number</p>
-          <input class="" type="text" placeholder="OTP code">
-          <button type="button" name="button" class="btn waves-effect waves-light">Proceed</button>
+          <input class="" type="text" placeholder="OTP code" [(ngModel)]='otp'>
+          <button type="button" name="button" class="btn waves-effect waves-light"  (click)='sendOTP()'>Proceed</button>
       </div>
       <div class="col m1 s1"></div>
     </div>
@@ -95,7 +95,7 @@
       <h4>Ticket Details Here</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <!-- Ticket Details Modal End -->

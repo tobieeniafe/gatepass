@@ -61,4 +61,13 @@ export class EventsService {
     });
   }
 
+  sendOTP(message){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.token );
+    return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/finalize_transfer', message, {headers: headers})
+    .map(res => {
+        return res.json();
+    });
+  }
+
 }

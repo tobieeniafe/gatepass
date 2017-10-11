@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 import { EventsService } from './events.service';
 import { Http, Headers } from '@angular/http';
 declare var Materialize: any;
@@ -55,6 +54,8 @@ export class EventsComponent implements OnInit {
   noBank: boolean = false;
   checkoutValue: any;
   transferBankCode: any;
+  otp: any;
+  transferCode: any;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -166,6 +167,7 @@ export class EventsComponent implements OnInit {
     this.eventsService.getPayed(message).subscribe(
        data => {
          console.log(data)
+         this.transferCode = data.transfer_code
        },
        err => console.log(err),
        () => console.log()
@@ -174,6 +176,20 @@ export class EventsComponent implements OnInit {
 
   passTotalPurchased(e){
     this.checkoutValue = e.total_purchase;
+  }
+
+  sendOTP(){
+    const message = {
+      otp: this.otp,
+      transfer_code: this.transferCode
+    }
+    this.eventsService.sendOTP(message).subscribe(
+       data => {
+         console.log(data)
+       },
+       err => console.log(err),
+       () => console.log()
+    );
   }
 
 }
