@@ -7,7 +7,6 @@
         <li><a *ngIf="_auth.loggedIn()" routerLink='/events' routerLinkActive='active'>Events</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/profile' routerLinkActive='active'>Profile</a></li>
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/settings' routerLinkActive='active'>Settings</a></li>
         <li><a *ngIf="_auth.loggedIn()" (click)='logOut()'>Logout</a></li>
       </ul>
 
@@ -16,7 +15,6 @@
         <li><a *ngIf="_auth.loggedIn()" routerLink='/events' routerLinkActive='active'>Events <i class="fa fa-ticket"></i></a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/create-event' routerLinkActive='active'>Create Event <i class="fa fa-calendar"></i></a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/profile' routerLinkActive='active'>Profile <i class="fa fa-user"></i></a></li>
-        <li><a *ngIf="_auth.loggedIn()" routerLink='/settings' routerLinkActive='active'>Settings <i class="fa fa-cogs"></i></a></li>
         <li><a *ngIf="_auth.loggedIn()" (click)='logOut()'>Logout <i class="fa fa-power-off"></i></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="fa fa-bars primary-base-text"></i></a>

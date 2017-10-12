@@ -112,13 +112,12 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_organiser_events_events_service__ = __webpack_require__("../../../../../src/app/components/organiser/events/events.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/organiser/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_organiser_settings_settings_component__ = __webpack_require__("../../../../../src/app/components/organiser/settings/settings.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_validator_service__ = __webpack_require__("../../../../../src/app/services/validator.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_nav_nav_component__ = __webpack_require__("../../../../../src/app/components/nav/nav.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_authguard_service__ = __webpack_require__("../../../../../src/app/services/authguard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_component__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_organiser_create_event_create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_validator_service__ = __webpack_require__("../../../../../src/app/services/validator.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_nav_nav_component__ = __webpack_require__("../../../../../src/app/components/nav/nav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_authguard_service__ = __webpack_require__("../../../../../src/app/services/authguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_organiser_create_event_create_event_component__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -147,16 +146,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var appRoutes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component: __WEBPACK_IMPORTED_MODULE_10__components_index_index_component__["a" /* IndexComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'events', component: __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__["a" /* EventsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_16__components_organiser_settings_settings_component__["a" /* SettingsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'create-event', component: __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] }
+    { path: 'events', component: __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__["a" /* EventsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] },
+    { path: 'create-event', component: __WEBPACK_IMPORTED_MODULE_20__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */]] }
     //{ path: '**', component: LoginComponent }
 ];
 var AppModule = (function () {
@@ -187,11 +184,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */],
             __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__["a" /* EventsComponent */],
             __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_organiser_settings_settings_component__["a" /* SettingsComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_nav_nav_component__["a" /* NavComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */]
+            __WEBPACK_IMPORTED_MODULE_18__components_nav_nav_component__["a" /* NavComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_18__services_validator_service__["a" /* ValidatorService */], __WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_22__components_organiser_create_event_create_event_service__["a" /* CreateEventService */], __WEBPACK_IMPORTED_MODULE_14__components_organiser_events_events_service__["a" /* EventsService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_17__services_validator_service__["a" /* ValidatorService */], __WEBPACK_IMPORTED_MODULE_19__services_authguard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_21__components_organiser_create_event_create_event_service__["a" /* CreateEventService */], __WEBPACK_IMPORTED_MODULE_14__components_organiser_events_events_service__["a" /* EventsService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -208,7 +204,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".body{\r\n  min-height: 100vh !important;\r\n}\r\n\r\nh1, h2, h3, h4, h5, p{\r\n  text-align: center;\r\n}\r\n\r\ndiv{\r\n  margin: auto !important;\r\n  text-align: center;\r\n}\r\n\r\n.app{\r\n  width: 185px;\r\n  height: 60px;\r\n}\r\n\r\n.divThree{\r\n   height: 700px;\r\n }\r\n\r\n#particles-js{\r\n  width: 100%;\r\n  min-height: 100vh !important;\r\n  background-color: #24242e;\r\n  background-image: url(" + __webpack_require__("../../../../../src/assets/img/landing-background.png") + ");\r\n  background-size: cover;\r\n  background-position: 50% 50%;\r\n  background-repeat: no-repeat;\r\n  margin: auto;\r\n  position: relative;\r\n}\r\n\r\n.mobile-apps{\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: inherit;\r\n}\r\n\r\n@media only screen and (max-width: 1200px) {\r\n    .ribbon {\r\n        width: 100%;\r\n    }\r\n    h3{\r\n      font-size: 36px;\r\n    }\r\n    p{\r\n      font-size: 18px;\r\n    }\r\n    #particles-js{\r\n      height: 50vh !important;\r\n      width: 100vw !important;\r\n    }\r\n    .divThree{\r\n      height: 450px;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .app{\r\n    width: 75px;\r\n    height: 30px;\r\n  }\r\n  #particles-js{\r\n  width: 100%;\r\n  min-height: 500px !important;\r\n  }\r\n}\r\n", ""]);
+exports.push([module.i, ".body{\r\n  min-height: 100vh !important;\r\n  background-color: #fafafa;\r\n}\r\n\r\nh1, h2, h3, h4, h5, p{\r\n  text-align: center;\r\n}\r\n\r\ndiv{\r\n  margin: auto !important;\r\n  text-align: center;\r\n}\r\n\r\n.app{\r\n  width: 185px;\r\n  height: 60px;\r\n}\r\n\r\n.divThree{\r\n   height: 700px;\r\n }\r\n \r\n .fa{\r\n  font-size: inherit !important;\r\n }\r\n\r\n .diff{\r\n  background-color: #ffffff;\r\n  box-shadow: 0 3px 12px -2px rgba(0, 0, 0, 0.08);\r\n }\r\n\r\n .different .row{\r\n  padding-left: 80px !important;\r\n }\r\n\r\n#particles-js{\r\n  width: 100%;\r\n  min-height: 100vh !important;\r\n  background-color: #24242e;\r\n  background-image: url(" + __webpack_require__("../../../../../src/assets/img/landing-background.png") + ");\r\n  background-size: cover;\r\n  background-position: 50% 50%;\r\n  background-repeat: no-repeat;\r\n  margin: auto;\r\n  position: relative;\r\n}\r\n\r\n.mobile-apps{\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: inherit;\r\n}\r\n\r\n.fa-angle-double-down{\r\n  font-size: 40px !important;\r\n}\r\n\r\n@media only screen and (max-width: 1200px) {\r\n    .ribbon {\r\n        width: 100%;\r\n    }\r\n    h3{\r\n      font-size: 36px;\r\n    }\r\n    p{\r\n      font-size: 18px;\r\n    }\r\n    #particles-js{\r\n      height: 50vh !important;\r\n      width: 100vw !important;\r\n    }\r\n    .divThree{\r\n      height: 450px;\r\n    }\r\n    .different .row{\r\n      padding-left: 0 !important;\r\n    }\r\n    .different .row .col{\r\n      padding: 10px;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n  .app{\r\n    width: 80px;\r\n    height: 35px;\r\n  }\r\n  #particles-js{\r\n  width: 100%;\r\n  min-height: 500px !important;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -221,7 +217,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/index/index.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\t<div id=\"particles-js\" class=\"wow jello\" data-wow-duration=\"1.5s\" data-wow-delay=\"1s\" data-wow-offset='0'>\r\n\t\t<div class=\"row mobile-apps\">\r\n\t\t\t<div class=\"col s3 m3\"></div>\r\n\t\t\t<div class=\"col s3 m3\">\r\n\t\t\t\t<img src=\"{{appstore}}\" class=\"app wow tada\" data-wow-duration=\"1.5s\" data-wow-delay=\"5s\" data-wow-offset='0' data-wow-iteration=\"3\">\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s3 m3\">\r\n\t\t\t\t<img src=\"{{playstore}}\" class=\"app wow tada\" data-wow-duration=\"1.5s\" data-wow-delay=\"5s\" data-wow-offset='0' data-wow-iteration=\"3\">\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s3 m3\"></div>\r\n\t\t\t<br><br>\r\n\t\t\t<div class=\"col s12 m12\">\r\n\t\t\t\t<a pageScroll href=\"#here\" class=\"white-text\"><i class=\"fa fa-angle-double-down animated infinite bounce\"></i></a>\r\n\t\t\t\t<br><br>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"divTwo row\">\r\n\t\t<br><br>\r\n\t  <div class=\"col s1 m1\"></div>\r\n\t  <div class=\"col s11 m5 wow slideInLeft\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.5s\" id=\"here\" data-wow-offset='0'>\r\n\t    <h4>No More Long Lines</h4>\r\n\t    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n\t      <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n\t      <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n\t      <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n\t      <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\t      <br>cupidatat non proident, sunt in culpa qui officia .\r\n\t    </p>\r\n\t  </div>\r\n\t  <div class=\"col s12 m6 wow slideInRight\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.5s\" data-wow-offset='0'>\r\n\t    <img src=\"{{iosApp}}\">\r\n\t  </div>\r\n\t</div>\r\n\r\n\t<div class=\"divThree row\">\r\n\t\t<div class=\"col s12 m12 wow zoomIn\" data-wow-duration=\"1.5s\" data-wow-delay=\"0.5s\" data-wow-offset='0'>\r\n\t    \t<h3>Bring Your Event To Life</h3>\r\n\t    \t<img src=\"{{ribbon}}\" class=\"ribbon\">\r\n\t    </div>\r\n\t    <br><br><br><br><br>\r\n\t    <div class=\"col s12 m12\">\r\n\t    \t<a routerLink='/login' class=\"\"><button type=\"button\" name=\"button\" class=\"animated infinite bounce btn-large getStarted waves-effect waves-light\">Get Started</button></a>\r\n\t    </div>\r\n\t</div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"body\">\r\n\t<div id=\"particles-js\" class=\"wow jello\" data-wow-duration=\"1.5s\" data-wow-delay=\"1s\" data-wow-offset='0'>\r\n\t\t<div class=\"row mobile-apps\">\r\n\t\t\t<div class=\"col s3 m3\"></div>\r\n\t\t\t<div class=\"col s3 m3\">\r\n\t\t\t\t<img src=\"{{appstore}}\" class=\"app wow slideInLeft\" data-wow-duration=\"1.5s\" data-wow-delay=\"3s\" data-wow-offset='0'>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s3 m3\">\r\n\t\t\t\t<img src=\"{{playstore}}\" class=\"app wow slideInRight\" data-wow-duration=\"1.5s\" data-wow-delay=\"3s\" data-wow-offset='0'>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s3 m3\"></div>\r\n\t\t\t<br><br>\r\n\t\t\t<div class=\"col s12 m12\">\r\n\t\t\t\t<a pageScroll href=\"#here\" class=\"white-text\"><i class=\"fa fa-angle-double-down animated infinite bounce\"></i></a>\r\n\t\t\t\t<br><br>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"divTwo row\" id=\"here\">\r\n\t\t<br><br>\r\n\t  <div class=\"col s1 m1\"></div>\r\n\t  <div class=\"col s11 m5\">\r\n\t    <h4>No More Long Lines</h4>\r\n\t    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\r\n\t      <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n\t      <br> Ut enim ad minim veniam, quis nostrud exercitation\r\n\t      <br>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n\t      <br>voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\t      <br>cupidatat non proident, sunt in culpa qui officia .\r\n\t    </p>\r\n\t  </div>\r\n\t  <div class=\"col s12 m6\">\r\n\t    <img src=\"{{iosApp}}\">\r\n\t  </div>\r\n\t</div>\r\n\r\n\t<div class=\"row different\">\r\n\t\t<h3>How It works</h3>\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-sign-in\"></i></h4>\r\n\t\t\t\t<h5>Register</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s12 m1\"></div>\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-calendar\"></i></h4>\r\n\t\t\t\t<h5>Create Event</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s12 m1\"></div>\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-ticket\"></i></h4>\r\n\t\t\t\t<h5>Sell Tickets</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s12 m1\"></div>\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-line-chart\"></i></h4>\r\n\t\t\t\t<h5>View Sales</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<br>\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col s12 m1\"></div>\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-clock-o\"></i></h4>\r\n\t\t\t\t<h5>After Event</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s12 m1\"></div>\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-bank\"></i></h4>\r\n\t\t\t\t<h5>Bank Transfer</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s12 m1\"></div>\r\n\t\t\t<div class=\"col s12 m2 diff\">\r\n\t\t\t\t<h4><i class=\"fa fa-smile-o\"></i></h4>\r\n\t\t\t\t<h5>Happy Customer</h5>\r\n\t\t\t\t<p>Some text here, blah blah blah</p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col s12 m2\"></div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"divThree row\">\r\n\t\t<div class=\"col s12 m12\">\r\n\t    \t<h3>Bring Your Event To Life</h3>\r\n\t    \t<img src=\"{{ribbon}}\" class=\"ribbon\">\r\n\t    </div>\r\n\t    <br><br><br><br><br>\r\n\t    <div class=\"col s12 m12\">\r\n\t    \t<a routerLink='/login' class=\"\"><button type=\"button\" name=\"button\" class=\"btn-large getStarted waves-effect waves-light\">Get Started</button></a>\r\n\t    </div>\r\n\t</div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -408,7 +404,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\" id=\"topOfPage\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><img src=\"{{logo}}\"></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/settings' routerLinkActive='active'>Settings <i class=\"fa fa-cogs\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\" id=\"topOfPage\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><img src=\"{{logo}}\"></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1106,67 +1102,6 @@ ProfileComponent = __decorate([
 ], ProfileComponent);
 
 //# sourceMappingURL=profile.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/organiser/settings/settings.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/organiser/settings/settings.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  settings works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/organiser/settings/settings.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SettingsComponent = (function () {
-    function SettingsComponent() {
-    }
-    SettingsComponent.prototype.ngOnInit = function () {
-    };
-    return SettingsComponent;
-}());
-SettingsComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-settings',
-        template: __webpack_require__("../../../../../src/app/components/organiser/settings/settings.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/organiser/settings/settings.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], SettingsComponent);
-
-//# sourceMappingURL=settings.component.js.map
 
 /***/ }),
 

@@ -40,7 +40,7 @@ export class IndexComponent{
 
     new WOW().init();
 
-     PageScrollConfig.defaultDuration = 1200;
+    PageScrollConfig.defaultDuration = 1200;
 
   }
 

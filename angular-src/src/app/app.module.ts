@@ -17,7 +17,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { EventsComponent } from './components/organiser/events/events.component';
 import { EventsService } from './components/organiser/events/events.service';
 import { ProfileComponent } from './components/organiser/profile/profile.component';
-import { SettingsComponent } from './components/organiser/settings/settings.component';
 import { AuthService } from './services/auth.service';
 import { ValidatorService } from './services/validator.service';
 import { NavComponent } from './components/nav/nav.component';
@@ -31,7 +30,6 @@ const appRoutes: Routes = [
   { path: 'login',  component: LoginComponent },
   { path: 'register',  component: RegisterComponent},
   { path: 'events', component: EventsComponent , canActivate: [AuthGuard] },
-  { path: 'settings', component: SettingsComponent , canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] },
   { path: 'create-event', component: CreateEventComponent , canActivate: [AuthGuard] }
   //{ path: '**', component: LoginComponent }
@@ -59,7 +57,6 @@ const appRoutes: Routes = [
     RegisterComponent,
     EventsComponent,
     ProfileComponent,
-    SettingsComponent,
     NavComponent,
     CreateEventComponent
   ],

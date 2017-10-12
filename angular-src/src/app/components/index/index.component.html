@@ -3,10 +3,10 @@
 		<div class="row mobile-apps">
 			<div class="col s3 m3"></div>
 			<div class="col s3 m3">
-				<img src="{{appstore}}" class="app wow tada" data-wow-duration="1.5s" data-wow-delay="5s" data-wow-offset='0' data-wow-iteration="3">
+				<img src="{{appstore}}" class="app wow slideInLeft" data-wow-duration="1.5s" data-wow-delay="3s" data-wow-offset='0'>
 			</div>
 			<div class="col s3 m3">
-				<img src="{{playstore}}" class="app wow tada" data-wow-duration="1.5s" data-wow-delay="5s" data-wow-offset='0' data-wow-iteration="3">
+				<img src="{{playstore}}" class="app wow slideInRight" data-wow-duration="1.5s" data-wow-delay="3s" data-wow-offset='0'>
 			</div>
 			<div class="col s3 m3"></div>
 			<br><br>
@@ -17,10 +17,10 @@
 		</div>
 	</div>
 
-	<div class="divTwo row">
+	<div class="divTwo row" id="here">
 		<br><br>
 	  <div class="col s1 m1"></div>
-	  <div class="col s11 m5 wow slideInLeft" data-wow-duration="1.5s" data-wow-delay="0.5s" id="here" data-wow-offset='0'>
+	  <div class="col s11 m5">
 	    <h4>No More Long Lines</h4>
 	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 	      <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -30,19 +30,70 @@
 	      <br>cupidatat non proident, sunt in culpa qui officia .
 	    </p>
 	  </div>
-	  <div class="col s12 m6 wow slideInRight" data-wow-duration="1.5s" data-wow-delay="0.5s" data-wow-offset='0'>
+	  <div class="col s12 m6">
 	    <img src="{{iosApp}}">
 	  </div>
 	</div>
 
+	<div class="row different">
+		<h3>How It works</h3>
+		<div class="row">
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-sign-in"></i></h4>
+				<h5>Register</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+			<div class="col s12 m1"></div>
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-calendar"></i></h4>
+				<h5>Create Event</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+			<div class="col s12 m1"></div>
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-ticket"></i></h4>
+				<h5>Sell Tickets</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+			<div class="col s12 m1"></div>
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-line-chart"></i></h4>
+				<h5>View Sales</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col s12 m1"></div>
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-clock-o"></i></h4>
+				<h5>After Event</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+			<div class="col s12 m1"></div>
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-bank"></i></h4>
+				<h5>Bank Transfer</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+			<div class="col s12 m1"></div>
+			<div class="col s12 m2 diff">
+				<h4><i class="fa fa-smile-o"></i></h4>
+				<h5>Happy Customer</h5>
+				<p>Some text here, blah blah blah</p>
+			</div>
+			<div class="col s12 m2"></div>
+		</div>
+	</div>
+
 	<div class="divThree row">
-		<div class="col s12 m12 wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.5s" data-wow-offset='0'>
+		<div class="col s12 m12">
 	    	<h3>Bring Your Event To Life</h3>
 	    	<img src="{{ribbon}}" class="ribbon">
 	    </div>
 	    <br><br><br><br><br>
 	    <div class="col s12 m12">
-	    	<a routerLink='/login' class=""><button type="button" name="button" class="animated infinite bounce btn-large getStarted waves-effect waves-light">Get Started</button></a>
+	    	<a routerLink='/login' class=""><button type="button" name="button" class="btn-large getStarted waves-effect waves-light">Get Started</button></a>
 	    </div>
 	</div>
 
