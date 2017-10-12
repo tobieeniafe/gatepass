@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location} from '@angular/common';
-import {AuthService} from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 declare var Materialize: any;
 
 
@@ -38,9 +38,7 @@ export class LoginComponent implements OnInit {
         }else if(data.status == true){
           Materialize.toast('Login successful', 3000, 'green white-text');
           localStorage.setItem('token', data.token);
-          //console.log(localStorage.getItem('token'));
           this.isDisabled = false;
-          //console.log(data.token);
           this.router.navigate(['/events']);
         }else{
           this.isDisabled = false;

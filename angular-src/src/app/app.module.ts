@@ -21,14 +21,15 @@ import { AuthService } from './services/auth.service';
 import { ValidatorService } from './services/validator.service';
 import { NavComponent } from './components/nav/nav.component';
 import { AuthGuard } from './services/authguard.service';
+import { RouteGuard } from './services/routeguard.service';
 import { CreateEventComponent } from './components/organiser/create-event/create-event.component';
 import { CreateEventService } from './components/organiser/create-event/create-event.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index',  component: IndexComponent },
-  { path: 'login',  component: LoginComponent },
-  { path: 'register',  component: RegisterComponent},
+  { path: 'login',  component: LoginComponent , canActivate: [RouteGuard] },
+  { path: 'register',  component: RegisterComponent , canActivate: [RouteGuard] },
   { path: 'events', component: EventsComponent , canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] },
   { path: 'create-event', component: CreateEventComponent , canActivate: [AuthGuard] }
@@ -60,7 +61,7 @@ const appRoutes: Routes = [
     NavComponent,
     CreateEventComponent
   ],
-  providers: [ AuthService, ValidatorService, AuthGuard, CreateEventService, EventsService ],
+  providers: [ AuthService, ValidatorService, AuthGuard, CreateEventService, EventsService, RouteGuard ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

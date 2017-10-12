@@ -34,7 +34,7 @@ export class IndexComponent{
       });
     });
 
-    particlesJS.load('particles-js', 'assets/particles.json', function() {
+    particlesJS.load('particles', 'assets/particles.json', function() {
       console.log('good to go');
     });
 
