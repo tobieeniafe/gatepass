@@ -56,6 +56,7 @@ export class EventsComponent implements OnInit {
   transferBankCode: any;
   otp: any;
   transferCode: any;
+  eventTicketDetails: any;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -121,7 +122,7 @@ export class EventsComponent implements OnInit {
          if(this.myBanks.length == 0){
            this.noBank = true;
          }
-         console.log(data);
+         //console.log(data);
        },
        err => console.log(err),
        () => console.log()
@@ -176,6 +177,10 @@ export class EventsComponent implements OnInit {
 
   passTotalPurchased(e){
     this.checkoutValue = e.total_purchase;
+  }
+
+  passTicketDetails(e){
+    this.eventTicketDetails = e.purchased
   }
 
   sendOTP(){

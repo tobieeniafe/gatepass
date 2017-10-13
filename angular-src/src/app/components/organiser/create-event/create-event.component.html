@@ -51,7 +51,7 @@
                   </div>
 
                   <div class="col m3 s8">
-                    <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketName.valid" [url]="'https://gatepassng.herokuapp.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+                    <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid" [url]="'https://gatepassng.herokuapp.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
                     buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, i)" [extensions]="['jpeg','png','jpg']"></image-upload>
                   </div>
                   <div class="col m2 s2">

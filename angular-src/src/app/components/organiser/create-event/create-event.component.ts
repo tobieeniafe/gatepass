@@ -80,9 +80,9 @@ export class CreateEventComponent implements OnInit {
 
   initTicket() {
       return this._fb.group({
-          ticketName: ['', Validators.required],
+          ticketName: [''],
           ticketPrice: [''],
-          ticketLimit: ['']
+          ticketLimit: ['', Validators.required]
       });
   }
 
@@ -133,6 +133,8 @@ ticketImageUpload(event,i){
 
   createEvent(d, t){
 
+    this.isDisabled = true;
+
     if (this.formatted_address == null || this.formatted_address == undefined) {
         this.event_location = this.event_location;
     } else {
@@ -154,11 +156,12 @@ ticketImageUpload(event,i){
     this.createEventService.postEvent(event).subscribe(
        data => {
          if(data.status == false){
-          Materialize.toast('Error while creating event', 5000, 'red white-text');
-          console.log(data);
+          Materialize.toast('Error occured while creating event', 3000, 'red white-text');
+          this.isDisabled = false;
+          //console.log(data);
         }else if(data.status == true){
-          console.log(data);
-          Materialize.toast('Event created', 5000, 'green white-text');
+          //console.log(data);
+          Materialize.toast('Event created', 3000, 'green white-text');
           this.router.navigate(['/events']);
         }
        },

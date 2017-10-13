@@ -29,18 +29,20 @@ export class IndexComponent{
 
   constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any){
     $(document).ready(function(){
-      $('.carousel.carousel-slider').carousel({
-        fullWidth: true
-      });
-    });
+        $('.carousel.carousel-slider').carousel({
+          fullWidth: true
+        });
+        
+        particlesJS.load('particles', 'assets/particles.json', function() {
+          console.log('good to go');
+        });
 
-    particlesJS.load('particles', 'assets/particles.json', function() {
-      console.log('good to go');
-    });
+        new WOW().init();
 
-    new WOW().init();
+        PageScrollConfig.defaultDuration = 1200;
+   });
 
-    PageScrollConfig.defaultDuration = 1200;
+    
 
   }
 
