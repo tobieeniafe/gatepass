@@ -1,5 +1,5 @@
 <div class="row body">
-  <div class="col m12 s12">
+  <div class="col m12 s12 center-align">
     <h5>Create Event</h5>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <br>
@@ -26,14 +26,11 @@
       </div>
       <div class="row"><br>
         <div class="input-field col s12 m6">
-          <input placeholder="Base Price &#8358;" id="price" type="number" class="validate"  name="base_price" [(ngModel)]="base_price">
-        </div>
-        <div class="input-field col s12 m6">
           <input placeholder="Contact Number" id="contact" type="text" class="validate"  name="contact" [(ngModel)]="contact">
         </div>
       </div>
       <br><br>
-      <h5>Ticket Details</h5><br>
+      <h5 class="center-align">Ticket Details</h5><br>
 
       <form [formGroup]="ticketForm" novalidate>
           <div formArrayName="tickets" class="row">

@@ -6,3 +6,9 @@
 label{
 	float: left;
 }
+
+.col, .row{
+  margin: auto !important;
+  align-items: center !important;
+  text-align: center !important;
+}

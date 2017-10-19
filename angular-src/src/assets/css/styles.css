@@ -91,11 +91,11 @@ footer {
   color: #00003f !important;
 }
 
-.col, .row{
+/*.col, .row{
   margin: auto !important;
   align-items: center !important;
   text-align: center !important;
-}
+}*/
 
 button .getStarted{
   margin: auto;

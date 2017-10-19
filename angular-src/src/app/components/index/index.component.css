@@ -22,7 +22,7 @@ div{
 }
 
 .divThree{
-   height: 700px;
+   height: 200px;
  }
  
 .fa{
@@ -40,6 +40,10 @@ div{
 
 .different .row .col{
   padding: 0 !important;
+}
+
+.slider-box{
+   padding-top: 80px;
 }
 
 #particles{
@@ -72,8 +76,21 @@ div{
   color: #ffffff !important;
 }
 
-a button{
+.getStarted{
+  color: #24242e !important;
+  background-color: #ffffff !important;
+  opacity: 0.5;
+  border: 1px solid #24242e;
+}
+
+.getStarted:hover{
   color: #ffffff !important;
+  background-color: #24242e !important;
+  opacity: 0.9;
+}
+
+.carousel.carousel-slider .carousel-item {
+    height: 280px !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -91,7 +108,7 @@ a button{
       width: 100vw !important;
     }
     .divThree{
-      height: 450px;
+      height: 250px;
     }
     .different .row{
       padding-left: 60px !important;
@@ -109,6 +126,9 @@ a button{
   }
   .different .row{
    padding-left: 0 !important;
+  }
+  .slider-box{
+   padding-top: 30px;
   }
 }
 
@@ -132,6 +152,7 @@ a button{
     width: 100%;
     height: 100%;
     background: #24242e;
+    opacity: 0.9;
     transform: scale(0,0);
     -webkit-transform: scale(0,0);
     -o-transform: scale(0,0);

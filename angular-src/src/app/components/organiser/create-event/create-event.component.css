@@ -39,3 +39,9 @@ agm-map {
 h6, h6 .fa{
   font-size: 20px;
 }
+
+.col, .row{
+  margin: auto !important;
+  align-items: center !important;
+  text-align: center !important;
+}

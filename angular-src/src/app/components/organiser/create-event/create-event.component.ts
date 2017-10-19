@@ -32,6 +32,7 @@ export class CreateEventComponent implements OnInit {
   searchControl: FormControl;
   formatted_address: string;
   ticketForm: FormGroup;
+  ticketPrices: number[] = [];
 
    @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -107,6 +108,8 @@ ticketImageUpload(event,i){
     }
     console.log(data)
 
+    this.ticketPrices.push(data.price)
+
     this.quicky(data).subscribe((resp)=>{
       if (resp.status) {
         this.tables.push(resp.table._id.$oid);
@@ -131,9 +134,14 @@ ticketImageUpload(event,i){
     console.log(this.image_url);
   }
 
+  getMinValue(array){
+      return Math.min.apply( Math, array );
+  }
+
   createEvent(d, t){
 
     this.isDisabled = true;
+    this.base_price = this.getMinValue(this.ticketPrices)
 
     if (this.formatted_address == null || this.formatted_address == undefined) {
         this.event_location = this.event_location;
