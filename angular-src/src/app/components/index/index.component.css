@@ -90,13 +90,26 @@ div{
 }
 
 .carousel.carousel-slider .carousel-item {
-    height: 280px !important;
+    height: 240px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .ribbon {
-        width: 100%;
-    }
+.iphone{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 326px;
+}
+
+.iosapp{
+  position: absolute;
+  bottom: 6px;
+  width: 274px;
+  height: 400px;
+  left: 22%;
+}
+
+/*tablets*/
+@media only screen and (max-width: 1030px) {
     h3{
       font-size: 36px;
     }
@@ -113,8 +126,12 @@ div{
     .different .row{
       padding-left: 60px !important;
     }
+    .iosapp{
+      left: 13.5%;
+    }
 }
 
+/*iphone plus*/
 @media only screen and (max-width: 450px) {
   .app{
     width: 80px;
@@ -129,6 +146,28 @@ div{
   }
   .slider-box{
    padding-top: 30px;
+  }
+  .iphone{
+    width: 302px;
+  }
+
+  .iosapp{
+    width: 255px;
+    height: 368px;
+    left: 18%;
+  }
+}
+
+/*iphone x, 7, 8*/
+@media only screen and (max-width: 400px) {
+  .iphone{
+    width: 302px;
+  }
+
+  .iosapp{
+    width: 255px;
+    height: 368px;
+    left: 14%;
   }
 }
 

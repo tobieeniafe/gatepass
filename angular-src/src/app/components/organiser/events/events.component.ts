@@ -181,6 +181,9 @@ export class EventsComponent implements OnInit {
 
   passTicketDetails(e){
     this.eventTicketDetails = e.purchased
+    for (var key in this.eventTicketDetails) {
+      console.log(`${key} ${key.length}`)
+    }
   }
 
   sendOTP(){

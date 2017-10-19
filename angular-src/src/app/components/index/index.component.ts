@@ -1,5 +1,6 @@
 import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Observable } from 'rxjs/Rx';
 import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
 declare var Materialize: any;
 declare var jQuery: any;
@@ -19,10 +20,8 @@ export class IndexComponent{
   private container: ElementRef;
 
   public title: string = 'GatePassNG';
-  private sliderImages: any = ['assets/img/1.png', 'assets/img/2.png', 'assets/img/1.jpg', 'assets/img/4.jpg', 'assets/img/5.jpg', 'assets/img/6.jpg'];
-  private image: string = this.sliderImages[2];
-  private iosApp: string = 'assets/img/iphone.png';
-  private ribbon: string = 'assets/img/ribbon.png';
+  private sliderImages: any = ['assets/img/app-1.jpg', 'assets/img/app-2.jpg', 'assets/img/app-3.jpg'];
+  private iphone: string = 'assets/img/iphone.png';
   private appstore: string = 'assets/img/appstore.png';
   private playstore: string = 'assets/img/playstore.png';
 
@@ -33,6 +32,14 @@ export class IndexComponent{
           fullWidth: true
         });
         
+        $(".next").click(function(){
+            $('.carousel').carousel('next');
+        });
+
+        $(".prev").click(function(){
+            $('.carousel').carousel('prev');
+        });
+
         particlesJS.load('particles', 'assets/particles.json', function() {
           console.log('good to go');
         });
@@ -42,9 +49,9 @@ export class IndexComponent{
         PageScrollConfig.defaultDuration = 1200;
    });
 
-    
-
+    Observable.interval(6000).subscribe(() => {
+      $('.carousel').carousel('next'); 
+    });
   }
-
 
 }

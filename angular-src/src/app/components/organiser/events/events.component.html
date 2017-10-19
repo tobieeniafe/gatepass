@@ -94,9 +94,9 @@
     <div id="ticketDetailsModal" class="modal row" align="center">
       <h4>Ticket Details Here</h4>
       <ul>
-        <li *ngFor="let t of eventTicketDetails"><h5>{{t.table.title}}  {{t.quantity}}</h5></li>
+        <!-- <li *ngFor="let t of eventTicketDetails"><h5>{{t}}  {{t?.length}}</h5></li> -->
       </ul>
-      <!-- {{eventTicketDetails | json}} -->
+      {{eventTicketDetails | json}}
     </div>
     <!-- Ticket Details Modal End -->
 

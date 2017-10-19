@@ -1,7 +1,7 @@
 <div class="body">
   <nav class="white" role="navigation" id="topOfPage">
     <div class="nav-wrapper container">
-      <a id="logo-container" routerLink='/index' class="brand-logo"><!-- <img src="{{logo}}"> --><h4 style="color: #24242e; font-weight: bold;">Gatepass</h4></a>
+      <a id="logo-container" routerLink='/index' class="brand-logo"><!-- <img src="{{logo}}"> --><h4 style="font-weight: bold;">Gatepass</h4></a>
       <ul class="right hide-on-med-and-down">
         <li><a *ngIf="!_auth.loggedIn()" routerLink='/register' routerLinkActive='active'>Get Started</a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/events' routerLinkActive='active'>Events</a></li>
