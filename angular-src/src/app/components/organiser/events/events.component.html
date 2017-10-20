@@ -84,7 +84,7 @@
         <h4 align='center' class="grey-text">OTP</h4>
         <p class="grey-text">An OTP code has been sent to your registered phone number</p>
           <input class="" type="text" placeholder="OTP code" [(ngModel)]='otp'>
-          <button type="button" name="button" class="btn waves-effect waves-light"  (click)='sendOTP()'>Proceed</button>
+          <button type="button" name="button" class="btn waves-effect waves-light" (click)='sendOTP()' [disabled]='processingPayment'>Proceed</button>
       </div>
       <div class="col m1 s1"></div>
     </div>

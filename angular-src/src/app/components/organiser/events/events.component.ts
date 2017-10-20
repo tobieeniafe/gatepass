@@ -57,6 +57,7 @@ export class EventsComponent implements OnInit {
   otp: any;
   transferCode: any;
   eventTicketDetails: string[];
+  processingPayment: boolean = false;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -89,7 +90,7 @@ export class EventsComponent implements OnInit {
              this.noEvent = true;
          }
        },
-       err => console.log(err),
+       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
        () => console.log()//this.events
     );
   }
@@ -124,7 +125,7 @@ export class EventsComponent implements OnInit {
          }
          //console.log(data);
        },
-       err => console.log(err),
+       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
        () => console.log()
     );
   }
@@ -148,7 +149,7 @@ export class EventsComponent implements OnInit {
          }
          console.log(data)
        },
-       err => console.log(err),
+       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
        () => console.log()
     );
 
@@ -167,10 +168,10 @@ export class EventsComponent implements OnInit {
     }
     this.eventsService.getPayed(message).subscribe(
        data => {
-         console.log(data)
+         //console.log(data)
          this.transferCode = data.transfer_code
        },
-       err => console.log(err),
+       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
        () => console.log()
     );
   }
@@ -184,7 +185,7 @@ export class EventsComponent implements OnInit {
     function showObject(obj) {
       for (var p in obj) {
         if( obj.hasOwnProperty(p) ) {
-          saveInto.push(`${p} tickets - ${obj[p].reduce((sum, value) => sum + value, 0)} sales`)
+          saveInto.push(`${p} - ${obj[p].reduce((sum, value) => sum + value, 0)} ticket(s) sold`)
         }
       }             
     }
@@ -194,15 +195,24 @@ export class EventsComponent implements OnInit {
   }
 
   sendOTP(){
+    this.processingPayment = true
     const message = {
       otp: this.otp,
       transfer_code: this.transferCode
     }
     this.eventsService.sendOTP(message).subscribe(
        data => {
-         console.log(data)
+         if (data.status == true) {
+             Materialize.toast(data.message, 3000, 'green white-text');
+             this.processingPayment = false
+             $('#otpModal').modal('close');
+         } else if(data.status == false) {
+            Materialize.toast('Error occured', 3000, 'red white-text');
+            this.processingPayment = false 
+         }
+         //console.log(data)
        },
-       err => console.log(err),
+       err => Materialize.toast('Error occured', 3000, 'red white-text'),
        () => console.log()
     );
   }

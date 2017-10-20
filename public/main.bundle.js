@@ -277,7 +277,7 @@ var IndexComponent = (function () {
                 $('.carousel').carousel('prev');
             });
             particlesJS.load('particles', 'assets/particles.json', function () {
-                console.log('good to go');
+                //console.log('good to go');
             });
             new WOW().init();
             __WEBPACK_IMPORTED_MODULE_3_ng2_page_scroll__["b" /* PageScrollConfig */].defaultDuration = 1200;
@@ -674,7 +674,7 @@ var CreateEventComponent = (function () {
                 Materialize.toast('Event created', 3000, 'green white-text');
                 _this.router.navigate(['/events']);
             }
-        }, function (err) { return console.log(err); }, function () { return console.log(); } //console.log('Request Completed') event
+        }, function (err) { return Materialize.toast('Oops an error occured', 3000, 'red white-text'); }, function () { return console.log(); } //console.log('Request Completed') event
         );
     };
     return CreateEventComponent;
@@ -792,7 +792,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n            <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.sold}}  <a href=\"#ticketDetailsModal\" class=\"modal-trigger green-text\" (click)='passTicketDetails(event)'>View Details</a></td>\r\n\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>\r\n                <a class=\"waves-effect waves-light btn modal-trigger white-text\" href='#checkoutModal' (click)='passTotalPurchased(event)'>Checkout</a>\r\n              </td>\r\n            </tr>\r\n        </tbody>\r\n  </table>\r\n\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n    <!-- Checkout Modal -->\r\n    <div id=\"checkoutModal\" class=\"modal\">\r\n      <div class=\"modal-content\">\r\n        <h4 align='center' class=\"green-text\">&#8358;{{checkoutValue}}</h4>\r\n        <h5 align='center' class=\"grey-text\">Your banks</h5>\r\n        <p></p>\r\n        <div *ngIf='!noBank'>\r\n          <hr>\r\n          <span *ngFor='let bank of myBanks; let i = index'>\r\n            <input class=\"with-gap\" id='{{i}}' type=\"radio\" name=\"banks\" [value]='bank.recepient_code' (change)=\"radioSelectChange(bank)\">\r\n            <label for=\"{{i}}\">{{bank.bank_name}} {{bank.account_number}}</label>\r\n            <hr>\r\n          </span>\r\n          <div class=\"col\">\r\n            <a class=\"waves-effect waves-light btn white-text\" (click)='getPayed()'>Get Payed</a>\r\n          </div>\r\n        </div>\r\n\r\n          <div class=\"col\">\r\n            <a class=\"modal-trigger\" href=\"#addBankModal\"><h5 class=\"grey-text\">Add a new bank</h5></a>\r\n          </div>\r\n      </div>\r\n    </div>\r\n    <!-- Checkout Modal End -->\r\n\r\n    <!-- OTP Modal -->\r\n    <div id=\"otpModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">OTP</h4>\r\n        <p class=\"grey-text\">An OTP code has been sent to your registered phone number</p>\r\n          <input class=\"\" type=\"text\" placeholder=\"OTP code\" [(ngModel)]='otp'>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\"  (click)='sendOTP()'>Proceed</button>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- OTP Modal End -->\r\n\r\n    <!-- Ticket Details Modal -->\r\n    <div id=\"ticketDetailsModal\" class=\"modal row\" align=\"center\">\r\n      <h4>Ticket Details</h4>\r\n      <ul>\r\n        <li *ngFor=\"let t of eventTicketDetails\"><h5>{{t}}</h5></li>\r\n      </ul>\r\n    </div>\r\n    <!-- Ticket Details Modal End -->\r\n\r\n    <!-- Add Bank Modal -->\r\n    <div id=\"addBankModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">Add New Bank</h4>\r\n          <div class=\"input-field col s12\">\r\n            <select #selectedBank>\r\n              <option *ngFor='let bank of allBanks' [value]='bank.code'> {{bank.name}} </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"input-field col s12\">\r\n            <input class=\"\" type=\"text\" placeholder=\"Account Number\" [(ngModel)]='accountNumber'>\r\n          </div>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='addBank(selectedBank.value)' [disabled]='addingBank'>Add Bank</button>\r\n          <br><br>\r\n          <div class=\"preloader-wrapper small active\" *ngIf='addingBank'>\r\n            <div class=\"spinner-layer\">\r\n              <div class=\"circle-clipper left\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"gap-patch\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"circle-clipper right\">\r\n                <div class=\"circle\"></div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- Add Bank Modal End -->\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n            <tr *ngIf='noEvent'><td colspan=\"6\"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.sold}}  <a href=\"#ticketDetailsModal\" class=\"modal-trigger green-text\" (click)='passTicketDetails(event)'>View Details</a></td>\r\n\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>\r\n                <a class=\"waves-effect waves-light btn modal-trigger white-text\" href='#checkoutModal' (click)='passTotalPurchased(event)'>Checkout</a>\r\n              </td>\r\n            </tr>\r\n        </tbody>\r\n  </table>\r\n\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n    <!-- Checkout Modal -->\r\n    <div id=\"checkoutModal\" class=\"modal\">\r\n      <div class=\"modal-content\">\r\n        <h4 align='center' class=\"green-text\">&#8358;{{checkoutValue}}</h4>\r\n        <h5 align='center' class=\"grey-text\">Your banks</h5>\r\n        <p></p>\r\n        <div *ngIf='!noBank'>\r\n          <hr>\r\n          <span *ngFor='let bank of myBanks; let i = index'>\r\n            <input class=\"with-gap\" id='{{i}}' type=\"radio\" name=\"banks\" [value]='bank.recepient_code' (change)=\"radioSelectChange(bank)\">\r\n            <label for=\"{{i}}\">{{bank.bank_name}} {{bank.account_number}}</label>\r\n            <hr>\r\n          </span>\r\n          <div class=\"col\">\r\n            <a class=\"waves-effect waves-light btn white-text\" (click)='getPayed()'>Get Payed</a>\r\n          </div>\r\n        </div>\r\n\r\n          <div class=\"col\">\r\n            <a class=\"modal-trigger\" href=\"#addBankModal\"><h5 class=\"grey-text\">Add a new bank</h5></a>\r\n          </div>\r\n      </div>\r\n    </div>\r\n    <!-- Checkout Modal End -->\r\n\r\n    <!-- OTP Modal -->\r\n    <div id=\"otpModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">OTP</h4>\r\n        <p class=\"grey-text\">An OTP code has been sent to your registered phone number</p>\r\n          <input class=\"\" type=\"text\" placeholder=\"OTP code\" [(ngModel)]='otp'>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='sendOTP()' [disabled]='processingPayment'>Proceed</button>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- OTP Modal End -->\r\n\r\n    <!-- Ticket Details Modal -->\r\n    <div id=\"ticketDetailsModal\" class=\"modal row\" align=\"center\">\r\n      <h4>Ticket Details</h4>\r\n      <ul>\r\n        <li *ngFor=\"let t of eventTicketDetails\"><h5>{{t}}</h5></li>\r\n      </ul>\r\n    </div>\r\n    <!-- Ticket Details Modal End -->\r\n\r\n    <!-- Add Bank Modal -->\r\n    <div id=\"addBankModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">Add New Bank</h4>\r\n          <div class=\"input-field col s12\">\r\n            <select #selectedBank>\r\n              <option *ngFor='let bank of allBanks' [value]='bank.code'> {{bank.name}} </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"input-field col s12\">\r\n            <input class=\"\" type=\"text\" placeholder=\"Account Number\" [(ngModel)]='accountNumber'>\r\n          </div>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='addBank(selectedBank.value)' [disabled]='addingBank'>Add Bank</button>\r\n          <br><br>\r\n          <div class=\"preloader-wrapper small active\" *ngIf='addingBank'>\r\n            <div class=\"spinner-layer\">\r\n              <div class=\"circle-clipper left\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"gap-patch\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"circle-clipper right\">\r\n                <div class=\"circle\"></div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- Add Bank Modal End -->\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -857,6 +857,7 @@ var EventsComponent = (function () {
         ];
         this.addingBank = false;
         this.noBank = false;
+        this.processingPayment = false;
         this.viewEvents();
         this.loadBanks();
         this.token = localStorage.getItem('token');
@@ -884,7 +885,7 @@ var EventsComponent = (function () {
             if (_this.events.length == 0) {
                 _this.noEvent = true;
             }
-        }, function (err) { return console.log(err); }, function () { return console.log(); } //this.events
+        }, function (err) { return Materialize.toast('Oops an error occured', 3000, 'red white-text'); }, function () { return console.log(); } //this.events
         );
     };
     EventsComponent.prototype.changeStatus = function (e) {
@@ -916,7 +917,7 @@ var EventsComponent = (function () {
                 _this.noBank = true;
             }
             //console.log(data);
-        }, function (err) { return console.log(err); }, function () { return console.log(); });
+        }, function (err) { return Materialize.toast('Oops an error occured', 3000, 'red white-text'); }, function () { return console.log(); });
     };
     EventsComponent.prototype.addBank = function (c) {
         var _this = this;
@@ -937,7 +938,7 @@ var EventsComponent = (function () {
                 _this.addingBank = false;
             }
             console.log(data);
-        }, function (err) { return console.log(err); }, function () { return console.log(); });
+        }, function (err) { return Materialize.toast('Oops an error occured', 3000, 'red white-text'); }, function () { return console.log(); });
     };
     EventsComponent.prototype.radioSelectChange = function (b) {
         this.transferBankCode = b.recipient_code;
@@ -951,9 +952,9 @@ var EventsComponent = (function () {
             recipient_code: this.transferBankCode
         };
         this.eventsService.getPayed(message).subscribe(function (data) {
-            console.log(data);
+            //console.log(data)
             _this.transferCode = data.transfer_code;
-        }, function (err) { return console.log(err); }, function () { return console.log(); });
+        }, function (err) { return Materialize.toast('Oops an error occured', 3000, 'red white-text'); }, function () { return console.log(); });
     };
     EventsComponent.prototype.passTotalPurchased = function (e) {
         this.checkoutValue = e.total_purchase;
@@ -963,7 +964,7 @@ var EventsComponent = (function () {
         function showObject(obj) {
             for (var p in obj) {
                 if (obj.hasOwnProperty(p)) {
-                    saveInto.push(p + " tickets - " + obj[p].reduce(function (sum, value) { return sum + value; }, 0) + " sales");
+                    saveInto.push(p + " - " + obj[p].reduce(function (sum, value) { return sum + value; }, 0) + " ticket(s) sold");
                 }
             }
         }
@@ -972,13 +973,24 @@ var EventsComponent = (function () {
         //console.log(this.eventTicketDetails)
     };
     EventsComponent.prototype.sendOTP = function () {
+        var _this = this;
+        this.processingPayment = true;
         var message = {
             otp: this.otp,
             transfer_code: this.transferCode
         };
         this.eventsService.sendOTP(message).subscribe(function (data) {
-            console.log(data);
-        }, function (err) { return console.log(err); }, function () { return console.log(); });
+            if (data.status == true) {
+                Materialize.toast(data.message, 3000, 'green white-text');
+                _this.processingPayment = false;
+                $('#otpModal').modal('close');
+            }
+            else if (data.status == false) {
+                Materialize.toast('Error occured', 3000, 'red white-text');
+                _this.processingPayment = false;
+            }
+            //console.log(data)
+        }, function (err) { return Materialize.toast('Error occured', 3000, 'red white-text'); }, function () { return console.log(); });
     };
     return EventsComponent;
 }());

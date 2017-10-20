@@ -173,7 +173,7 @@ ticketImageUpload(event,i){
           this.router.navigate(['/events']);
         }
        },
-       err => console.log(err),
+       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
        () =>  console.log() //console.log('Request Completed') event
 
     );

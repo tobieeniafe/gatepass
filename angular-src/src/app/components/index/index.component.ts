@@ -41,7 +41,7 @@ export class IndexComponent{
         });
 
         particlesJS.load('particles', 'assets/particles.json', function() {
-          console.log('good to go');
+          //console.log('good to go');
         });
 
         new WOW().init();
