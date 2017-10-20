@@ -4,8 +4,8 @@ html, body, app-root , router-outlet, .body{
 }
 
 @font-face {
-    font-family: 'avenirNextCondensed';
-    src: url('/assets/fonts/AvenirNextCondensed-Medium.ttf');
+    font-family: 'Lato';
+    src: url('/assets/fonts/Lato-Regular.ttf');
 }
 
 @font-face {
@@ -119,7 +119,7 @@ a{
 }
 
 h1, h2, h3, h4, h5, h6, p{
-  font-family: 'avenirNextCondensed' !important;
+  font-family: 'Lato' !important;
 }
 
 li .active, li .active i {

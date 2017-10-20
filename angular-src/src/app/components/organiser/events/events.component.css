@@ -24,3 +24,7 @@
   align-items: center !important;
   text-align: center !important;
 }
+
+#ticketDetailsModal{
+  min-height: 200px;
+}

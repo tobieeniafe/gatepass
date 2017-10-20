@@ -17,7 +17,7 @@ agm-map {
   font-weight: normal;
   padding: 6px;
   border-radius: 3px;
-  font-family: 'avenirNextCondensed';
+  font-family: 'Lato';
 }
 
 /deep/ image-upload label.clear span{

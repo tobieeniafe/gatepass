@@ -56,7 +56,7 @@ export class EventsComponent implements OnInit {
   transferBankCode: any;
   otp: any;
   transferCode: any;
-  eventTicketDetails: any;
+  eventTicketDetails: string[];
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -180,10 +180,17 @@ export class EventsComponent implements OnInit {
   }
 
   passTicketDetails(e){
-    this.eventTicketDetails = e.purchased
-    for (var key in this.eventTicketDetails) {
-      console.log(`${key} ${key.length}`)
+    var saveInto = []
+    function showObject(obj) {
+      for (var p in obj) {
+        if( obj.hasOwnProperty(p) ) {
+          saveInto.push(`${p} tickets - ${obj[p].reduce((sum, value) => sum + value, 0)} sales`)
+        }
+      }             
     }
+    showObject(e.purchased)
+    this.eventTicketDetails = saveInto
+    //console.log(this.eventTicketDetails)
   }
 
   sendOTP(){

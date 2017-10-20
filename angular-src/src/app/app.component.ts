@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   constructor() {
     Observable.interval(1000).subscribe(() => {
+
       this.computerIsOnline = Observable.merge(
         Observable.of(navigator.onLine),
         Observable.fromEvent(window, 'online').map(() => true),
@@ -26,6 +27,16 @@ export class AppComponent implements OnInit {
           //return false
         })
       );
+
+      $(window).scroll(function() {
+          if ( $(this).scrollTop() > 550 ) {
+             $('.go-top').addClass('show');
+          } else {
+             $('.go-top').removeClass('show');
+          }
+      }); 
+       
+
     });
   }
 
