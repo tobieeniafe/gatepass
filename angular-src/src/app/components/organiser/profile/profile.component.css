@@ -12,3 +12,16 @@ label{
   align-items: center !important;
   text-align: center !important;
 }
+
+@media only screen and (max-width: 450px) {
+   .body{
+	  padding: 0;
+	}
+}
+
+.avatar{
+	border-radius: 15px;
+	background-color: #24242e;
+	padding: 35px;
+	color: #fff;
+}

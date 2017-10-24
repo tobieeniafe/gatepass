@@ -90,7 +90,7 @@ export class EventsComponent implements OnInit {
              this.noEvent = true;
          }
        },
-       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
+       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
        () => console.log()//this.events
     );
   }
@@ -125,7 +125,7 @@ export class EventsComponent implements OnInit {
          }
          //console.log(data);
        },
-       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
+       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
        () => console.log()
     );
   }
@@ -147,9 +147,9 @@ export class EventsComponent implements OnInit {
             Materialize.toast('Unable to add bank', 3000, 'red white-text');
             this.addingBank = false;
          }
-         console.log(data)
+         //console.log(data)
        },
-       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
+       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
        () => console.log()
     );
 
@@ -171,7 +171,7 @@ export class EventsComponent implements OnInit {
          //console.log(data)
          this.transferCode = data.transfer_code
        },
-       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
+       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
        () => console.log()
     );
   }

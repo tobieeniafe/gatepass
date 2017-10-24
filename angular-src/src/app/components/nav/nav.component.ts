@@ -29,8 +29,7 @@ export class NavComponent implements OnInit {
       })(jQuery);
    }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   setLoggedIn(value: boolean) {
     // Update login status subject
@@ -39,7 +38,7 @@ export class NavComponent implements OnInit {
   }
 
   logOut(){
-    console.log('logged out');
+    //console.log('logged out');
       Materialize.toast('Logout successful', 5000, 'green white-text');
       localStorage.removeItem('token');
       this.router.navigate(['/login']);

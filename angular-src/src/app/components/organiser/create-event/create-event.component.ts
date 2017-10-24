@@ -27,7 +27,9 @@ export class CreateEventComponent implements OnInit {
   base_price: any;
   contact: any;
   tables: string[] = [];
-  isDisabled: boolean = true;
+  ticketImage: boolean = true;
+  eventImage: boolean = true;
+  isDisabled: boolean = this.ticketImage || this.eventImage;
   image_url: any;
   searchControl: FormControl;
   formatted_address: string;
@@ -106,15 +108,16 @@ ticketImageUpload(event,i){
       "title": this.ticketForm.value.tickets[i].ticketName,
       "limit": this.ticketForm.value.tickets[i].ticketLimit
     }
-    console.log(data)
+    //console.log(data)
 
     this.ticketPrices.push(data.price)
 
     this.quicky(data).subscribe((resp)=>{
       if (resp.status) {
         this.tables.push(resp.table._id.$oid);
-        console.log(this.tables);
-        this.isDisabled = false;
+        //console.log(this.tables);
+        this.ticketImage = false;
+        this.isDisabled = this.ticketImage || this.eventImage;
       }
     })
   }
@@ -131,7 +134,9 @@ ticketImageUpload(event,i){
     const resp = event.serverResponse._body
     const j = JSON.parse(resp);
     this.image_url = j.image_url;
-    console.log(this.image_url);
+    //console.log(this.image_url);
+    this.eventImage = false;
+    this.isDisabled = this.ticketImage || this.eventImage;
   }
 
   getMinValue(array){
@@ -173,7 +178,7 @@ ticketImageUpload(event,i){
           this.router.navigate(['/events']);
         }
        },
-       err => Materialize.toast('Oops an error occured', 3000, 'red white-text'),
+       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
        () =>  console.log() //console.log('Request Completed') event
 
     );

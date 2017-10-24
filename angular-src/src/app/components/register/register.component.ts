@@ -54,23 +54,25 @@ export class RegisterComponent implements OnInit {
        console.log("err")
        return false
      }
-     this._auth.registerUser(user).subscribe(data => {
-       console.log(data);
-       if (data.status == false) {
-         Materialize.toast(data.message+'s', 3000, 'red white-text');
-         this.isDisabled = false;
-       }else if(data.status == true){
-         //Flash message
-         Materialize.toast('Registration successful', 3000, 'green white-text');
-         localStorage.setItem('token', data.token);
-         //console.log(localStorage.setItem('token', data.token));
-         this._router.navigate(['/events']);
-         this.isDisabled = false;
-       }else{
-         //Flash message
-         this._router.navigate(['/register'])
-         this.isDisabled = false;
-       }
-     })
+     this._auth.registerUser(user).subscribe(
+       data => {
+           if (data.status == false) {
+             Materialize.toast(data.message+'s', 3000, 'red white-text');
+             this.isDisabled = false;
+           }else if(data.status == true){
+             Materialize.toast('Registration successful', 3000, 'green white-text');
+             localStorage.setItem('token', data.token);
+             //console.log(localStorage.setItem('token', data.token));
+             this._router.navigate(['/events']);
+             this.isDisabled = false;
+           }else{
+             this._router.navigate(['/register'])
+             this.isDisabled = false;
+           }
+     },
+     err => Materialize.toast("Something's not right", 1500, 'red white-text'),
+     () =>  console.log()
+   );
+
   }
 }

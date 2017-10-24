@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  avatar: string = 'assets/img/avatar.jpg';
   constructor() { }
 
   ngOnInit() {

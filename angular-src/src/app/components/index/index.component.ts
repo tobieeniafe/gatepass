@@ -29,19 +29,28 @@ export class IndexComponent{
   constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any){
     $(document).ready(function(){
         $('.carousel.carousel-slider').carousel({
-          fullWidth: true
+          fullWidth: true,
+          duration: 300
         });
         
         $(".next").click(function(){
             $('.carousel').carousel('next');
+            $('.slider').slider('next');
         });
 
         $(".prev").click(function(){
             $('.carousel').carousel('prev');
+            $('.slider').slider('prev');
         });
 
         particlesJS.load('particles', 'assets/particles.json', function() {
           //console.log('good to go');
+        });
+
+        $('.slider').slider({
+          indicators: false,
+          transition: 300,
+          interval: 60000
         });
 
         new WOW().init();
@@ -51,6 +60,7 @@ export class IndexComponent{
 
     Observable.interval(6000).subscribe(() => {
       $('.carousel').carousel('next'); 
+      $('.slider').slider('next');
     });
   }
 
