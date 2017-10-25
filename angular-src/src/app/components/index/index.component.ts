@@ -21,7 +21,7 @@ export class IndexComponent{
 
   public title: string = 'GatePassNG';
   private sliderImages: any = ['assets/img/app-1.jpg', 'assets/img/app-2.jpg', 'assets/img/app-3.jpg'];
-  private iphone: string = 'assets/img/iphone.png';
+  private app: string = 'assets/img/app.gif';
   private appstore: string = 'assets/img/appstore.png';
   private playstore: string = 'assets/img/playstore.png';
 
@@ -35,22 +35,14 @@ export class IndexComponent{
         
         $(".next").click(function(){
             $('.carousel').carousel('next');
-            $('.slider').slider('next');
         });
 
         $(".prev").click(function(){
             $('.carousel').carousel('prev');
-            $('.slider').slider('prev');
         });
 
         particlesJS.load('particles', 'assets/particles.json', function() {
           //console.log('good to go');
-        });
-
-        $('.slider').slider({
-          indicators: false,
-          transition: 300,
-          interval: 60000
         });
 
         new WOW().init();

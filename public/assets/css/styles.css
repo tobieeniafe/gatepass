@@ -251,7 +251,20 @@ div.preloader {
 .preloader .welcome {
   position: absolute;
   top: 15%;
-  left: 40%;
-  margin: auto;
-  text-align: center;
+  left: 38%;
+  margin: auto !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+@media only screen and (max-width: 1030px) {
+  .preloader .welcome {
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .preloader .welcome {
+    left: 10%;
+  }
 }
