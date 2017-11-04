@@ -3,10 +3,6 @@
   padding-bottom: 70px;
 }
 
-label{
-  font-size: 12px !important;
-}
-
 agm-map {
   height: 100vh;
 }
@@ -34,10 +30,6 @@ agm-map {
 
 /deep/ image-upload div.image-container.hr-inline-group{
   background-color: #f8f8f8;
-}
-
-h6, h6 .fa{
-  font-size: 20px;
 }
 
 .col, .row{

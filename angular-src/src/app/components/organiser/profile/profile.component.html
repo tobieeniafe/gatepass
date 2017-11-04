@@ -3,35 +3,34 @@
 		<div class="col s12 m12 avatar">
 			<img src="{{avatar}}" class="circle" style="width: 100px; height: 100px">
 			<br>
-			<h4>John Doe</h4>
-			<p>@johndoe</p>
-			<p>johndoe@mail.com</p>
+			<h4>{{user.fullname}}</h4>
+			<p>{{user.email}}</p>
 		</div>
 	</div>
 	<div class="row col s12 m8">
 		<h4 class="center-align">Update Account Details</h4>
 		<div class="col s12 m12">
 			<label>Fullname</label>
-			<input type="text" value="John Doe">
+			<input type="text" [ngModel]="user.fullname">
 		</div>
 		<div class="col s12 m12">
 			<label>Phone number</label>
-			<input type="text" value="0810 123 4567">
+			<input type="text" [ngModel]="user.phone">
 		</div>
 		<div class="col s12 m12">
 			<label>Email</label>
-			<input type="text" value="johndoe@mail.com">
+			<input type="text" [ngModel]="user.email">
 		</div>
 		<div class="col s12 m12">
 			<label>Current password</label>
-			<input type="password" value="********">
+			<input type="password" [ngModel]="user.currentPassword">
 		</div>
 		<div class="col s12 m12">
 			<label>New password</label>
-			<input type="password" value="********">
+			<input type="password" [ngModel]="user.newPassword">
 		</div>
 		<div class="col s12 m12 center-align">
-			<button type="button" class="btn">Update Account</button>
+			<button type="button" class="btn" (click)='updateUser()'>Update Account</button>
 		</div>
 		
 	</div>

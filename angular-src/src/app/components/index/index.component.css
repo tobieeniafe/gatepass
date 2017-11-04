@@ -95,12 +95,6 @@ div{
 
 /*tablets*/
 @media only screen and (max-width: 1030px) {
-    h3{
-      font-size: 36px;
-    }
-    p{
-      font-size: 18px;
-    }
     #particles-js{
       height: 70vh !important;
       width: 100vw !important;

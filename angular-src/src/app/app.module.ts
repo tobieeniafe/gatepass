@@ -17,6 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { EventsComponent } from './components/organiser/events/events.component';
 import { EventsService } from './components/organiser/events/events.service';
 import { ProfileComponent } from './components/organiser/profile/profile.component';
+import { ProfileService } from './components/organiser/profile/profile.service';
 import { AuthService } from './services/auth.service';
 import { ValidatorService } from './services/validator.service';
 import { NavComponent } from './components/nav/nav.component';
@@ -61,7 +62,7 @@ const appRoutes: Routes = [
     NavComponent,
     CreateEventComponent
   ],
-  providers: [ AuthService, ValidatorService, AuthGuard, CreateEventService, EventsService, RouteGuard ],
+  providers: [ AuthService, ValidatorService, AuthGuard, CreateEventService, EventsService, RouteGuard, ProfileService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

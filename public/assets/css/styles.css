@@ -5,7 +5,7 @@ html, body, app-root , router-outlet, .body{
 
 @font-face {
     font-family: 'Lato';
-    src: url('/assets/fonts/Lato-Regular.ttf');
+    src: url('/assets/fonts/Lato-Light.ttf');
 }
 
 @font-face {
@@ -101,16 +101,7 @@ button .getStarted{
 
 .brand-logo{
   font-family: 'sassoonSans';
-  font-size: 15px !important;
   color: #24242e !important;
-}
-
-h3{
-  font-size: 72px;
-}
-
-p{
-  font-size: 20px;
 }
 
 a{
