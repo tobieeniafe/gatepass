@@ -76,6 +76,10 @@ div{
   color: #ffffff !important;
 }
 
+.center h5 a .fa{
+  font-size: 25px !important;
+}
+
 .getStarted{
   color: #24242e !important;
   background-color: #ffffff !important;
@@ -110,8 +114,8 @@ div{
 /*iphone plus*/
 @media only screen and (max-width: 450px) {
   .app{
-    width: 80px;
-    height: 35px;
+    width: 120px;
+    height: 55px;
   }
   #particles-js{
     width: 100vw !important;
