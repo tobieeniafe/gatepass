@@ -11,26 +11,26 @@
 		<h4 class="center-align">Update Account Details</h4>
 		<div class="col s12 m12">
 			<label>Fullname</label>
-			<input type="text" [ngModel]="user.fullname">
+			<input type="text" [ngModel]="user.fullname" #fn>
 		</div>
 		<div class="col s12 m12">
 			<label>Phone number</label>
-			<input type="text" [ngModel]="user.phone">
+			<input type="text" [ngModel]="user.phone" #pn>
 		</div>
 		<div class="col s12 m12">
 			<label>Email</label>
-			<input type="text" [ngModel]="user.email">
+			<input type="text" [ngModel]="user.email" #e>
 		</div>
 		<div class="col s12 m12">
 			<label>Current password</label>
-			<input type="password" [ngModel]="user.currentPassword">
+			<input type="password" [ngModel]="user.currentPassword" #cp>
 		</div>
 		<div class="col s12 m12">
 			<label>New password</label>
-			<input type="password" [ngModel]="user.newPassword">
+			<input type="password" [ngModel]="user.newPassword" #np>
 		</div>
 		<div class="col s12 m12 center-align">
-			<button type="button" class="btn" (click)='updateUser()'>Update Account</button>
+			<button type="button" class="btn" (click)='updateUser(fn.value, pn.value, e.value, cp.value, np.value)' [disabled]='isDisabled'>Update Account</button>
 		</div>
 		
 	</div>

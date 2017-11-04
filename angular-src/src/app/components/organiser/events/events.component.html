@@ -13,7 +13,10 @@
         </thead>
 
         <tbody *ngIf='events'>
-            <tr *ngIf='noEvent'><td colspan="6"><h4 align=center>Oops.. you have no events at this time ☹</h4></td></tr>
+            <tr *ngIf='noEvent'><td colspan="6">
+              <h4 align='center'>Oops.. you have no events at this time ☹</h4>
+              <a routerLink='/create-event' align='center'><u><h5>Create one now</h5></u></a>
+            </td></tr>
             <tr *ngFor="let event of events; let i = index">
               <td>{{i+1}}</td>
               <td>{{event.name}}</td>

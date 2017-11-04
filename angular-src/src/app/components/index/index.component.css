@@ -82,9 +82,10 @@ div{
 
 .getStarted{
   color: #24242e !important;
-  background-color: #ffffff !important;
-  opacity: 0.5;
-  border: 1px solid #24242e;
+  background-color: rgba(255,255,255,0.5) !important;
+  border: 2px solid #24242e !important;
+  font-weight: bolder !important;
+  border-radius: 15px;
 }
 
 .getStarted:hover{
