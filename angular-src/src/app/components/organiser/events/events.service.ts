@@ -17,7 +17,7 @@ export class EventsService {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
 
-    return this.http.get('https://gatepassng.herokuapp.com/api/v1/events', {headers: headers})
+    return this.http.get('http://staging.gatepassng.com/api/v1/events', {headers: headers})
     .map(res => {
         return res.json();
     });
@@ -27,7 +27,7 @@ export class EventsService {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
 
-    return this.http.put(`https://gatepassng.herokuapp.com/api/v1/event/online/${id}`, message, {headers: headers})
+    return this.http.put(`http://staging.gatepassng.com/api/v1/event/online/${id}`, message, {headers: headers})
     .map(res => {
         return res.json();
     });
@@ -37,7 +37,7 @@ export class EventsService {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
 
-    return this.http.get('https://gatepassng.herokuapp.com/api/v1/organiser/bank', {headers: headers})
+    return this.http.get('http://staging.gatepassng.com/api/v1/organiser/bank', {headers: headers})
     .map(res => {
         return res.json();
     });
@@ -46,7 +46,7 @@ export class EventsService {
   addBank(details){
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
-    return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/bank', details, {headers: headers})
+    return this.http.post('http://staging.gatepassng.com/api/v1/organiser/bank', details, {headers: headers})
     .map(res => {
         return res.json();
     });
@@ -55,7 +55,7 @@ export class EventsService {
   getPayed(message){
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
-    return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/transfer', message, {headers: headers})
+    return this.http.post('http://staging.gatepassng.com/api/v1/organiser/transfer', message, {headers: headers})
     .map(res => {
         return res.json();
     });
@@ -64,7 +64,7 @@ export class EventsService {
   sendOTP(message){
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
-    return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/finalize_transfer', message, {headers: headers})
+    return this.http.post('http://staging.gatepassng.com/api/v1/organiser/finalize_transfer', message, {headers: headers})
     .map(res => {
         return res.json();
     });

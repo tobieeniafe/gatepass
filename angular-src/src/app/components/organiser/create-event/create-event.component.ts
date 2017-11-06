@@ -122,7 +122,7 @@ ticketImageUpload(event,i){
     header.append('Content-Type','application/json');
     header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
     header.append('Authorization', localStorage.getItem('token'));
-     return this._http.post(`https://gatepassng.herokuapp.com/api/v1/table`, data, {headers: header}).map(res => res.json())
+     return this._http.post(`http://staging.gatepassng.com/api/v1/table`, data, {headers: header}).map(res => res.json())
   }
 
   eventImageUpload(event){

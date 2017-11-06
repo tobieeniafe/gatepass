@@ -519,7 +519,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/create-event/create-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12 center-align\">\r\n    <h5>Create Event</h5>\r\n    <p style=\"font-weight: bold;\">Please note that all fields are required</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m8 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Contact Number\" id=\"contact\" type=\"text\" class=\"validate\"  name=\"contact\" [(ngModel)]=\"contact\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5 class=\"center-align\">Ticket Details</h5><br>\r\n\r\n      <form [formGroup]=\"ticketForm\" novalidate>\r\n          <div formArrayName=\"tickets\" class=\"row\">\r\n              <div *ngFor=\"let ticket of ticketForm.controls.tickets.controls; let i=index\" class=\"row\">\r\n                  <div class=\"col m7 s12\" [formGroupName]=\"i\">\r\n                    <div class=\"col m5 s12\">\r\n                        <input type=\"text\" formControlName=\"ticketName\" placeholder=\"e.g. Regular, VIP\">\r\n                    </div>\r\n                    <div class=\"col m4 s6\">\r\n                        <input type=\"number\" formControlName=\"ticketPrice\" placeholder='Ticket Price &#8358;'>\r\n                    </div>\r\n                    <div class=\"col m3 s6\">\r\n                      <input type=\"number\" formControlName=\"ticketLimit\" placeholder=\"Quantity\">\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col m3 s8\">\r\n                    <image-upload  [max]=\"1\" *ngIf=\"ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid\" [url]=\"'https://gatepassng.herokuapp.com/api/v1/image'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n                    buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, i)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n                  </div>\r\n                  <div class=\"col m2 s2\">\r\n                    <br>\r\n                      <a class=\"primary-base-text\" *ngIf=\"ticketForm.controls.tickets.controls.length > 1\" (click)=\"removeTicket(i)\"><i class=\"fa fa-trash\"></i></a>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n          <div class=\"col\">\r\n              <a style=\"float: left\" (click)=\"addTicket()\"><h6>Add another ticket <i class=\"fa fa-plus\"></i></h6></a>\r\n          </div>\r\n      </form>\r\n\r\n\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'https://gatepassng.herokuapp.com/api/v1/image'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n<!-- map here -->\r\n  <div class=\"col m4 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n<!-- map ends here -->\r\n"
+module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12 center-align\">\r\n    <h5>Create Event</h5>\r\n    <p style=\"font-weight: bold;\">Please note that all fields are required</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m8 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Contact Number\" id=\"contact\" type=\"text\" class=\"validate\"  name=\"contact\" [(ngModel)]=\"contact\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5 class=\"center-align\">Ticket Details</h5><br>\r\n\r\n      <form [formGroup]=\"ticketForm\" novalidate>\r\n          <div formArrayName=\"tickets\" class=\"row\">\r\n              <div *ngFor=\"let ticket of ticketForm.controls.tickets.controls; let i=index\" class=\"row\">\r\n                  <div class=\"col m7 s12\" [formGroupName]=\"i\">\r\n                    <div class=\"col m5 s12\">\r\n                        <input type=\"text\" formControlName=\"ticketName\" placeholder=\"e.g. Regular, VIP\">\r\n                    </div>\r\n                    <div class=\"col m4 s6\">\r\n                        <input type=\"number\" formControlName=\"ticketPrice\" placeholder='Ticket Price &#8358;'>\r\n                    </div>\r\n                    <div class=\"col m3 s6\">\r\n                      <input type=\"number\" formControlName=\"ticketLimit\" placeholder=\"Quantity\">\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col m3 s8\">\r\n                    <image-upload  [max]=\"1\" *ngIf=\"ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid\" [url]=\"'http://staging.gatepassng.com/api/v1/image'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n                    buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, i)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n                  </div>\r\n                  <div class=\"col m2 s2\">\r\n                    <br>\r\n                      <a class=\"primary-base-text\" *ngIf=\"ticketForm.controls.tickets.controls.length > 1\" (click)=\"removeTicket(i)\"><i class=\"fa fa-trash\"></i></a>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n          <div class=\"col\">\r\n              <a style=\"float: left\" (click)=\"addTicket()\"><h6>Add another ticket <i class=\"fa fa-plus\"></i></h6></a>\r\n          </div>\r\n      </form>\r\n\r\n\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'http://staging.gatepassng.com/api/v1/image'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n<!-- map here -->\r\n  <div class=\"col m4 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n<!-- map ends here -->\r\n"
 
 /***/ }),
 
@@ -632,7 +632,7 @@ var CreateEventComponent = (function () {
         header.append('Content-Type', 'application/json');
         header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
         header.append('Authorization', localStorage.getItem('token'));
-        return this._http.post("https://gatepassng.herokuapp.com/api/v1/table", data, { headers: header }).map(function (res) { return res.json(); });
+        return this._http.post("http://staging.gatepassng.com/api/v1/table", data, { headers: header }).map(function (res) { return res.json(); });
     };
     CreateEventComponent.prototype.eventImageUpload = function (event) {
         var resp = event.serverResponse._body;
@@ -757,7 +757,7 @@ var CreateEventService = (function () {
         //console.log(event);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('https://gatepassng.herokuapp.com/api/v1/events', event, { headers: headers })
+        return this.http.post('http://staging.gatepassng.com/api/v1/events', event, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1041,7 +1041,7 @@ var EventsService = (function () {
     EventsService.prototype.getEvent = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('https://gatepassng.herokuapp.com/api/v1/events', { headers: headers })
+        return this.http.get('http://staging.gatepassng.com/api/v1/events', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1049,7 +1049,7 @@ var EventsService = (function () {
     EventsService.prototype.updateStatus = function (id, message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.put("https://gatepassng.herokuapp.com/api/v1/event/online/" + id, message, { headers: headers })
+        return this.http.put("http://staging.gatepassng.com/api/v1/event/online/" + id, message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1057,7 +1057,7 @@ var EventsService = (function () {
     EventsService.prototype.getBanks = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('https://gatepassng.herokuapp.com/api/v1/organiser/bank', { headers: headers })
+        return this.http.get('http://staging.gatepassng.com/api/v1/organiser/bank', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1065,7 +1065,7 @@ var EventsService = (function () {
     EventsService.prototype.addBank = function (details) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/bank', details, { headers: headers })
+        return this.http.post('http://staging.gatepassng.com/api/v1/organiser/bank', details, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1073,7 +1073,7 @@ var EventsService = (function () {
     EventsService.prototype.getPayed = function (message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/transfer', message, { headers: headers })
+        return this.http.post('http://staging.gatepassng.com/api/v1/organiser/transfer', message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1081,7 +1081,7 @@ var EventsService = (function () {
     EventsService.prototype.sendOTP = function (message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('https://gatepassng.herokuapp.com/api/v1/organiser/finalize_transfer', message, { headers: headers })
+        return this.http.post('http://staging.gatepassng.com/api/v1/organiser/finalize_transfer', message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1236,7 +1236,7 @@ var ProfileService = (function () {
     ProfileService.prototype.getUser = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('https://gatepassng.herokuapp.com/api/v1/organiser', { headers: headers })
+        return this.http.get('http://staging.gatepassng.com/api/v1/organiser', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1244,7 +1244,7 @@ var ProfileService = (function () {
     ProfileService.prototype.updateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.put('https://gatepassng.herokuapp.com/api/v1/organiser', user, { headers: headers })
+        return this.http.put('http://staging.gatepassng.com/api/v1/organiser', user, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1408,13 +1408,13 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
-        return this._http.post('https://gatepassng.herokuapp.com/api/v1/organiser/register', user, { headers: header })
+        return this._http.post('http://staging.gatepassng.com/api/v1/organiser/register', user, { headers: header })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loginUser = function (user) {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
-        return this._http.post('https://gatepassng.herokuapp.com/api/v1/organiser/login', user, { headers: header })
+        return this._http.post('http://staging.gatepassng.com/api/v1/organiser/login', user, { headers: header })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
