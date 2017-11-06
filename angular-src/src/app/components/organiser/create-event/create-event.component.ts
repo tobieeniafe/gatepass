@@ -42,13 +42,8 @@ export class CreateEventComponent implements OnInit {
   constructor(private createEventService: CreateEventService,private router: Router,private _http: Http, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private _fb: FormBuilder) { }
 
   ngOnInit() {
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(position => {
-        //console.log(position.coords);
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-      });
-    }
+    this.latitude = 0;
+    this.longitude = 0;
 
     this.ticketForm = this._fb.group({
         tickets: this._fb.array([

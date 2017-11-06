@@ -566,13 +566,8 @@ var CreateEventComponent = (function () {
     }
     CreateEventComponent.prototype.ngOnInit = function () {
         var _this = this;
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                //console.log(position.coords);
-                _this.latitude = position.coords.latitude;
-                _this.longitude = position.coords.longitude;
-            });
-        }
+        this.latitude = 0;
+        this.longitude = 0;
         this.ticketForm = this._fb.group({
             tickets: this._fb.array([
                 this.initTicket(),
