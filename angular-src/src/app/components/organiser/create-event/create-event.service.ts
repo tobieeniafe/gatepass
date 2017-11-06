@@ -3,12 +3,15 @@ import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 declare var jQuery: any;
 declare var $: any;
+import { Api } from '../../../api'
 
 @Injectable()
 export class CreateEventService {
 
   http: Http;
   token: any;
+  api = new Api().endpoint
+
   constructor(public _http: Http) {
      this.http = _http;
      this.token = localStorage.getItem('token');
@@ -48,7 +51,7 @@ export class CreateEventService {
     //console.log(event);
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
-    return this.http.post('http://staging.gatepassng.com/api/v1/events', event, {headers: headers})
+    return this.http.post(this.api+'/events', event, {headers: headers})
     .map(res => {
         return res.json();
     });

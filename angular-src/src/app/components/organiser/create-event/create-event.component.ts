@@ -7,6 +7,7 @@ import { CreateEventService } from './create-event.service';
 import { Http, Headers } from '@angular/http';
 import { } from '@types/googlemaps';
 declare var Materialize: any;
+import { Api } from '../../../api'
 
 @Component({
   selector: 'create-event',
@@ -35,6 +36,8 @@ export class CreateEventComponent implements OnInit {
   formatted_address: string;
   ticketForm: FormGroup;
   ticketPrices: number[] = [];
+  api = new Api().endpoint
+  imageEndpoint = this.api+'/image'
 
    @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -122,7 +125,7 @@ ticketImageUpload(event,i){
     header.append('Content-Type','application/json');
     header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
     header.append('Authorization', localStorage.getItem('token'));
-     return this._http.post(`http://staging.gatepassng.com/api/v1/table`, data, {headers: header}).map(res => res.json())
+     return this._http.post(this.api+'/table', data, {headers: header}).map(res => res.json())
   }
 
   eventImageUpload(event){

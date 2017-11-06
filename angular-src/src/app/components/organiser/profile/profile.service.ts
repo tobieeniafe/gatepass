@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Api } from '../../../api'
 
 @Injectable()
 export class ProfileService {
 
   http: Http;
   token: any;
+  api = new Api().endpoint
 
   constructor(public _http: Http) {
     this.http = _http;
@@ -17,7 +19,7 @@ export class ProfileService {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
 
-    return this.http.get('http://staging.gatepassng.com/api/v1/organiser', {headers: headers})
+    return this.http.get(this.api+'/organiser', {headers: headers})
     .map(res => {
         return res.json();
     });
@@ -27,7 +29,7 @@ export class ProfileService {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
 
-    return this.http.put('http://staging.gatepassng.com/api/v1/organiser', user, {headers: headers})
+    return this.http.put(this.api+'/organiser', user, {headers: headers})
     .map(res => {
         return res.json();
     });

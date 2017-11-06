@@ -48,7 +48,7 @@
                   </div>
 
                   <div class="col m3 s8">
-                    <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid" [url]="'http://staging.gatepassng.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+                    <image-upload  [max]="1" *ngIf="ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid" [url]="imageEndpoint"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
                     buttonCaption="Ticket Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="ticketImageUpload($event, i)" [extensions]="['jpeg','png','jpg']"></image-upload>
                   </div>
                   <div class="col m2 s2">
@@ -68,7 +68,7 @@
       <div class="row">
         <div class="col s12 m12">
           <h5 align='center'>Event Design Image</h5>
-          <image-upload  [max]="1"  [url]="'http://staging.gatepassng.com/api/v1/image'"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
+          <image-upload  [max]="1"  [url]="imageEndpoint"  [headers]="[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]"
           buttonCaption="Event Image"  dropBoxMessage="Drop image here"  (onFileUploadFinish)="eventImageUpload($event)" [extensions]="['jpeg','png','jpg']" #eventImg></image-upload>
         </div>
       </div>

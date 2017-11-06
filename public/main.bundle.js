@@ -17,6 +17,23 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
+/***/ "../../../../../src/app/api.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
+var Api = (function () {
+    function Api() {
+        //readonly endpoint: string = 'https://gatepassng.herokuapp.com/api/v1'
+        this.endpoint = 'http://staging.gatepassng.com/api/v1';
+    }
+    return Api;
+}());
+
+//# sourceMappingURL=api.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/app.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -519,7 +536,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/create-event/create-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12 center-align\">\r\n    <h5>Create Event</h5>\r\n    <p style=\"font-weight: bold;\">Please note that all fields are required</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m8 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Contact Number\" id=\"contact\" type=\"text\" class=\"validate\"  name=\"contact\" [(ngModel)]=\"contact\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5 class=\"center-align\">Ticket Details</h5><br>\r\n\r\n      <form [formGroup]=\"ticketForm\" novalidate>\r\n          <div formArrayName=\"tickets\" class=\"row\">\r\n              <div *ngFor=\"let ticket of ticketForm.controls.tickets.controls; let i=index\" class=\"row\">\r\n                  <div class=\"col m7 s12\" [formGroupName]=\"i\">\r\n                    <div class=\"col m5 s12\">\r\n                        <input type=\"text\" formControlName=\"ticketName\" placeholder=\"e.g. Regular, VIP\">\r\n                    </div>\r\n                    <div class=\"col m4 s6\">\r\n                        <input type=\"number\" formControlName=\"ticketPrice\" placeholder='Ticket Price &#8358;'>\r\n                    </div>\r\n                    <div class=\"col m3 s6\">\r\n                      <input type=\"number\" formControlName=\"ticketLimit\" placeholder=\"Quantity\">\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col m3 s8\">\r\n                    <image-upload  [max]=\"1\" *ngIf=\"ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid\" [url]=\"'http://staging.gatepassng.com/api/v1/image'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n                    buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, i)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n                  </div>\r\n                  <div class=\"col m2 s2\">\r\n                    <br>\r\n                      <a class=\"primary-base-text\" *ngIf=\"ticketForm.controls.tickets.controls.length > 1\" (click)=\"removeTicket(i)\"><i class=\"fa fa-trash\"></i></a>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n          <div class=\"col\">\r\n              <a style=\"float: left\" (click)=\"addTicket()\"><h6>Add another ticket <i class=\"fa fa-plus\"></i></h6></a>\r\n          </div>\r\n      </form>\r\n\r\n\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"'http://staging.gatepassng.com/api/v1/image'\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n<!-- map here -->\r\n  <div class=\"col m4 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n<!-- map ends here -->\r\n"
+module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12 center-align\">\r\n    <h5>Create Event</h5>\r\n    <p style=\"font-weight: bold;\">Please note that all fields are required</p>\r\n    <br>\r\n  </div>\r\n\r\n<!-- form starts here -->\r\n  <div class=\"col m8 s12\">\r\n    <form class=\"col s12\" (submit)=\"createEvent(eventDate.value, eventTime.value)\" class=\"row\" id=\"form\" novalidate=\"\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Event Name\" id=\"event_name\" type=\"text\" class=\"validate\" name=\"event_name\" [(ngModel)]=\"event_name\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder='Event Location' id=\"event_location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"validate\" name=\"event_location\" [(ngModel)]=\"event_location\" #search [formControl]=\"searchControl\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_date\" placeholder='Date' type=\"text\" class=\"datepicker\" #eventDate name=\"event_date\" [(ngModel)]=\"event_date\">\r\n        </div>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input id=\"event_time\" placeholder=\"Time\" type=\"text\" class=\"timepicker\" #eventTime name=\"event_time\" [(ngModel)]=\"event_time\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\"><br>\r\n        <div class=\"input-field col s12 m6\">\r\n          <input placeholder=\"Contact Number\" id=\"contact\" type=\"text\" class=\"validate\"  name=\"contact\" [(ngModel)]=\"contact\">\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <h5 class=\"center-align\">Ticket Details</h5><br>\r\n\r\n      <form [formGroup]=\"ticketForm\" novalidate>\r\n          <div formArrayName=\"tickets\" class=\"row\">\r\n              <div *ngFor=\"let ticket of ticketForm.controls.tickets.controls; let i=index\" class=\"row\">\r\n                  <div class=\"col m7 s12\" [formGroupName]=\"i\">\r\n                    <div class=\"col m5 s12\">\r\n                        <input type=\"text\" formControlName=\"ticketName\" placeholder=\"e.g. Regular, VIP\">\r\n                    </div>\r\n                    <div class=\"col m4 s6\">\r\n                        <input type=\"number\" formControlName=\"ticketPrice\" placeholder='Ticket Price &#8358;'>\r\n                    </div>\r\n                    <div class=\"col m3 s6\">\r\n                      <input type=\"number\" formControlName=\"ticketLimit\" placeholder=\"Quantity\">\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col m3 s8\">\r\n                    <image-upload  [max]=\"1\" *ngIf=\"ticketForm.controls.tickets.controls[i].controls.ticketLimit.valid\" [url]=\"imageEndpoint\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n                    buttonCaption=\"Ticket Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"ticketImageUpload($event, i)\" [extensions]=\"['jpeg','png','jpg']\"></image-upload>\r\n                  </div>\r\n                  <div class=\"col m2 s2\">\r\n                    <br>\r\n                      <a class=\"primary-base-text\" *ngIf=\"ticketForm.controls.tickets.controls.length > 1\" (click)=\"removeTicket(i)\"><i class=\"fa fa-trash\"></i></a>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n          <div class=\"col\">\r\n              <a style=\"float: left\" (click)=\"addTicket()\"><h6>Add another ticket <i class=\"fa fa-plus\"></i></h6></a>\r\n          </div>\r\n      </form>\r\n\r\n\r\n\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col s12 m12\">\r\n          <h5 align='center'>Event Design Image</h5>\r\n          <image-upload  [max]=\"1\"  [url]=\"imageEndpoint\"  [headers]=\"[{header: 'Authorization', value: 'Client-ID aab3505f42b5d63'}]\"\r\n          buttonCaption=\"Event Image\"  dropBoxMessage=\"Drop image here\"  (onFileUploadFinish)=\"eventImageUpload($event)\" [extensions]=\"['jpeg','png','jpg']\" #eventImg></image-upload>\r\n        </div>\r\n      </div>\r\n      <br><br>\r\n      <div class=\"row\" align=center>\r\n        <button type=\"submit\" name=\"button\" class=\"btn\" [disabled]='isDisabled'>Create Event</button>\r\n      </div>\r\n      <br><br>\r\n    </form>\r\n  </div>\r\n  <!-- form ends here -->\r\n\r\n\r\n<!-- map here -->\r\n  <div class=\"col m4 s12\">\r\n    <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]='17' [minZoom]='15'>\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n    </agm-map>\r\n  </div>\r\n\r\n</div>\r\n<!-- map ends here -->\r\n"
 
 /***/ }),
 
@@ -534,6 +551,7 @@ module.exports = "<div class=\"row body\">\r\n  <div class=\"col m12 s12 center-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__create_event_service__ = __webpack_require__("../../../../../src/app/components/organiser/create-event/create-event.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api__ = __webpack_require__("../../../../../src/app/api.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -543,6 +561,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -563,6 +582,8 @@ var CreateEventComponent = (function () {
         this.eventImage = true;
         this.isDisabled = this.ticketImage || this.eventImage;
         this.ticketPrices = [];
+        this.api = new __WEBPACK_IMPORTED_MODULE_6__api__["a" /* Api */]().endpoint;
+        this.imageEndpoint = this.api + '/image';
     }
     CreateEventComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -632,7 +653,7 @@ var CreateEventComponent = (function () {
         header.append('Content-Type', 'application/json');
         header.append('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin');
         header.append('Authorization', localStorage.getItem('token'));
-        return this._http.post("http://staging.gatepassng.com/api/v1/table", data, { headers: header }).map(function (res) { return res.json(); });
+        return this._http.post(this.api + '/table', data, { headers: header }).map(function (res) { return res.json(); });
     };
     CreateEventComponent.prototype.eventImageUpload = function (event) {
         var resp = event.serverResponse._body;
@@ -710,6 +731,7 @@ var _a, _b, _c, _d, _e, _f, _g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__("../../../../../src/app/api.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -722,9 +744,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CreateEventService = (function () {
     function CreateEventService(_http) {
         this._http = _http;
+        this.api = new __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]().endpoint;
         this.http = _http;
         this.token = localStorage.getItem('token');
         (function ($) {
@@ -757,7 +781,7 @@ var CreateEventService = (function () {
         //console.log(event);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('http://staging.gatepassng.com/api/v1/events', event, { headers: headers })
+        return this.http.post(this.api + '/events', event, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -795,7 +819,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/organiser/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n            <tr *ngIf='noEvent'><td colspan=\"6\">\r\n              <h4 align='center'>Oops.. you have no events at this time ☹</h4>\r\n              <a routerLink='/create-event' align='center'><u><h5>Create one now</h5></u></a>\r\n            </td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.sold}}  <a href=\"#ticketDetailsModal\" class=\"modal-trigger green-text\" (click)='passTicketDetails(event)'>View Details</a></td>\r\n\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>\r\n                <a class=\"waves-effect waves-light btn modal-trigger white-text\" href='#checkoutModal' (click)='passTotalPurchased(event)'>Checkout</a>\r\n              </td>\r\n            </tr>\r\n        </tbody>\r\n  </table>\r\n\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n    <!-- Checkout Modal -->\r\n    <div id=\"checkoutModal\" class=\"modal\">\r\n      <div class=\"modal-content\">\r\n        <h4 align='center' class=\"green-text\">&#8358;{{checkoutValue}}</h4>\r\n        <h5 align='center' class=\"grey-text\">Your banks</h5>\r\n        <p></p>\r\n        <div *ngIf='!noBank'>\r\n          <hr>\r\n          <span *ngFor='let bank of myBanks; let i = index'>\r\n            <input class=\"with-gap\" id='{{i}}' type=\"radio\" name=\"banks\" [value]='bank.recepient_code' (change)=\"radioSelectChange(bank)\">\r\n            <label for=\"{{i}}\">{{bank.bank_name}} {{bank.account_number}}</label>\r\n            <hr>\r\n          </span>\r\n          <div class=\"col\">\r\n            <a class=\"waves-effect waves-light btn white-text\" (click)='getPayed()'>Get Payed</a>\r\n          </div>\r\n        </div>\r\n\r\n          <div class=\"col\">\r\n            <a class=\"modal-trigger\" href=\"#addBankModal\"><h5 class=\"grey-text\">Add a new bank</h5></a>\r\n          </div>\r\n      </div>\r\n    </div>\r\n    <!-- Checkout Modal End -->\r\n\r\n    <!-- OTP Modal -->\r\n    <div id=\"otpModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">OTP</h4>\r\n        <p class=\"grey-text\">An OTP code has been sent to your registered phone number</p>\r\n          <input class=\"\" type=\"text\" placeholder=\"OTP code\" [(ngModel)]='otp'>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='sendOTP()' [disabled]='processingPayment'>Proceed</button>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- OTP Modal End -->\r\n\r\n    <!-- Ticket Details Modal -->\r\n    <div id=\"ticketDetailsModal\" class=\"modal row\" align=\"center\">\r\n      <h4>Ticket Details</h4>\r\n      <ul>\r\n        <li *ngFor=\"let t of eventTicketDetails\"><h5>{{t}}</h5></li>\r\n      </ul>\r\n    </div>\r\n    <!-- Ticket Details Modal End -->\r\n\r\n    <!-- Add Bank Modal -->\r\n    <div id=\"addBankModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">Add New Bank</h4>\r\n          <div class=\"input-field col s12\">\r\n            <select #selectedBank>\r\n              <option *ngFor='let bank of allBanks' [value]='bank.code'> {{bank.name}} </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"input-field col s12\">\r\n            <input class=\"\" type=\"text\" placeholder=\"Account Number\" [(ngModel)]='accountNumber'>\r\n          </div>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='addBank(selectedBank.value)' [disabled]='addingBank'>Add Bank</button>\r\n          <br><br>\r\n          <div class=\"preloader-wrapper small active\" *ngIf='addingBank'>\r\n            <div class=\"spinner-layer\">\r\n              <div class=\"circle-clipper left\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"gap-patch\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"circle-clipper right\">\r\n                <div class=\"circle\"></div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- Add Bank Modal End -->\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n\r\n  <table class=\"highlight\">\r\n        <thead>\r\n          <tr>\r\n              <th data-field=\"#\"></th>\r\n              <th data-field=\"name\">Name</th>\r\n              <th data-field=\"location\">Location</th>\r\n              <th data-field=\"date\">Date</th>\r\n              <th data-field=\"purchase\">Ticket Sales</th>\r\n              <th data-field=\"status\">Status</th>\r\n          </tr>\r\n        </thead>\r\n\r\n        <tbody *ngIf='events'>\r\n            <tr *ngIf='noEvent'><td colspan=\"6\">\r\n              <h4 align='center'>Oops.. you have no events at this time ☹</h4>\r\n              <a routerLink='/create-event' align='center'><u><h5>Create one now</h5></u></a>\r\n            </td></tr>\r\n            <tr *ngFor=\"let event of events; let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td>{{event.name}}</td>\r\n              <td>{{event.location}}</td>\r\n              <td>{{event.date}}</td>\r\n              <td>{{event.sold}}  <a href=\"#ticketDetailsModal\" class=\"modal-trigger green-text\" (click)='passTicketDetails(event)'>View Details</a></td>\r\n\r\n              <td *ngIf='!event.disabled'>\r\n                <div class=\"switch\">\r\n                    <label>Off<input type=\"checkbox\" [checked]=\"event.is_online\" (change)='changeStatus(event)' value=\"{{event.is_online}}\"  [disabled]='loading'><span class=\"lever\"></span>On</label>\r\n                </div>\r\n              </td>\r\n              <td class=\"red-text\" *ngIf='event.disabled'>\r\n                <a class=\"waves-effect waves-light btn modal-trigger white-text\" href='#checkoutModal' (click)='passTotalPurchased(event)'>Cashout</a>\r\n              </td>\r\n            </tr>\r\n        </tbody>\r\n  </table>\r\n\r\n  <br><br><br>\r\n  <div *ngIf='preloader' align='center'>\r\n    <h5>Loading events</h5>\r\n    <div class=\"preloader-wrapper small active\">\r\n      <div class=\"spinner-layer\">\r\n        <div class=\"circle-clipper left\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"gap-patch\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n        <div class=\"circle-clipper right\">\r\n          <div class=\"circle\"></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n    <!-- Checkout Modal -->\r\n    <div id=\"checkoutModal\" class=\"modal\">\r\n      <div class=\"modal-content\">\r\n        <h4 align='center' class=\"green-text\">&#8358;{{checkoutValue}}</h4>\r\n        <h5 align='center' class=\"grey-text\">Your banks</h5>\r\n        <p></p>\r\n        <div *ngIf='!noBank'>\r\n          <hr>\r\n          <span *ngFor='let bank of myBanks; let i = index'>\r\n            <input class=\"with-gap\" id='{{i}}' type=\"radio\" name=\"banks\" [value]='bank.recepient_code' (change)=\"radioSelectChange(bank)\">\r\n            <label for=\"{{i}}\">{{bank.bank_name}} {{bank.account_number}}</label>\r\n            <hr>\r\n          </span>\r\n          <div class=\"col\">\r\n            <a class=\"waves-effect waves-light btn white-text\" (click)='getPayed()'>Get Payed</a>\r\n          </div>\r\n        </div>\r\n\r\n          <div class=\"col\">\r\n            <a class=\"modal-trigger\" href=\"#addBankModal\"><h5 class=\"grey-text\">Add a new bank</h5></a>\r\n          </div>\r\n      </div>\r\n    </div>\r\n    <!-- Checkout Modal End -->\r\n\r\n    <!-- OTP Modal -->\r\n    <div id=\"otpModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">OTP</h4>\r\n        <p class=\"grey-text\">An OTP code has been sent to your registered phone number</p>\r\n          <input class=\"\" type=\"text\" placeholder=\"OTP code\" [(ngModel)]='otp'>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='sendOTP()' [disabled]='processingPayment'>Proceed</button>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- OTP Modal End -->\r\n\r\n    <!-- Ticket Details Modal -->\r\n    <div id=\"ticketDetailsModal\" class=\"modal row\" align=\"center\">\r\n      <h4>Ticket Details</h4>\r\n      <ul>\r\n        <li *ngFor=\"let t of eventTicketDetails\"><h5>{{t}}</h5></li>\r\n      </ul>\r\n    </div>\r\n    <!-- Ticket Details Modal End -->\r\n\r\n    <!-- Add Bank Modal -->\r\n    <div id=\"addBankModal\" class=\"modal row\" align=\"center\">\r\n      <div class=\"col m1 s1\"></div>\r\n      <div class=\"modal-content col m10 s10\">\r\n        <h4 align='center' class=\"grey-text\">Add New Bank</h4>\r\n          <div class=\"input-field col s12\">\r\n            <select #selectedBank>\r\n              <option *ngFor='let bank of allBanks' [value]='bank.code'> {{bank.name}} </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"input-field col s12\">\r\n            <input class=\"\" type=\"text\" placeholder=\"Account Number\" [(ngModel)]='accountNumber'>\r\n          </div>\r\n          <button type=\"button\" name=\"button\" class=\"btn waves-effect waves-light\" (click)='addBank(selectedBank.value)' [disabled]='addingBank'>Add Bank</button>\r\n          <br><br>\r\n          <div class=\"preloader-wrapper small active\" *ngIf='addingBank'>\r\n            <div class=\"spinner-layer\">\r\n              <div class=\"circle-clipper left\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"gap-patch\">\r\n                <div class=\"circle\"></div>\r\n              </div><div class=\"circle-clipper right\">\r\n                <div class=\"circle\"></div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n      </div>\r\n      <div class=\"col m1 s1\"></div>\r\n    </div>\r\n    <!-- Add Bank Modal End -->\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1020,6 +1044,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__("../../../../../src/app/api.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1032,16 +1057,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EventsService = (function () {
     function EventsService(_http) {
         this._http = _http;
+        this.api = new __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]().endpoint;
         this.http = _http;
         this.token = localStorage.getItem('token');
     }
     EventsService.prototype.getEvent = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('http://staging.gatepassng.com/api/v1/events', { headers: headers })
+        return this.http.get(this.api + '/events', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1049,7 +1076,7 @@ var EventsService = (function () {
     EventsService.prototype.updateStatus = function (id, message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.put("http://staging.gatepassng.com/api/v1/event/online/" + id, message, { headers: headers })
+        return this.http.put(this.api + '/event/online/${id}', message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1057,7 +1084,7 @@ var EventsService = (function () {
     EventsService.prototype.getBanks = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('http://staging.gatepassng.com/api/v1/organiser/bank', { headers: headers })
+        return this.http.get(this.api + '/organiser/bank', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1065,7 +1092,7 @@ var EventsService = (function () {
     EventsService.prototype.addBank = function (details) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('http://staging.gatepassng.com/api/v1/organiser/bank', details, { headers: headers })
+        return this.http.post(this.api + '/organiser/bank', details, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1073,7 +1100,7 @@ var EventsService = (function () {
     EventsService.prototype.getPayed = function (message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('http://staging.gatepassng.com/api/v1/organiser/transfer', message, { headers: headers })
+        return this.http.post(this.api + '/organiser/transfer', message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1081,7 +1108,7 @@ var EventsService = (function () {
     EventsService.prototype.sendOTP = function (message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.post('http://staging.gatepassng.com/api/v1/organiser/finalize_transfer', message, { headers: headers })
+        return this.http.post(this.api + '/organiser/finalize_transfer', message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1215,6 +1242,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__("../../../../../src/app/api.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1227,16 +1255,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProfileService = (function () {
     function ProfileService(_http) {
         this._http = _http;
+        this.api = new __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]().endpoint;
         this.http = _http;
         this.token = localStorage.getItem('token');
     }
     ProfileService.prototype.getUser = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.get('http://staging.gatepassng.com/api/v1/organiser', { headers: headers })
+        return this.http.get(this.api + '/organiser', { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1244,7 +1274,7 @@ var ProfileService = (function () {
     ProfileService.prototype.updateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.put('http://staging.gatepassng.com/api/v1/organiser', user, { headers: headers })
+        return this.http.put(this.api + '/organiser', user, { headers: headers })
             .map(function (res) {
             return res.json();
         });
@@ -1388,6 +1418,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api__ = __webpack_require__("../../../../../src/app/api.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1401,20 +1432,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = (function () {
     function AuthService(_http) {
         this._http = _http;
+        this.api = new __WEBPACK_IMPORTED_MODULE_4__api__["a" /* Api */]().endpoint;
     }
     AuthService.prototype.registerUser = function (user) {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
-        return this._http.post('http://staging.gatepassng.com/api/v1/organiser/register', user, { headers: header })
+        return this._http.post(this.api + '/organiser/register', user, { headers: header })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loginUser = function (user) {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Content-Type', 'application/json');
-        return this._http.post('http://staging.gatepassng.com/api/v1/organiser/login', user, { headers: header })
+        return this._http.post(this.api + '/organiser/login', user, { headers: header })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
