@@ -28,7 +28,7 @@ export class EventsService {
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.token );
 
-    return this.http.put(this.api+'/event/online/${id}', message, {headers: headers})
+    return this.http.put(this.api+'/event/online/'+id, message, {headers: headers})
     .map(res => {
         return res.json();
     });

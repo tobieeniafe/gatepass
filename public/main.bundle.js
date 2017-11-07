@@ -24,8 +24,8 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
 var Api = (function () {
     function Api() {
-        //readonly endpoint: string = 'https://gatepassng.herokuapp.com/api/v1'
-        this.endpoint = 'http://staging.gatepassng.com/api/v1';
+        this.endpoint = 'https://gatepassng.herokuapp.com/api/v1';
+        //readonly endpoint: string = 'http://staging.gatepassng.com/api/v1'
     }
     return Api;
 }());
@@ -1078,7 +1078,7 @@ var EventsService = (function () {
     EventsService.prototype.updateStatus = function (id, message) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.token);
-        return this.http.put(this.api + '/event/online/${id}', message, { headers: headers })
+        return this.http.put(this.api + '/event/online/' + id, message, { headers: headers })
             .map(function (res) {
             return res.json();
         });
