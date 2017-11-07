@@ -627,7 +627,7 @@ var CreateEventComponent = (function () {
         var control = this.ticketForm.controls['tickets'];
         control.removeAt(i);
         this.tables.splice(i, 1);
-        console.log(this.tables);
+        //console.log(this.tables)
     };
     CreateEventComponent.prototype.ticketImageUpload = function (event, i) {
         var _this = this;
@@ -644,7 +644,7 @@ var CreateEventComponent = (function () {
         this.quicky(data).subscribe(function (resp) {
             if (resp.status) {
                 _this.tables.push(resp.table._id.$oid);
-                console.log(_this.tables);
+                //console.log(this.tables);
                 _this.ticketImage = false;
                 _this.isDisabled = _this.ticketImage || _this.eventImage;
             }

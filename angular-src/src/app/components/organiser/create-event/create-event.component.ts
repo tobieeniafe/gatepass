@@ -96,7 +96,7 @@ export class CreateEventComponent implements OnInit {
       const control = <FormArray>this.ticketForm.controls['tickets'];
       control.removeAt(i);
       this.tables.splice(i, 1)
-      console.log(this.tables)
+      //console.log(this.tables)
   }
 
 ticketImageUpload(event,i){
@@ -115,7 +115,7 @@ ticketImageUpload(event,i){
     this.quicky(data).subscribe((resp)=>{
       if (resp.status) {
         this.tables.push(resp.table._id.$oid);
-        console.log(this.tables);
+        //console.log(this.tables);
         this.ticketImage = false;
         this.isDisabled = this.ticketImage || this.eventImage;
       }
