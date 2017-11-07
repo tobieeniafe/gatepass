@@ -33,8 +33,8 @@ const appRoutes: Routes = [
   { path: 'register',  component: RegisterComponent , canActivate: [RouteGuard] },
   { path: 'events', component: EventsComponent , canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] },
-  { path: 'create-event', component: CreateEventComponent , canActivate: [AuthGuard] }
-  //{ path: '**', component: LoginComponent }
+  { path: 'create-event', component: CreateEventComponent , canActivate: [AuthGuard] },
+  { path: '**', component: IndexComponent  }
 ];
 
 @NgModule({

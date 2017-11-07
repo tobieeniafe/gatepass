@@ -182,8 +182,8 @@ var appRoutes = [
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_routeguard_service__["a" /* RouteGuard */]] },
     { path: 'events', component: __WEBPACK_IMPORTED_MODULE_13__components_organiser_events_events_component__["a" /* EventsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_organiser_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
-    { path: 'create-event', component: __WEBPACK_IMPORTED_MODULE_22__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] }
-    //{ path: '**', component: LoginComponent }
+    { path: 'create-event', component: __WEBPACK_IMPORTED_MODULE_22__components_organiser_create_event_create_event_component__["a" /* CreateEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_20__services_authguard_service__["a" /* AuthGuard */]] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_10__components_index_index_component__["a" /* IndexComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
