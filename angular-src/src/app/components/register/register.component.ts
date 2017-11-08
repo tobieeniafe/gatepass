@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location} from '@angular/common';
-import {AuthService} from '../../services/auth.service'
-import {ValidatorService} from '../../services/validator.service'
+import { AuthService } from '../../services/auth.service'
+import { ValidatorService } from '../../services/validator.service'
 
 declare var Materialize: any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'register',
@@ -43,17 +45,21 @@ export class RegisterComponent implements OnInit {
       email: this.email
     }
     //console.log(user)
+
     if(!this._validateService.ValidateRegister(user)){
        //Show flash or something
-       console.log("err")
+       Materialize.toast("Invalid user registration", 1500, 'red white-text')
+       this.isDisabled = false
        return false
      }
+
      //validate email
      if(!this._validateService.ValidateEmail(user.email)){
-       //Flash flash flash flash
-       console.log("err")
+       Materialize.toast("Invalid email", 1500, 'red white-text')
+       this.isDisabled = false
        return false
      }
+
      this._auth.registerUser(user).subscribe(
        data => {
            if (data.status == false) {

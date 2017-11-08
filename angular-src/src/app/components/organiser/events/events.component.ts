@@ -139,8 +139,8 @@ export class EventsComponent implements OnInit {
     this.eventsService.addBank(details).subscribe(
        data => {
          if (data.status == true) {
-             Materialize.toast('Bank added', 3000, 'green white-text');
              this.loadBanks();
+             Materialize.toast('Bank added', 3000, 'green white-text');
              this.addingBank = false;
              $('#addBankModal').modal('close');
          } else if(data.status == false) {
@@ -150,7 +150,7 @@ export class EventsComponent implements OnInit {
          //console.log(data)
        },
        err => Materialize.toast("Something's not right", 1500, 'red white-text'),
-       () => console.log()
+       () => this.loadBanks()
     );
 
   }
@@ -199,6 +199,7 @@ export class EventsComponent implements OnInit {
     const message = {
       otp: this.otp,
       transfer_code: this.transferCode
+      //event: e._id.$oid
     }
     this.eventsService.sendOTP(message).subscribe(
        data => {

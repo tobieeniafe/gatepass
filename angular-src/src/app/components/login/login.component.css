@@ -36,10 +36,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  loginBody{
+ /* #loginBody{
     height: inherit;
     padding-top: 65px;
-  }
+  }*/
 
   .form{
     background-color: #fff;
