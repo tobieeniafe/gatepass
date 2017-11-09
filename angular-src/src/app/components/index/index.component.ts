@@ -19,11 +19,11 @@ export class IndexComponent{
   @ViewChild('container')
   private container: ElementRef;
 
-  public title: string = 'GatePassNG';
-  private sliderImages: any = ['assets/img/app-1.jpg', 'assets/img/app-2.jpg', 'assets/img/app-3.jpg'];
-  private app: string = 'assets/img/app.gif';
-  private appstore: string = 'assets/img/appstore.png';
-  private playstore: string = 'assets/img/playstore.png';
+  title: string = 'GatePassNG';
+  sliderImages: any = ['assets/img/app-1.jpg', 'assets/img/app-2.jpg', 'assets/img/app-3.jpg'];
+  app: string = 'assets/img/app.gif';
+  appstore: string = 'assets/img/appstore.png';
+  playstore: string = 'assets/img/playstore.png';
 
 
   constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any){

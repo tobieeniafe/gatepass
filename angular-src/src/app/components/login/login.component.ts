@@ -12,8 +12,8 @@ declare var Materialize: any;
 })
 
 export class LoginComponent implements OnInit {
-  private image: string = 'assets/img/7.jpg';
-  private title: string = 'Login Page';
+  image: string = 'assets/img/7.jpg';
+  title: string = 'Login Page';
   email:String;
   password:String;
   isDisabled: boolean = false;

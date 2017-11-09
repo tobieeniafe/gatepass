@@ -13,6 +13,6 @@
     "start": "cd angular-src  && cd .. && node app",
     "go_angular": "cd angular-src",
     "deploy": "cd angular-src && ng build && cd .. && git add . && git commit -m 'deploy' && git push origin master && git push heroku master",
-    "staging": "cd angular-src && ng build && cd .. && git add . && git commit -m 'staging' && git push staging master"
+    "staging": "cd angular-src && ng build --prod --aot=false --build-optimizer && cd .. && git add . && git commit -m 'staging' && git push staging master"
   }
 }

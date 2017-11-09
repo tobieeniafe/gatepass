@@ -16,8 +16,8 @@ declare var $: any;
 
 export class RegisterComponent implements OnInit {
 
-  private image: string = 'assets/img/7.jpg';
-  private title: string = 'Register Page';
+  image: string = 'assets/img/7.jpg';
+  title: string = 'Register Page';
 
   responseStatus:Object= [];
   fullname:String;
