@@ -29,8 +29,11 @@
                     <label>Off<input type="checkbox" [checked]="event.is_online" (change)='changeStatus(event)' value="{{event.is_online}}" [disabled]='loading'><span class="lever"></span>On</label>
                 </div>
               </td>
-              <td class="" *ngIf='event.disabled && !event.checked'>
+              <td *ngIf='event.disabled && !event.checked'>
                 <a class="waves-effect waves-light btn modal-trigger white-text" href='#checkoutModal' (click)='passTotalPurchased(event)'>Cashout</a>
+              </td>
+              <td *ngIf='!(event.disabled && !event.checked) && event.disabled'>
+                <b class="green-text">Cashout Completed</b>
               </td>
             </tr>
         </tbody>

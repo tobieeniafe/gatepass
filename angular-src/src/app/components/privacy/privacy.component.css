@@ -1,0 +1,16 @@
+.case{
+  min-height: 80vh !important;
+  padding: 70px;
+}
+
+.heading{
+	color: #fff;
+	background-color: #24242e;
+	opacity: 0.9;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.policy{
+	padding-bottom: 50px !important;
+}

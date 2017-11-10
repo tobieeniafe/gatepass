@@ -25,6 +25,8 @@ import { AuthGuard } from './services/authguard.service';
 import { RouteGuard } from './services/routeguard.service';
 import { CreateEventComponent } from './components/organiser/create-event/create-event.component';
 import { CreateEventService } from './components/organiser/create-event/create-event.service';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -34,6 +36,8 @@ const appRoutes: Routes = [
   { path: 'events', component: EventsComponent , canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] },
   { path: 'create-event', component: CreateEventComponent , canActivate: [AuthGuard] },
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'faq', component: FaqComponent },
   { path: '**', component: IndexComponent  }
 ];
 
@@ -60,7 +64,9 @@ const appRoutes: Routes = [
     EventsComponent,
     ProfileComponent,
     NavComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    PrivacyComponent,
+    FaqComponent
   ],
   providers: [ AuthService, ValidatorService, AuthGuard, CreateEventService, EventsService, RouteGuard, ProfileService ],
   bootstrap: [ AppComponent ]
