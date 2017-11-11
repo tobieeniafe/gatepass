@@ -1071,7 +1071,7 @@ var EventsComponent = (function () {
         this.eventTicketDetails = saveInto;
         //console.log(this.eventTicketDetails)
     };
-    EventsComponent.prototype.sendOTP = function () {
+    EventsComponent.prototype.sendOTP = function (event) {
         var _this = this;
         this.processingPayment = true;
         var message = {

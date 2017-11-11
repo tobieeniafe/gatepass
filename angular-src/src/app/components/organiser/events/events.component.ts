@@ -14,6 +14,7 @@ declare var $: any;
 export class EventsComponent implements OnInit {
 
   events: any;
+  event: any;
   noEvent: boolean = false;
   preloader: boolean = true;
   token: any;
@@ -194,7 +195,7 @@ export class EventsComponent implements OnInit {
     //console.log(this.eventTicketDetails)
   }
 
-  sendOTP(){
+  sendOTP(event){
     this.processingPayment = true
     const message = {
       otp: this.otp,
