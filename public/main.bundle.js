@@ -24,8 +24,8 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
 var Api = (function () {
     function Api() {
-        this.endpoint = 'https://gatepassng.herokuapp.com/api/v1';
-        //readonly endpoint: string = 'http://staging.gatepassng.com/api/v1'
+        //readonly endpoint: string = 'https://gatepassng.herokuapp.com/api/v1'
+        this.endpoint = 'http://staging.gatepassng.com/api/v1';
     }
     return Api;
 }());
