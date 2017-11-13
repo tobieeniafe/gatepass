@@ -241,7 +241,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".case{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n", ""]);
+exports.push([module.i, ".case{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n\r\n.heading{\r\n\tcolor: #fff;\r\n\tbackground-color: #24242e;\r\n\topacity: 0.9;\r\n\tpadding-top: 50px;\r\n\tpadding-bottom: 50px;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n\t.case{\r\n\t  padding: 10px;\r\n\t}\r\n\r\n}", ""]);
 
 // exports
 
@@ -254,7 +254,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/faq/faq.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"case\">\n\t\n\n\t<h1>faq</h1>\n</div>"
+module.exports = "<div class=\"col s12 m12 center heading\">\n\t<h1>FAQs</h1>\n</div>\n\n\n<div class=\"case row col s12 m12\">\n\t\n\n\t<h3>currently under construction</h3>\n</div>"
 
 /***/ }),
 
@@ -513,7 +513,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\" id=\"topOfPage\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><!-- <img src=\"{{logo}}\"> --><h4 style=\"font-weight: bold;\">Gatepass</h4></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
+module.exports = "<div class=\"body\">\r\n  <nav class=\"white\" role=\"navigation\" id=\"topOfPage\">\r\n    <div class=\"nav-wrapper container\">\r\n      <a id=\"logo-container\" routerLink='/index' class=\"brand-logo\"><!-- <img src=\"{{logo}}\"> --><h4 style=\"font-weight: bold;\">Gatepass</h4></a>\r\n      <ul class=\"right hide-on-med-and-down\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile</a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout</a></li>\r\n      </ul>\r\n\r\n      <ul id=\"nav-mobile\" class=\"side-nav\">\r\n        <li><a *ngIf=\"!_auth.loggedIn()\" routerLink='/register' routerLinkActive='active'>Get Started <i class=\"fa fa-sign-in\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/events' routerLinkActive='active'>Events <i class=\"fa fa-ticket\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/create-event' routerLinkActive='active'>Create Event <i class=\"fa fa-calendar\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" routerLink='/profile' routerLinkActive='active'>Profile <i class=\"fa fa-user\"></i></a></li>\r\n        <li><a *ngIf=\"_auth.loggedIn()\" (click)='logOut()'>Logout <i class=\"fa fa-power-off\"></i></a></li>\r\n        <li><a routerLink='/privacy' routerLinkActive='active'>Privacy <i class=\"fa fa-lock\"></i></a></li>\r\n        <li><a routerLink='/faq' routerLinkActive='active'>FAQs <i class=\"fa fa-question-circle\"></i></a></li>\r\n      </ul>\r\n      <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse white-text\"><i class=\"fa fa-bars primary-base-text\"></i></a>\r\n    </div>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1372,7 +1372,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".case{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n\r\n.heading{\r\n\tcolor: #fff;\r\n\tbackground-color: #24242e;\r\n\topacity: 0.9;\r\n\tpadding-top: 50px;\r\n\tpadding-bottom: 50px;\r\n}\r\n\r\n.policy{\r\n\tpadding-bottom: 50px !important;\r\n}\r\n\r\n*{\r\n\tfont-weight: bold;\r\n}\r\n", ""]);
+exports.push([module.i, ".case{\r\n  min-height: 80vh !important;\r\n  padding: 70px;\r\n}\r\n\r\n.heading{\r\n\tcolor: #fff;\r\n\tbackground-color: #24242e;\r\n\topacity: 0.9;\r\n\tpadding-top: 50px;\r\n\tpadding-bottom: 50px;\r\n}\r\n\r\n.policy{\r\n\tpadding-bottom: 50px !important;\r\n}\r\n\r\n*{\r\n\tfont-weight: bold;\r\n}\r\n\r\n@media only screen and (max-width: 450px) {\r\n\t.case{\r\n\t  padding: 10px;\r\n\t}\r\n\r\n}\r\n", ""]);
 
 // exports
 

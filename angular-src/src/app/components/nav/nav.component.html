@@ -16,6 +16,8 @@
         <li><a *ngIf="_auth.loggedIn()" routerLink='/create-event' routerLinkActive='active'>Create Event <i class="fa fa-calendar"></i></a></li>
         <li><a *ngIf="_auth.loggedIn()" routerLink='/profile' routerLinkActive='active'>Profile <i class="fa fa-user"></i></a></li>
         <li><a *ngIf="_auth.loggedIn()" (click)='logOut()'>Logout <i class="fa fa-power-off"></i></a></li>
+        <li><a routerLink='/privacy' routerLinkActive='active'>Privacy <i class="fa fa-lock"></i></a></li>
+        <li><a routerLink='/faq' routerLinkActive='active'>FAQs <i class="fa fa-question-circle"></i></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="fa fa-bars primary-base-text"></i></a>
     </div>
