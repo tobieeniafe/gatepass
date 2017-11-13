@@ -14,3 +14,7 @@
 .policy{
 	padding-bottom: 50px !important;
 }
+
+*{
+	font-weight: bold;
+}
