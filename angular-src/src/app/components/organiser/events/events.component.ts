@@ -162,7 +162,7 @@ export class EventsComponent implements OnInit {
 
   getPayed(){
     $('#checkoutModal').modal('close');
-    $('#otpModal').modal('open');
+    Materialize.toast('Your request is being processed', 3000, 'green white-text');
     const message = {
       amount: this.checkoutValue,
       recipient_code: this.transferBankCode

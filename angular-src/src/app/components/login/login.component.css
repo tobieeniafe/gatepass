@@ -52,10 +52,6 @@
     margin: auto;
   }
 
-  .transparent{
-    display: none;
-  }
-
   .small{
     display: block;
   }
@@ -65,4 +61,10 @@
   margin: auto !important;
   align-items: center !important;
   text-align: center !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .transparent{
+      display: none;
+  }
 }
