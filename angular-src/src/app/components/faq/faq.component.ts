@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+declare var Materialize: any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-faq',
@@ -8,7 +11,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+  	$(document).ready(function(){
+	    $('.collapsible').collapsible();
+	});
+  }
 
   ngOnInit() {
   }
