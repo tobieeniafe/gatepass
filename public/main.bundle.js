@@ -24,8 +24,8 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
 var Api = (function () {
     function Api() {
-        this.endpoint = 'https://gatepassng.herokuapp.com/api/v1';
-        //readonly endpoint: string = 'http://staging.gatepassng.com/api/v1'
+        //readonly endpoint: string = 'https://gatepassng.herokuapp.com/api/v1'
+        this.endpoint = 'http://staging.gatepassng.com/api/v1';
     }
     return Api;
 }());
@@ -983,6 +983,7 @@ var EventsComponent = (function () {
         this.eventsService.getEvent().subscribe(function (data) {
             _this.events = data;
             _this.preloader = false;
+            _this.percentage = data[0].organiser.percentage;
             if (_this.events.length == 0) {
                 _this.noEvent = true;
             }
@@ -1059,7 +1060,7 @@ var EventsComponent = (function () {
     };
     EventsComponent.prototype.passTotalPurchased = function (e) {
         this.checkoutValue = e.total_purchase;
-        this.availableBalance = this.checkoutValue - (0.1 * this.checkoutValue);
+        this.availableBalance = this.checkoutValue - (this.percentage / 100 * this.checkoutValue);
     };
     EventsComponent.prototype.passTicketDetails = function (e) {
         var saveInto = [];

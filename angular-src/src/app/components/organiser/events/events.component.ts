@@ -60,6 +60,7 @@ export class EventsComponent implements OnInit {
   eventTicketDetails: string[];
   processingPayment: boolean = false;
   availableBalance: any;
+  percentage: any;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -88,6 +89,7 @@ export class EventsComponent implements OnInit {
        data => {
          this.events = data;
          this.preloader = false;
+         this.percentage = data[0].organiser.percentage;
          if (this.events.length == 0) {
              this.noEvent = true;
          }
@@ -180,7 +182,7 @@ export class EventsComponent implements OnInit {
 
   passTotalPurchased(e){
     this.checkoutValue = e.total_purchase;
-    this.availableBalance = this.checkoutValue - (0.1 * this.checkoutValue)
+    this.availableBalance = this.checkoutValue - (this.percentage / 100 * this.checkoutValue)
   }
 
   passTicketDetails(e){
