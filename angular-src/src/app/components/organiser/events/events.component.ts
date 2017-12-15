@@ -59,6 +59,7 @@ export class EventsComponent implements OnInit {
   transferCode: any;
   eventTicketDetails: string[];
   processingPayment: boolean = false;
+  availableBalance: any;
 
   constructor(private eventsService:EventsService, private router: Router, private http: Http) {
     this.viewEvents();
@@ -164,7 +165,7 @@ export class EventsComponent implements OnInit {
     $('#checkoutModal').modal('close');
     Materialize.toast('Your request is being processed', 3000, 'green white-text');
     const message = {
-      amount: this.checkoutValue,
+      amount: this.availableBalance,
       recipient_code: this.transferBankCode
     }
     this.eventsService.getPayed(message).subscribe(
@@ -179,6 +180,7 @@ export class EventsComponent implements OnInit {
 
   passTotalPurchased(e){
     this.checkoutValue = e.total_purchase;
+    this.availableBalance = this.checkoutValue - (0.1 * this.checkoutValue)
   }
 
   passTicketDetails(e){

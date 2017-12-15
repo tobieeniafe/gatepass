@@ -76,8 +76,8 @@ export class RegisterComponent implements OnInit {
              this.isDisabled = false;
            }
      },
-     err => Materialize.toast("Something's not right", 1500, 'red white-text'),
-     () =>  console.log()
+     err => (Materialize.toast("Something's not right", 1500, 'red white-text'), this.isDisabled = false),
+     () =>  this.isDisabled = false
    );
 
   }

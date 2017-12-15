@@ -61,8 +61,9 @@
     <!-- Checkout Modal -->
     <div id="checkoutModal" class="modal">
       <div class="modal-content">
-        <h4 align='center' class="green-text">&#8358;{{checkoutValue}}</h4>
-        <h5 align='center' class="grey-text">Your banks</h5>
+        <h5 align='center' class="green-text">Total sales &#8358;{{checkoutValue}}</h5>
+        <h5 align='center' class="green-text">Available balance &#8358;{{availableBalance}}</h5>
+        <h6 align='center' class="grey-text">Your banks</h6>
         <p></p>
         <div *ngIf='!noBank'>
           <hr>

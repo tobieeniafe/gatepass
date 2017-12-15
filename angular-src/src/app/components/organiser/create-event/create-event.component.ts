@@ -178,9 +178,8 @@ ticketImageUpload(event,i){
           this.router.navigate(['/events']);
         }
        },
-       err => Materialize.toast("Something's not right", 1500, 'red white-text'),
-       () =>  console.log() //console.log('Request Completed') event
-
+       err => (Materialize.toast("Something's not right", 1500, 'red white-text'), this.isDisabled = false),
+       () =>  this.isDisabled = true
     );
   }
 
